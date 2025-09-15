@@ -1,12 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\ReviewController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +18,8 @@ use App\Http\Controllers\ReviewController;
 */
 
 Route::get('/', function () {
-    return redirect()->route('dashboard');
+    return view('Backend.Dashboard.dashboard');
 });
-
-
 
 
 Route::get('/dashboard', [BeritaController::class, 'dashboard'])->name('dashboard');
@@ -60,4 +56,3 @@ Route::post('/simpan_review', [ReviewController::class, 'store'])->name('review.
 Route::get('/edit_review/{id}', [ReviewController::class, 'edit'])->name('review.edit');
 Route::post('/update_review/{id}', [ReviewController::class, 'update'])->name('review.update');
 Route::get('/delete_review/{id}', [ReviewController::class, 'destroy'])->name('review.destroy');
-

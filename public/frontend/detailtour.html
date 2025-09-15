@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nusa Penida East Trip</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans antialiased bg-gray-50">
+
+<!-- Navbar -->
+<header id="navbar" class="fixed top-0 left-0 w-full z-50 bg-white shadow">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
+    <!-- Logo -->
+    <img src="assets/logo.png" class="h-12" alt="Logo"/>
+    
+    <!-- Menu Desktop -->
+    <nav class="hidden md:flex space-x-6 font-medium text-gray-700">
+      <a href="#" class="hover:text-pink-600 nav-link">Home</a>
+      <a href="#" class="hover:text-pink-600 nav-link">Tour</a>
+      <a href="#" class="hover:text-pink-600 nav-link">Hotel & Airport</a>
+      <a href="#" class="hover:text-pink-600 nav-link">Transfers</a>
+      <a href="#" class="hover:text-pink-600 nav-link">Articles</a>
+    </nav>
+
+    <!-- Right Side -->
+    <div class="flex items-center space-x-4">
+      <!-- Language Dropdown -->
+      <div class="relative">
+        <button id="globeBtn" class="text-gray-600 text-xl">🌐</button>
+        <div id="langMenu" class="hidden absolute right-0 mt-2 w-32 bg-white rounded shadow-lg">
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Indonesia</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">English</a>
+        </div>
+      </div>
+      <!-- Book Button -->
+      <a href="#"
+         class="hidden md:inline-block bg-yellow-400 text-gray-800 font-semibold px-4 py-2 rounded hover:bg-yellow-500 transition">
+         Book
+      </a>
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="md:hidden focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             id="menuIcon"
+             class="h-8 w-8 text-gray-700" fill="none" 
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" 
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden bg-white border-t shadow-lg">
+    <nav class="flex flex-col space-y-2 px-6 py-4 text-gray-700 font-medium">
+      <a href="#" class="mobile-link hover:text-pink-600">Home</a>
+      <a href="#" class="mobile-link hover:text-pink-600">Tour</a>
+      <a href="#" class="mobile-link hover:text-pink-600">Hotel & Airport</a>
+      <a href="#" class="mobile-link hover:text-pink-600">Transfers</a>
+      <a href="#" class="mobile-link hover:text-pink-600">Articles</a>
+      <a href="#"
+         class="bg-yellow-400 text-gray-800 font-semibold px-4 py-2 rounded text-center hover:bg-yellow-500">
+         Book
+      </a>
+    </nav>
+  </div>
+</header>
+<!-- Spacer -->
+<div class="h-20"></div>
+<!-- Breadcrumb -->
+<nav class="bg-gray-50 border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 text-sm text-gray-700">
+    <ol class="flex items-center space-x-2">
+      <li>
+        <a href="#" class="hover:text-pink-600">Home</a>
+      </li>
+      <li>
+        <span>&gt;</span>
+      </li>
+      <li>
+        <a href="#" class="hover:text-pink-600">Tour Package</a>
+      </li>
+      <li>
+        <span>&gt;</span>
+      </li>
+      <li class="text-gray-900 font-medium">Bali</li>
+    </ol>
+  </div>
+</nav>
+
+
+
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+
+  <!-- Left Content -->
+  <div class="lg:col-span-2 space-y-6">
+
+    <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
+      Nusa Penida East Trip (Atuh Beach, Diamond Beach, Tree House)
+    </h1>
+    <p class="text-gray-600">
+      Enjoy and take some photos on some of the beaches located in the eastern part of Nusa Penida then enjoy a nice lunch.
+    </p>
+
+    <!-- About -->
+    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+      <h2 class="text-xl font-semibold mb-3">About this activity</h2>
+      <ul class="list-disc pl-6 text-gray-700 space-y-1">
+        <li>Bali Full Day Tour</li>
+        <li>Pickup service at your hotel in Bali</li>
+        <li>English speaking driver</li>
+      </ul>
+    </div>
+
+    <!-- Highlights -->
+    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+      <h2 class="text-xl font-semibold mb-3">Highlights</h2>
+      <ul class="list-disc pl-6 text-gray-700 space-y-1">
+        <li>Visit the East Nusa Penida and stop by Atuh Beach and Diamond Beach</li>
+        <li>Enjoy the beauty of the tree house and the view of the molenteng</li>
+      </ul>
+    </div>
+
+    <!-- Description -->
+    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+      <h2 class="text-xl font-semibold mb-3">Description</h2>
+      <p class="text-gray-700 leading-relaxed">
+        The first spot is Atuh Beach Nusa Penida and the Diamond Beach Nusa Penida, these beaches are very close to each other...
+        <br><br>
+        After enjoying the quiet atmosphere of the beach and swimming around, you will be heading to enjoy the lunch...
+        <br><br>
+        Then continue the trip to the Tree Houses and Molanteng Viewcrack in the shady and peaceful atmosphere...
+      </p>
+    </div>
+
+    <!-- Including -->
+    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+      <h2 class="text-xl font-semibold mb-3">Including</h2>
+      <ul class="list-disc pl-6 text-gray-700 space-y-1">
+        <li>Private transportation</li>
+        <li>Shower and changing room</li>
+        <li>Entry/Admission fee</li>
+        <li>Lunch</li>
+        <li>Mineral water</li>
+        <li>Insurance</li>
+        <li>Private driver at Nusa Penida</li>
+        <li>Boat Ticket return</li>
+        <li>Snorkeling equipment</li>
+      </ul>
+    </div>
+
+    <!-- Pricing -->
+    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+      <h2 class="text-xl font-semibold mb-3">Price</h2>
+      <p class="font-medium text-gray-800">Price including Snorkeling:</p>
+      <ul class="list-disc pl-6 text-gray-700">
+        <li>USD 83 / Person (Open Trip)</li>
+        <li>USD 76 / Person (2–4 pax)</li>
+        <li>USD 67 / Person for more than 4 pax</li>
+      </ul>
+      <p class="font-medium text-gray-800 mt-4">Price without Snorkeling:</p>
+      <ul class="list-disc pl-6 text-gray-700">
+        <li>USD 73 / Person (Open Trip)</li>
+        <li>USD 66 / Person (2–4 pax)</li>
+        <li>USD 60 / Person for more than 4 pax</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="space-y-6">
+<!-- Price Box -->
+<div class="bg-white shadow-sm border border-gray-100 rounded-lg p-6">
+  <p class="text-green-600 font-bold text-lg">Start from</p>
+  <p class="text-pink-600 font-extrabold text-xl mb-4">USD 83 / Person (Open Trip)</p>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/6287652123456?text=Halo%20saya%20ingin%20booking%20Nusa%20Penida%20East%20Trip"
+     target="_blank"
+     class="block bg-green-500 text-white font-semibold py-2 rounded text-center mb-3 hover:bg-green-600">
+    💬 Booking Via WhatsApp
+  </a>
+
+  <!-- Booking Form Button -->
+  <button onclick="openBookingForm()"
+     class="block w-full bg-yellow-400 text-gray-800 font-semibold py-2 rounded text-center hover:bg-yellow-500">
+    📝 Booking Form
+  </button>
+</div>
+
+<!-- Booking Form Modal -->
+<div id="bookingModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-4">
+  <div class="bg-white rounded-lg shadow-lg w-full max-w-3xl mx-auto p-6 relative overflow-y-auto max-h-[90vh]">
+    <!-- Close button -->
+    <button onclick="closeBookingForm()" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+
+    <h2 class="text-xl md:text-2xl font-bold mb-6 text-gray-800">BOOKING FORM</h2>
+
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Full Name -->
+      <div class="md:col-span-1">
+        <label class="block text-sm font-medium text-gray-700">Your Full Name :</label>
+        <input type="text" class="w-full border rounded px-3 py-2 focus:ring focus:ring-yellow-300" required>
+      </div>
+
+      <!-- Email -->
+      <div class="md:col-span-1">
+        <label class="block text-sm font-medium text-gray-700">Your Email Address :</label>
+        <input type="email" class="w-full border rounded px-3 py-2 focus:ring focus:ring-yellow-300" required>
+      </div>
+
+      <!-- Phone -->
+      <div class="md:col-span-1">
+        <label class="block text-sm font-medium text-gray-700">Your Phone Number :</label>
+        <input type="text" class="w-full border rounded px-3 py-2 focus:ring focus:ring-yellow-300" required>
+      </div>
+
+      <!-- Nationality -->
+      <div class="md:col-span-1">
+        <label class="block text-sm font-medium text-gray-700">Your Nationality :</label>
+        <input type="text" class="w-full border rounded px-3 py-2 focus:ring focus:ring-yellow-300">
+      </div>
+
+      <!-- Tour Package -->
+      <div class="md:col-span-1">
+        <label class="block text-sm font-medium text-gray-700">Your Tour Package :</label>
+        <select class="w-full border rounded px-3 py-2 focus:ring focus:ring-yellow-300">
+          <option value="">Select Package</option>
+          <option value="Nusa Penida East Trip">Nusa Penida East Trip</option>
+          <option value="Nusa Penida West Trip">Nusa Penida West Trip</option>
+          <option value="Bali Full Day Tour">Bali Full Day Tour</option>
+        </select>
+      </div>
+
+      <!-- Date -->
+      <div class="md:col-span-1">
+        <label class="block text-sm font-medium text-gray-700">Date of Tour / Activity :</label>
+        <input type="date" class="w-full border rounded px-3 py-2 focus:ring focus:ring-yellow-300">
+      </div>
+
+      <!-- Total Person -->
+      <div class="md:col-span-1">
+        <label class="block text-sm font-medium text-gray-700">Total Person :</label>
+        <input type="number" min="1" class="w-full border rounded px-3 py-2 focus:ring focus:ring-yellow-300">
+      </div>
+
+      <!-- Hotel Name -->
+      <div class="md:col-span-2">
+        <label class="block text-sm font-medium text-gray-700">Your Hotel Name Stay in Bali :</label>
+        <textarea class="w-full border rounded px-3 py-2 focus:ring focus:ring-yellow-300"></textarea>
+      </div>
+
+      <!-- Message -->
+      <div class="md:col-span-2">
+        <label class="block text-sm font-medium text-gray-700">Booking / Comment / Message Details :</label>
+        <textarea class="w-full border rounded px-3 py-2 focus:ring focus:ring-yellow-300"></textarea>
+      </div>
+
+    <!-- Submit -->
+<div class="md:col-span-2">
+  <button type="submit"
+    class="w-full bg-indigo-900 text-white font-semibold py-2 rounded hover:bg-indigo-500 transition">
+    Send ✈
+  </button>
+
+
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Script -->
+<script>
+  function openBookingForm() {
+    document.getElementById('bookingModal').classList.remove('hidden');
+  }
+  function closeBookingForm() {
+    document.getElementById('bookingModal').classList.add('hidden');
+  }
+</script>
+
+
+
+
+
+
+    <!-- Need Help -->
+    <div class="bg-white shadow-sm border border-gray-100 rounded-lg p-6">
+      <h3 class="font-semibold text-gray-800 mb-2">Need Help ?</h3>
+      <p class="text-sm text-gray-600 mb-3">Do not hesitate to give us a call. We are an expert team and we are happy to talk to you</p>
+      <p class="text-sm text-gray-800">📞 087652123456</p>
+      <p class="text-sm text-gray-800">📧 baliladytour@gmail.com</p>
+    </div>
+
+    <!-- Other Packages -->
+    <div class="bg-white shadow-sm border border-gray-100 rounded-lg p-6 space-y-4">
+      <h3 class="font-semibold text-gray-800">Other Tours</h3>
+      <div class="space-y-3">
+        <div class="flex space-x-3">
+          <img src="assets/tour.png" class="w-20 h-16 object-cover rounded" alt="Tour"/>
+          <div>
+            <p class="text-sm font-medium text-gray-800">Nusa Penida East Trip</p>
+            <p class="text-sm text-pink-600 font-bold">USD 83 / Person</p>
+          </div>
+        </div>
+        <div class="flex space-x-3">
+          <img src="assets/tour.png" class="w-20 h-16 object-cover rounded" alt="Tour"/>
+          <div>
+            <p class="text-sm font-medium text-gray-800">Nusa Penida West Trip</p>
+            <p class="text-sm text-pink-600 font-bold">USD 85 / Person</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- Footer -->
+<footer class="bg-white border-t border-gray-200 py-10 mt-10">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:px-6">
+    <div>
+      <img src="assets/logo.png" alt="Logo" class="h-14 mb-4 max-w-full">
+      <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+        With our reliable Bali Lady Tour services, you can explore breathtaking islands,
+        soak up the sun, and travel comfortably.
+      </p>
+      <a href="#" class="inline-block bg-indigo-900 text-white px-6 py-2 rounded-full font-semibold hover:bg-indigo-800 transition">Contact</a>
+    </div>
+
+    <div>
+      <h4 class="font-bold text-indigo-900 mb-4 uppercase">Menu</h4>
+      <ul class="space-y-2 text-gray-600">
+        <li><a href="#" class="hover:text-indigo-900">Home</a></li>
+        <li><a href="#" class="hover:text-indigo-900">Tour</a></li>
+        <li><a href="#" class="hover:text-indigo-900">Hotel & Airport</a></li>
+        <li><a href="#" class="hover:text-indigo-900">Transfers</a></li>
+        <li><a href="#" class="hover:text-indigo-900">Articles</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-bold text-indigo-900 mb-4 uppercase">Info</h4>
+      <ul class="space-y-2 text-gray-600">
+        <li><a href="#" class="hover:text-indigo-900">FAQs</a></li>
+        <li><a href="#" class="hover:text-indigo-900">Support Center</a></li>
+        <li><a href="#" class="hover:text-indigo-900">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-bold text-indigo-900 mb-4 uppercase">Social</h4>
+      <ul class="space-y-2 text-gray-600">
+        <li><a href="#" class="hover:text-indigo-900">Instagram</a></li>
+        <li><a href="#" class="hover:text-indigo-900">Facebook</a></li>
+        <li><a href="#" class="hover:text-indigo-900">Youtube</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-gray-200 mt-10 pt-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-6 text-sm text-gray-600">
+      <p>© 2025 baliladytour.id All Rights Reserved</p>
+      <p class="md:text-right">Designed by <span class="font-medium text-indigo-900">IndoAppsSolusindo</span></p>
+    </div>
+  </div>
+</footer>
+<!-- Script -->
+<script>
+  const navbar = document.getElementById('navbar');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const globeBtn = document.getElementById('globeBtn');
+  const langMenu = document.getElementById('langMenu');
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  // Navbar scroll effect
+  function handleNavbar() {
+    if (window.scrollY > 80) {
+      navbar.classList.add('bg-white','shadow-md');
+    } else {
+      navbar.classList.remove('bg-white','shadow-md');
+    }
+  }
+  window.addEventListener('scroll', handleNavbar);
+  document.addEventListener('DOMContentLoaded', handleNavbar);
+
+  // Language dropdown
+  globeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langMenu.classList.toggle('hidden');
+  });
+  window.addEventListener('click', (e) => {
+    if (!globeBtn.contains(e.target) && !langMenu.contains(e.target)) {
+      langMenu.classList.add('hidden');
+    }
+  });
+
+  // Mobile menu toggle
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+</body>
+</html>
