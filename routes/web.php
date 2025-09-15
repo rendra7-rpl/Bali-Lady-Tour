@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('Backend.Dashboard.dashboard');
 });
 
+
 Route::get('/dashboard', [BeritaController::class, 'dashboard'])->name('dashboard');
 
 // ## GALERY ## //
