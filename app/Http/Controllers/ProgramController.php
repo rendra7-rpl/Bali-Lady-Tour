@@ -38,6 +38,8 @@ class ProgramController extends Controller
 
         $data = new Program();
         $data->title = $request->input('title');
+        $data->content = $request->input('content');
+    
     
         // Proses upload gambar jika ada
         if ($request->hasFile('foto')) {
@@ -57,6 +59,7 @@ class ProgramController extends Controller
     {
     $validated = $request->validate([
         'title' => 'required',
+        'content' => 'required',
         'foto' => 'image|mimes:jpeg,png,jpg|max:2048',
         // validasi lainnya
     ]);
@@ -92,6 +95,7 @@ public function updateprogram(Request $request, $id){
     // Perbarui data selain konten dan gambar, pastikan untuk tidak memperbarui kolom 'id' dan 'image' secara langsung
     $data->update([
         'title' => $request->input('title'),
+        'content' => $request->input('content'),
     ]);
 
     // Proses upload gambar jika ada
