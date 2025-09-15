@@ -1,9 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GaleriController;
-use App\Http\Controllers\BeritaController;
-use App\Http\Controllers\ProgramController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +43,11 @@ Route::get('/tampilkandata/{id}',[BeritaController::class, 'tampilkandata'])->na
 Route::post('/updatedata/{id}',[BeritaController::class, 'updatedata'])->name('updatedata');
 Route::get('/deletenews/{id}',[BeritaController::class, 'deletenews'])->name('deletenews');
 Route::get('/exportpdf',[BeritaController::class, 'exportpdf'])->name('exportpdf');
+
+//Review
+Route::get('/review', [ReviewController::class, 'index'])->name('review.index');
+Route::get('/tambah_review', [ReviewController::class, 'create'])->name('review.create');
+Route::post('/simpan_review', [ReviewController::class, 'store'])->name('review.store');
+Route::get('/edit_review/{id}', [ReviewController::class, 'edit'])->name('review.edit');
+Route::post('/update_review/{id}', [ReviewController::class, 'update'])->name('review.update');
+Route::get('/delete_review/{id}', [ReviewController::class, 'destroy'])->name('review.destroy');
