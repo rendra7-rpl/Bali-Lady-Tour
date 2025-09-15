@@ -17,6 +17,3 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/tourpackage', function () {
-    return view('tourpackage');
-});
