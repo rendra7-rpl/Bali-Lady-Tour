@@ -28,8 +28,20 @@
   <link rel="stylesheet" href="{{ asset('template/plugins/daterangepicker/daterangepicker.css') }}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('template/plugins/summernote/summernote-bs4.min.css') }}">
+
+  <!-- Custom Override -->
+  <style>
+    /* Hilangkan geser ke kanan saat sidebar collapse */
+    body.sidebar-collapse .content-wrapper {
+      margin-left: 0 !important;
+    }
+    /* Supaya pas sidebar normal, tetap ada margin */
+    .content-wrapper {
+      transition: margin-left .3s ease-in-out;
+    }
+  </style>
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed sidebar-collapse"><!-- pakai collapse -->
 
 <div class="wrapper">
 
@@ -156,13 +168,10 @@
   </aside>
 
   <!-- Content Wrapper -->
-  <div class="content-wrapper">
-    <section class="content">
-      <div class="container-fluid py-3">
-        @yield('content')
-      </div>
-    </section>
-  </div>
+<div class="px-3 py-3">
+    @yield('content')
+</div>
+
   <!-- /.content-wrapper -->
 
   <!-- Footer -->
@@ -198,11 +207,5 @@
 <script src="{{ asset('template/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <script src="{{ asset('template/dist/js/adminlte.js') }}"></script>
 
-<!-- Aktifkan sidebar push -->
-<script>
-  $(document).ready(function() {
-    $('[data-widget="pushmenu"]').PushMenu('collapse'); 
-  });
-</script>
 </body>
 </html>
