@@ -1,4 +1,4 @@
-@extends('Backend.Layout.admin')
+@extends('backend.layout.admin')
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -63,13 +63,13 @@
     }
 </style>
   <body>
-    <h1 class="text-center mb-4">Tambah Kelebihan</h1>
+    <h1 class="text-center mb-4">Tambah Berita</h1>
     <div class="container">
         <div class="row justify-content-center">
           <div class="col-8">
             <div class="card">
               <div class="card-body">
-                <form action="/insertprogram" method="post" enctype="multipart/form-data">
+                <form action="/insertdata" method="post" enctype="multipart/form-data">
                   @csrf
                   <div class="mb-3">
                     <label for="image" class="form-label">Gambar</label>
@@ -86,8 +86,23 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="content" class="form-label">Content</label>
+                    <label for="excerpt" class="form-label">Short Content Berita</label>
+                    <textarea class="form-control" name="excerpt" id="excerpt">{{ old('excerpt') }}</textarea>
+                </div>
+  
+                <div class="mb-3">
+                    <label for="content" class="form-label">Content Berita</label>
                     <textarea class="form-control" name="content" id="summernote">{{ old('content') }}</textarea>
+                </div>
+  
+                <div class="mb-3">
+                    <label for="date" class="form-label">Date</label>
+                    <input type="date" class="form-control @error('date')is-invalid @enderror" value="{{ old('date') }}" name="date" id="date">
+                </div>
+  
+                <div class="mb-3">
+                    <label for="hit" class="form-label">Hit</label>
+                    <input type="text" name="hit" class="form-control" value="{{ old('hit') }}" id="hit">
                 </div>
                 
                 <div class="d-flex justify-content-end mt-4">

@@ -1,4 +1,4 @@
-@extends('Backend.Layout.admin')
+@extends('backend.layout.admin')
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -63,31 +63,45 @@
     }
 </style>
   <body>
-    <h1 class="text-center mb-4">Tambah Kelebihan</h1>
+    <h1 class="text-center mb-4">Edit Berita</h1>
     <div class="container">
         <div class="row justify-content-center">
           <div class="col-8">
             <div class="card">
               <div class="card-body">
-                <form action="/insertprogram" method="post" enctype="multipart/form-data">
+                <form action="/updatedata/{{ $data->id }}" method="post" enctype="multipart/form-data">
                   @csrf
                   <div class="mb-3">
                     <label for="image" class="form-label">Gambar</label>
                     <input type="file" id="image" name="foto" class="form-control">
                     <div class="image-preview" id="thumbnailInput">
-                        <img src="#" alt="Image Preview" id="previewImage" style="display: none;">
-                        <span class="preview-text" id="previewText">No image selected</span>
+                        <img src="{{ asset('fotoberita/' . $data->foto) }}" alt="Image Preview" id="previewImage" style="display: block;">
                     </div>
                 </div>
   
                 <div class="mb-3">
                     <label for="judulProgram" class="form-label">Judul</label>
-                    <input type="text" name="title" class="form-control" value="{{ old('title') }}">
+                    <input type="text" name="title" class="form-control" value="{{ old('title', $data->title) }}">
                 </div>
 
                 <div class="mb-3">
-                    <label for="content" class="form-label">Content</label>
-                    <textarea class="form-control" name="content" id="summernote">{{ old('content') }}</textarea>
+                    <label for="excerpt" class="form-label">Short Content Berita</label>
+                    <textarea class="form-control" name="excerpt" id="excerpt">{{ old('excerpt',$data->excerpt) }}</textarea>
+                </div>
+  
+                <div class="mb-3">
+                    <label for="content" class="form-label">Content Berita</label>
+                    <textarea class="form-control" name="content" id="summernote">{{ old('content', $data->content) }}</textarea>
+                </div>
+  
+                <div class="mb-3">
+                    <label for="date" class="form-label">Date</label>
+                    <input type="date" class="form-control @error('date')is-invalid @enderror" value="{{ old('date', $data->date) }}" name="date" id="date">
+                </div>
+  
+                <div class="mb-3">
+                    <label for="hit" class="form-label">Hit</label>
+                    <input type="text" name="hit" class="form-control" value="{{ old('hit', $data->hit) }}" id="hit">
                 </div>
                 
                 <div class="d-flex justify-content-end mt-4">

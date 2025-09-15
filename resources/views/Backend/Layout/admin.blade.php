@@ -116,6 +116,15 @@
             </a>
           </li>
 
+          <!-- Short Content -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-image"></i>
+              <p>Short Content</p>
+            </a>
+          </li>
+
+
           <!-- Gallery -->
           <li class="nav-item">
             <a href="/galeri" class="nav-link">
@@ -128,7 +137,7 @@
           <li class="nav-item">
             <a href="/programs" class="nav-link">
               <i class="nav-icon fas fa-heartbeat"></i>
-              <p>Program</p>
+              <p>Advantage</p>
             </a>
           </li>
 
@@ -138,31 +147,6 @@
               <i class="nav-icon fas fa-star"></i>
               <p>Review</p>
             </a>
-          </li>
-
-          <!-- Pemilik Fasilitas -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-building"></i>
-              <p>
-                Pemilik Fasilitas
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/venue" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Venue</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/tempat-sehat" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tempat Sehat</p>
-                </a>
-              </li>
-            </ul>
           </li>
 
           <!-- Aktivitas -->
