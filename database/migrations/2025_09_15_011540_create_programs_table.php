@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('programs', function (Blueprint $table) {
             $table->id();
+            $table->string('foto');
+            $table->text('title');
+            $table->longtext('content');
             $table->timestamps();
         });
     }
