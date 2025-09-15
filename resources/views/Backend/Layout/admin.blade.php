@@ -25,8 +25,25 @@
   <link rel="stylesheet" href="{{ asset('template/plugins/daterangepicker/daterangepicker.css') }}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('template/plugins/summernote/summernote-bs4.min.css') }}">
+
+  <!-- Custom Override -->
+  <style>
+    /* Hilangkan geser ke kanan saat sidebar collapse */
+    body.sidebar-collapse .content-wrapper {
+      margin-left: 0 !important;
+    }
+    /* Supaya pas sidebar normal, tetap ada margin */
+    .content-wrapper {
+      transition: margin-left .3s ease-in-out;
+    }
+  </style>
 </head>
+
+<body class="hold-transition sidebar-mini layout-fixed sidebar-collapse"><!-- pakai collapse -->
+
+
 <body class="hold-transition sidebar-mini layout-fixed">
+
 <div class="wrapper">
 
   <!-- Preloader -->
@@ -72,7 +89,7 @@
           <img src="{{ asset('aset/user.jpg') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="/dashboard" class="d-block"></a>
+          <a href="/dashboard" class="d-block">Admin</a>
         </div>
       </div>
 
@@ -221,14 +238,21 @@
     <!-- /.sidebar -->
   </aside>
 
-  @yield('content')
+
+
+    @yield('content')
+
+
+
+
+
 
   <!-- Main Footer -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+   <footer class="main-footer">
+    <strong>Copyright &copy; 2025 Bali Lady Tour.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.1.0
+      <b>Version</b> 1.0
     </div>
   </footer>
 
@@ -270,9 +294,13 @@
 <script src="{{ asset('template/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('template/dist/js/adminlte.js') }}"></script>
+
+
+
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('template/dist/js/demo.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('template/dist/js/pages/dashboard.js') }}"></script>
+
 </body>
 </html>

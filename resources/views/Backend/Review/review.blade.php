@@ -7,60 +7,33 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 @endpush
 @section('content')
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0">Data Review</h1>
-                </div>
-            </div>
+<div class="container-fluid mt-4">
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-white">
+            <h3 class="card-title m-0 text-dark fw-bold">Data Ulasan Pengguna</h3>
         </div>
-    </div>    
-  <section class="content">
-        <div class="container-fluid">
-            <div class="card">
-                <div class="card-header">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <a href="/tambah_review" class="btn btn-success">
-                                <i class="fas fa-plus"></i> Tambah Data
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row justify-content-end">
-                                <div class="col-auto">
-                                    <form action="/programs" method="GET" class="form-inline">
-                                        <div class="input-group">
-                                            <input type="search" name="search" class="form-control" placeholder="Cari Program...">
-                                            <div class="input-group-append">
-                                                <button type="submit" class="btn btn-primary">
-                                                    <i class="fas fa-search"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th width="5%">No</th>
-                                    <th width="15%">Foto</th>
-                                    <th>Nama</th>
-                                    <th>Ulasan</th>
-                                    <th>Rate</th>
-                                    <th width="15%">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+
+        <div class="card-body">
+            {{-- Tombol Tambah Data --}}
+            <div class="mb-3">
+                <a href="{{ route('review.create') }}" class="btn btn-success">
+                    + Tambah Data
+                </a>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-bordered align-middle text-center">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th style="width: 50px">ID</th>
+                            <th>Nama</th>
+                            <th>Foto</th>
+                            <th>Ulasan</th>
+                            <th>Rate</th>
+                            <th style="width: 150px">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         @php $no = 1; @endphp
                         @forelse ($data as $row)
                         <tr>
@@ -93,42 +66,36 @@
                         </tr>
                         @endforelse
                     </tbody>
-                        </table>
-                          
-                    </div>
-                </div>
+                </table>
             </div>
+        </div>
+    </div>    
         </div>
       </div>
     </section>
 @endsection
 
-@push('scripts')
-<!-- jQuery first -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- SweetAlert2 -->
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<!-- Toastr JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<!-- Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-<!-- Toastr Alerts -->
 <script>
-  @if (Session::has('Success'))
-    toastr.success("{{ Session::get('Success') }}");
-  @endif
+    document.querySelectorAll('.delete').forEach(function(button) {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const id = this.getAttribute('data-id');
 
-  @if (Session::has('update'))
-    toastr.success("{{ Session::get('update') }}");
-  @endif
-
-  @if (Session::has('delete'))
-    toastr.success("{{ Session::get('delete') }}");
-  @endif
-
-  @if (Session::has('error'))
-    toastr.error("{{ Session::get('error') }}");
-  @endif
+            Swal.fire({
+                title: 'Yakin ingin menghapus?',
+                text: "Data ini tidak bisa dikembalikan!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '/review/' + id + '/delete';
+                }
+            });
+        });
+    });
 </script>
-@endpush
+@endsection
