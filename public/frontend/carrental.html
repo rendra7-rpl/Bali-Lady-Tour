@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bali Lady Tour - Car Rental</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans text-gray-800">
+
+  <!-- Header -->
+  <header class="absolute top-0 left-0 w-full z-50 bg-transparent">
+    <div class="container mx-auto flex justify-between items-center px-6 py-4">
+      <div class="flex items-center space-x-2">
+        <img src="https://via.placeholder.com/50" alt="Logo" class="h-10">
+        <span class="font-bold text-lg text-red-600">Bali Lady Tour</span>
+      </div>
+      <nav class="space-x-6 text-white font-medium">
+        <a href="#" class="hover:text-yellow-400">Home</a>
+        <a href="#" class="hover:text-yellow-400">Tour</a>
+        <a href="#" class="hover:text-yellow-400">Transfer</a>
+        <a href="#" class="hover:text-yellow-400">Tour Experience</a>
+        <a href="#" class="hover:text-yellow-400">Articles</a>
+      </nav>
+      <a href="#" class="bg-yellow-400 text-black font-semibold px-5 py-2 rounded-lg">Book</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative h-[500px] bg-cover bg-center flex items-center"
+           style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80');">
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="container relative z-10 text-white px-6">
+      <h2 class="text-4xl font-bold mb-4">LET’S SEE OUR <br> CAR RENTAL</h2>
+      <p class="max-w-2xl">Discover our variety of Bali car packages tailored to your requirement and guide-driven trip. 
+        From economy to luxurious rides, Bali Lady Tour offers the perfect travel companion for an 
+        unforgettable experience.</p>
+    </div>
+    <div class="absolute bottom-0 right-10">
+      <img src="https://i.ibb.co/QHqHdPz/car.png" alt="Car" class="h-72">
+    </div>
+  </section>
+
+  <!-- Car Rental Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-2">Car Rental</h2>
+      <p class="text-gray-500 mb-10">Try Variety of Elements when using our services</p>
+
+      <section class="py-12">
+    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <div class="bg-white shadow-md rounded-xl overflow-hidden relative">
+        <!-- Label -->
+        <span class="absolute top-3 right-3 bg-yellow-400 text-xs font-semibold px-3 py-1 rounded-full">Low Class</span>
+        <img src="https://i.ibb.co/8PDcKFS/car1.png" alt="Economy" class="w-full h-40 object-contain bg-gray-100">
+        
+        <div class="p-6">
+          <!-- Title & Price -->
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-lg font-bold">Economy</h3>
+              <p class="text-gray-500 text-sm">Passenger van</p>
+            </div>
+            <div class="text-right">
+              <p class="text-xs text-gray-500">From</p>
+              <p class="text-red-600 font-bold">Rp 999.999</p>
+              <p class="text-xs text-gray-500">per 10 hours <br> overtime 10% / hour</p>
+            </div>
+          </div>
+
+          <!-- Icon Info -->
+          <div class="flex items-center gap-6 mt-4 text-gray-600 text-sm">
+            <span class="flex items-center gap-1"><i class="fa-solid fa-user-group"></i> 5</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-suitcase"></i> 4</span>
+          </div>
+
+          <!-- Features -->
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Luxury car 7 seater</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> 10 hours for fullday charter</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> English speaking driver</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Fuel</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Parking fee</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Mineral water</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Note: Depend on pickup area and destination</li>
+          </ul>
+
+          <!-- Tombol Book (contoh dalam card mobil) -->
+<button onclick="openModal()" 
+  class="mt-6 block text-center bg-indigo-900 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700">
+  Book
+</button>
+
+<!-- Modal -->
+<div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <div class="bg-white rounded-lg shadow-lg w-full max-w-2xl p-6 relative">
+
+    <!-- Tombol Close -->
+    <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+      ✕
+    </button>
+
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">Booking Rental Mobil</h2>
+
+    <!-- FORM -->
+    <form class="space-y-6">
+      <!-- Data Penyewa -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Nama Lengkap</label>
+          <input type="text" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Nomor Telepon</label>
+          <input type="text" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Email</label>
+          <input type="email" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Alamat</label>
+          <input type="text" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+        </div>
+      </div>
+
+      <!-- Detail Mobil -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Pilih Mobil</label>
+          <select class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+            <option>Avanza - Rp 500.000/hari</option>
+            <option>Innova Reborn - Rp 800.000/hari</option>
+            <option>Alphard - Rp 1.200.000/hari</option>
+            <option>Fortuner - Rp 1.500.000/hari</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Tipe Sewa</label>
+          <select class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+            <option>Harian</option>
+            <option>Mingguan</option>
+            <option>Bulanan</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Waktu & Lokasi -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Tanggal Mulai</label>
+          <input type="date" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Tanggal Selesai</label>
+          <input type="date" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Lokasi Penjemputan</label>
+          <input type="text" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Lokasi Pengembalian</label>
+          <input type="text" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+        </div>
+      </div>
+
+      <!-- Catatan -->
+      <div>
+        <label class="block text-sm font-medium text-gray-600">Catatan Tambahan</label>
+        <textarea rows="3" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300"></textarea>
+      </div>
+
+      <!-- Submit -->
+      <div class="text-right">
+        <button type="submit" class="bg-indigo-900 text-white px-6 py-2 rounded-lg font-semibold hover:bg-indigo-700">
+          Kirim Booking
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Script Modal -->
+<script>
+  function openModal() {
+    document.getElementById('bookingModal').classList.remove('hidden');
+    document.getElementById('bookingModal').classList.add('flex');
+  }
+  function closeModal() {
+    document.getElementById('bookingModal').classList.add('hidden');
+    document.getElementById('bookingModal').classList.remove('flex');
+  }
+</script>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white shadow-md rounded-xl overflow-hidden relative">
+        <span class="absolute top-3 right-3 bg-yellow-300 text-xs font-semibold px-3 py-1 rounded-full">Mid Class</span>
+        <img src="https://i.ibb.co/93N12Rt/car2.png" alt="Innova Reborn" class="w-full h-40 object-contain bg-gray-100">
+
+        <div class="p-6">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-lg font-bold">Innova Reborn</h3>
+              <p class="text-gray-500 text-sm">Passenger van</p>
+            </div>
+            <div class="text-right">
+              <p class="text-xs text-gray-500">From</p>
+              <p class="text-red-600 font-bold">Rp 999.999</p>
+              <p class="text-xs text-gray-500">per 10 hours <br> overtime 10% / hour</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-6 mt-4 text-gray-600 text-sm">
+            <span class="flex items-center gap-1"><i class="fa-solid fa-user-group"></i> 5</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-suitcase"></i> 4</span>
+          </div>
+
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Luxury car 7 seater</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> 10 hours for fullday charter</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> English speaking driver</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Fuel</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Parking fee</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Mineral water</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Note: Depend on pickup area and destination</li>
+          </ul>
+
+          <button class="mt-6 w-full bg-indigo-900 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700">Book</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white shadow-md rounded-xl overflow-hidden relative">
+        <span class="absolute top-3 right-3 bg-yellow-500 text-xs font-semibold px-3 py-1 rounded-full">High Class</span>
+        <img src="https://i.ibb.co/52Xhdqg/car3.png" alt="Economy High Class" class="w-full h-40 object-contain bg-gray-100">
+
+        <div class="p-6">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-lg font-bold">Economy</h3>
+              <p class="text-gray-500 text-sm">Passenger van</p>
+            </div>
+            <div class="text-right">
+              <p class="text-xs text-gray-500">From</p>
+              <p class="text-red-600 font-bold">Rp 999.999</p>
+              <p class="text-xs text-gray-500">per 10 hours <br> overtime 10% / hour</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-6 mt-4 text-gray-600 text-sm">
+            <span class="flex items-center gap-1"><i class="fa-solid fa-user-group"></i> 5</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-suitcase"></i> 4</span>
+          </div>
+
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Luxury car 7 seater</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> 10 hours for fullday charter</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> English speaking driver</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Fuel</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Parking fee</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Mineral water</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Note: Depend on pickup area and destination</li>
+          </ul>
+
+          <button class="mt-6 w-full bg-indigo-900 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700">Book</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section class="py-12">
+    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <div class="bg-white shadow-md rounded-xl overflow-hidden relative">
+        <!-- Label -->
+        <span class="absolute top-3 right-3 bg-yellow-400 text-xs font-semibold px-3 py-1 rounded-full">Low Class</span>
+        <img src="https://i.ibb.co/8PDcKFS/car1.png" alt="Economy" class="w-full h-40 object-contain bg-gray-100">
+        
+        <div class="p-6">
+          <!-- Title & Price -->
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-lg font-bold">Economy</h3>
+              <p class="text-gray-500 text-sm">Passenger van</p>
+            </div>
+            <div class="text-right">
+              <p class="text-xs text-gray-500">From</p>
+              <p class="text-red-600 font-bold">Rp 999.999</p>
+              <p class="text-xs text-gray-500">per 10 hours <br> overtime 10% / hour</p>
+            </div>
+          </div>
+
+          <!-- Icon Info -->
+          <div class="flex items-center gap-6 mt-4 text-gray-600 text-sm">
+            <span class="flex items-center gap-1"><i class="fa-solid fa-user-group"></i> 5</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-suitcase"></i> 4</span>
+          </div>
+
+          <!-- Features -->
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Luxury car 7 seater</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> 10 hours for fullday charter</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> English speaking driver</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Fuel</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Parking fee</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Mineral water</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Note: Depend on pickup area and destination</li>
+          </ul>
+
+          <!-- Button -->
+          <button class="mt-6 w-full bg-indigo-900 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700">Book</button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white shadow-md rounded-xl overflow-hidden relative">
+        <span class="absolute top-3 right-3 bg-yellow-300 text-xs font-semibold px-3 py-1 rounded-full">Mid Class</span>
+        <img src="https://i.ibb.co/93N12Rt/car2.png" alt="Innova Reborn" class="w-full h-40 object-contain bg-gray-100">
+
+        <div class="p-6">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-lg font-bold">Innova Reborn</h3>
+              <p class="text-gray-500 text-sm">Passenger van</p>
+            </div>
+            <div class="text-right">
+              <p class="text-xs text-gray-500">From</p>
+              <p class="text-red-600 font-bold">Rp 999.999</p>
+              <p class="text-xs text-gray-500">per 10 hours <br> overtime 10% / hour</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-6 mt-4 text-gray-600 text-sm">
+            <span class="flex items-center gap-1"><i class="fa-solid fa-user-group"></i> 5</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-suitcase"></i> 4</span>
+          </div>
+
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Luxury car 7 seater</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> 10 hours for fullday charter</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> English speaking driver</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Fuel</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Parking fee</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Mineral water</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Note: Depend on pickup area and destination</li>
+          </ul>
+
+          <button class="mt-6 w-full bg-indigo-900 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700">Book</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white shadow-md rounded-xl overflow-hidden relative">
+        <span class="absolute top-3 right-3 bg-yellow-500 text-xs font-semibold px-3 py-1 rounded-full">High Class</span>
+        <img src="https://i.ibb.co/52Xhdqg/car3.png" alt="Economy High Class" class="w-full h-40 object-contain bg-gray-100">
+
+        <div class="p-6">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-lg font-bold">Economy</h3>
+              <p class="text-gray-500 text-sm">Passenger van</p>
+            </div>
+            <div class="text-right">
+              <p class="text-xs text-gray-500">From</p>
+              <p class="text-red-600 font-bold">Rp 999.999</p>
+              <p class="text-xs text-gray-500">per 10 hours <br> overtime 10% / hour</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-6 mt-4 text-gray-600 text-sm">
+            <span class="flex items-center gap-1"><i class="fa-solid fa-user-group"></i> 5</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-suitcase"></i> 4</span>
+          </div>
+
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Luxury car 7 seater</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> 10 hours for fullday charter</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> English speaking driver</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Fuel</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Parking fee</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Mineral water</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Note: Depend on pickup area and destination</li>
+          </ul>
+
+          <button class="mt-6 w-full bg-indigo-900 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700">Book</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 py-10">
+  <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+    <!-- Logo & Description -->
+    <div>
+      <div class="flex items-center space-x-2 mb-3">
+        <img src="https://i.ibb.co/Zc0kN6R/logo.png" alt="Bali Lady Tour" class="h-10">
+        <span class="font-bold text-red-600 text-lg">Bali Lady Tour</span>
+      </div>
+      <p class="text-gray-600 text-sm leading-relaxed">
+        With our reliable Bali Lady Tour services, <br>
+        you can explore breathtaking islands, <br>
+        soak up the sun, and travel comfortably.
+      </p>
+      <button class="mt-4 bg-indigo-900 text-white px-6 py-2 rounded-full font-semibold hover:bg-indigo-700">
+        Contact
+      </button>
+    </div>
+
+    <!-- Menu -->
+    <div>
+      <h3 class="font-bold text-indigo-900 mb-3">MENU</h3>
+      <ul class="space-y-2 text-sm text-gray-700">
+        <li><a href="#" class="hover:text-indigo-600">Home</a></li>
+        <li><a href="#" class="hover:text-indigo-600">Tour</a></li>
+        <li><a href="#" class="hover:text-indigo-600">Hotel & Airport</a></li>
+        <li><a href="#" class="hover:text-indigo-600">Tour Tranfers</a></li>
+        <li><a href="#" class="hover:text-indigo-600">Articles</a></li>
+      </ul>
+    </div>
+
+    <!-- Info -->
+    <div>
+      <h3 class="font-bold text-indigo-900 mb-3">INFO</h3>
+      <ul class="space-y-2 text-sm text-gray-700">
+        <li><a href="#" class="hover:text-indigo-600">FAQs</a></li>
+        <li><a href="#" class="hover:text-indigo-600">Support Center</a></li>
+        <li><a href="#" class="hover:text-indigo-600">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Social -->
+    <div>
+      <h3 class="font-bold text-indigo-900 mb-3">SOCIAL</h3>
+      <ul class="space-y-2 text-sm text-gray-700">
+        <li><a href="#" class="hover:text-indigo-600">Instagram</a></li>
+        <li><a href="#" class="hover:text-indigo-600">Facebook</a></li>
+        <li><a href="#" class="hover:text-indigo-600">Youtube</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="mt-10 border-t border-gray-200 pt-6 text-center md:flex md:justify-between md:text-left text-sm text-gray-600 container mx-auto px-6">
+    <p>© 2025 baliladytour.id All Rights Reserved</p>
+    <p class="mt-2 md:mt-0">Designed by <span class="font-semibold">IndoAppsSolusindo</span></p>
+  </div>
+</footer>
+
+
+</body>
+</html>
