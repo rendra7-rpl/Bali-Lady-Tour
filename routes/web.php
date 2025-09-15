@@ -6,6 +6,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ShortController;
 
 
 /*
@@ -25,6 +26,10 @@ Route::get('/', function () {
 
 
 Route::get('/dashboard', [BeritaController::class, 'dashboard'])->name('dashboard');
+
+// ## SHORT CONTENT ## //
+Route::get('/short', [ShortController::class, 'short'])->name('short');
+
 
 // ## GALERY ## //
 Route::get('/galeri', [GaleriController::class, 'galeri'])->name('galeri');
