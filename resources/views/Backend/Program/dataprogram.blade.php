@@ -67,7 +67,7 @@
                                         <img src="{{ asset('fotoprogram/'.$row->foto) }}" alt="{{ $row->title }}" class="img-thumbnail" style="max-height: 60px;">
                                     </td>
                                     <td>{{ $row->title }}</td>
-                                    <td>{{ $row->content }}</td>
+                                    <td>{!! $row->content !!}</td>
                                     
                                     <td>
                                         <a href="/tampilkanprogram/{{ $row->id }}" type="button" class="btn btn-info">Edit</a>

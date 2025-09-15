@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
