@@ -1,361 +1,1055 @@
+
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Olga Sehat - Booking Venue Olahraga</title>
-  <link rel="icon" href="assets/olgasehat-icon.png" type="image/png" />
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            blue: {
-              700: '#013D9D',
-              800: '#002D7A',
-              900: '#001F5C',
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <!-- Font Awesome CDN for icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Eva Bali Tour is Your Best Female Tour Guide in Bali. Let's Discover More About Bali or Enjoy Your Private Tour with Eva!">
+    <link rel="canonical" href="https://evabalitours.com" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    <title>Bali Lady Tour | Your Friendly Female Guide | Bali</title>
 </head>
-<body class="bg-white text-gray-800 font-sans">
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+:root {
+    --swiper-theme-color: #ffff;
+}
+textarea {
+    resize: none;
+}
+* {
+    font-family: "Poppins", "sans-serif";
+}
+body {
+    overflow-x: hidden;
+}
+.navbar {
+    z-index: 999999;
+    background-color: transparent;
+    transition: 0.3s;
+}
+.melukat{
+    height: 100vh !important;
+}
+.melukat img{
+    object-fit: cover;
+}
+.navbar a,
+.navbar .btn-toggle {
+    color: white;
+}
+.navbar .nav-link,
+.navbar-brand {
+    color: #414141 !important;
+}
+/* navbar */
+.navbar.open {
+    background-color: white;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+.offcanvas-body {
+    z-index: 999 !important;
+}
+.navbar.open a,
+.navbar.open .btn-toggle {
+    color: #414141 !important;
+}
+/* navbar end */
+.btn-orange {
+    background-color: #F4D348;
+    color: white !important;
+}
+.btn-blue {
+    background-color: #006989;
+    color: white !important;
+}
+.btn-orange:hover {
+    outline: 1px solid #F4D348;
+    color: #F4D348 !important;
+}
+.btn-blue:hover {
+    outline: 1px solid #006989;
+    color: #006989 !important;
+}
+.bg-orange-light {
+    background-color: #ffd9c6;
+}
+.bg-orange {
+    background-color: #F4D348;
+}
+.text-orange {
+    color: #F4D348 !important;
+}
+.text-blue {
+    color: #006989;
+}
+.hero-section .content .image-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+.hero-section .content .image-bg2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+.hero-section {
+    position: relative;
+}
+.hero-section .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0)
+    );
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.header-hero {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.floating-input .form {
+    position: absolute;
+    background-color: white;
+    top: -10em;
+    border-radius: 10px;
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.3));
+    width: 80%;
+    overflow: hidden;
+    padding: 1rem 0 0 0;
+}
+.icon-container {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F4D348;
+}
+.book-btn {
+    border: 0;
+    outline: 0;
+    margin-top: 1rem;
+    background-color: #F4D348;
+    width: 100%;
+    padding: 1rem;
+    height: 100%;
+    color: white;
+    transition: 0.3s;
+}
+.book-btn:hover {
+    background-color: white;
+    color: #F4D348;
+    outline: 1px solid #F4D348;
+}
 
-  <!-- Header -->
-  <header class="shadow-md">
-    <div class="container mx-auto flex items-center justify-between py-4 px-6">
-      <a href="#" class="flex items-center space-x-2">
-        <img src="assets/olgasehat-icon.png" alt="Olga Sehat Logo" class="w-100 h-10" />
-      </a>
-      <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
-        <a href="venue.html" class="hover:text-blue-700">Sewa Lapangan</a>
-        <a href="tempat_sehat.html" class="hover:text-blue-700">Tempat Sehat</a>
-        <a href="community.html" class="hover:text-blue-700">Komunitas</a>
-        <a href="club.html" class="hover:text-blue-700">Klub</a>
-        <a href="blog&news.html" class="hover:text-blue-700">Blog & News</a>
-      </nav>
-      <div class="hidden md:flex items-center space-x-4">
-        <button aria-label="Cart" class="text-gray-700 hover:text-blue-700 relative">
-          <i class="fas fa-shopping-cart fa-lg"></i>
-          <span
-            class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full px-1.5"
-            >0</span
-          >
+/* value */
+.value {
+    align-items: end;
+    height: 160vh;
+    padding-bottom: 2rem;
+}
+.value .col-md-3 {
+    margin-bottom: 1rem;
+}
+/* value end */
+/* about */
+
+/* about end */
+/* destination */
+.destination .swiper {
+    height: 80vh;
+    overflow: hidden;
+}
+.destination .content {
+    z-index: 99;
+    top: 0;
+    width: 75%;
+    height: 100%;
+}
+.destination img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.destination .overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+}
+.destination .content {
+    letter-spacing: 1px;
+}
+
+/* destination end*/
+
+/* package */
+.package .card-img-top {
+    height: 10rem;
+    object-fit: cover;
+    object-position: center;
+}
+.book-package {
+    font-size: 12px;
+}
+/* package end */
+/* parallax */
+.parallax-container {
+    height: 90vh;
+    overflow-y: hidden;
+}
+.parallax {
+    margin-top: -10rem;
+    z-index: -1;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.parallax-top {
+    z-index: 1;
+}
+.parallax-bot {
+    z-index: 2;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+.parallax-container .overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.2)
+    );
+    z-index: 0;
+}
+.parallax-container .content {
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+}
+.parallax-title {
+    font-size: 2rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    -webkit-text-fill-color: transparent;
+}
+.fs-12 {
+    font-size: 12px;
+}
+/* parallax end */
+/* gallery */
+.gallery-container {
+    height: 60vh;
+}
+.gallery {
+    height: 70%;
+}
+/* gallery end */
+
+/* article */
+.img-article {
+    height: 15rem;
+    object-fit: cover;
+}
+/* article end */
+
+/* about us page */
+.number-container {
+    width: 50px;
+    height: 50px;
+    background-color: #F4D348;
+}
+.wave-about {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+}
+.wave-about.wave-2 {
+    bottom: -1px;
+}
+.parallax-about {
+    overflow: hidden;
+    height: 100vh;
+}
+.parallax-about .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 9;
+    top: 2rem;
+}
+.parallax-about .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.about-destination {
+    background-color: #f7f7f7;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.overlay-barong {
+    position: absolute;
+    top: -10rem;
+    opacity: 10%;
+}
+.texture {
+    position: absolute;
+    left: -5rem;
+    bottom: 30rem;
+    z-index: -2;
+    scale: 100%;
+    width: 100%;
+}
+.overlay-barong.barong-2 {
+    right: 0;
+    transform: scaleX(-1);
+}
+/* aboutt us page end */
+/* destination  page */
+.img-dest {
+    transition: 0.3s;
+}
+.destination-place:hover .img-dest {
+    scale: 125%;
+}
+/* destination page end */
+
+.line-detail {
+    display: flex;
+}
+.line-detail .line-1 {
+    display: block;
+    width: 70px;
+    height: 10px;
+    background-color: #F4D348;
+}
+.line-detail .line-2 {
+    display: block;
+    width: 200px;
+    height: 10px;
+    background-color: #414141;
+}
+@media screen and (min-width: 768px) {
+
+    .hero-section .content .image-bg {
+        height: 100%;
+        right: -10rem;
+    }
+    .offcanvas-body {
+        width: 100%;
+    }
+    .menu-container {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .header-hero {
+        font-size: 4rem;
+    }
+    .book-btn {
+        padding: 3rem 0;
+        margin-top: 0;
+        border-radius: 5rem 0 0 5rem;
+    }
+    .floating-input .form {
+        padding: 0;
+        width: 100%;
+        top: -4em;
+        margin: 0 !important;
+    }
+    /* value */
+    .value {
+        align-items: center;
+        height: 100vh;
+        padding-bottom: 0;
+    }
+    /* value end */
+    /* destination */
+
+    /* destination end*/
+    /* package */
+    .book-package {
+        font-size: 16px;
+    }
+
+    /* package end */
+    /* parallax */
+    .parallax {
+        margin-top: -15rem;
+    }
+    .parallax-container {
+        height: 150vh;
+    }
+    .parallax-title {
+        font-size: 4rem;
+    }
+    .fs-12 {
+        font-size: 16px;
+    }
+    .parallax-container .overlay {
+        background-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0)
+        );
+    }
+    .wave-about.wave-2 {
+        bottom: -1px;
+    }
+    /* parallax end */
+    .w-md-50 {
+        width: 50%;
+    }
+    .texture {
+        left: -25rem;
+        bottom: 0rem;
+        scale: 50%;
+    }
+    .navbar .nav-link,
+    .navbar-brand {
+        color: white !important;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .parallax {
+        margin-top: -22rem;
+    }
+    
+}
+@media screen and (min-width: 1440px) {
+    .hero-section .content .image-bg {
+        top: -40rem;
+        right: -10rem;
+        height: fit-content;
+    }
+    .parallax {
+        margin-top: -25rem;
+    }
+}
+</style>
+<body >
+    <nav class="navbar navbar-expand-md position-fixed w-100 py-4">
+    <div class=" offcanvas offcanvas-start" id="navbar">
+        <div class="offcanvas-header">
+<a href="" class="navbar-brand"><img src="assets/logo.png" alt="Bali Lady Tour Logo" style="max-height: 50px;"></a>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="container-md menu-container">
+<a href="/" class="navbar-brand d-none d-md-block"><img src="assets/logo.png" alt="Bali Lady Tour Logo" style="max-height: 50px;"></a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link text-orange">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/about-me" class="nav-link ">Tour</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/packages" class="nav-link ">Tranfer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/destinations" class="nav-link ">Tour Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/articles" class="nav-link ">Articles</a>
+                    </li>
+                </ul>
+                <a href="/#floatinginput" class="btn btn-orange fw-semibold">Book Now</a>
+            </div>
+        </div>
+    </div>
+    <div class="container d-md-none">
+<a href="" class="navbar-brand "><img src="assets/logo.png" alt="Bali Lady Tour Logo" style="max-height: 50px;"></a>
+        <button class="btn btn-toggle" type="button " data-bs-toggle="offcanvas" data-bs-target="#navbar">
+            <i class="fa-solid fa-bars-staggered"></i>
         </button>
-        <a href="#" class="text-gray-700 hover:text-blue-700">Masuk</a>
-        <a
-          href="#"
-          class="bg-blue-700 text-white px-4 py-2 rounded-md hover:bg-blue-800 transition"
-          >Daftar</a
-        >
-      </div>
-      <div class="flex md:hidden items-center space-x-4">
-        <button aria-label="Cart" class="text-gray-700 hover:text-blue-700 relative">
-          <i class="fas fa-shopping-cart fa-lg"></i>
-          <span
-            class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full px-1.5"
-            >0</span
-          >
-        </button>
-        <!-- Mobile menu button -->
-        <button
-          id="mobileMenuBtn"
-          class="text-gray-700 hover:text-blue-700 focus:outline-none"
-          aria-label="Open menu"
-        >
-          <i class="fas fa-bars fa-lg"></i>
-        </button>
-      </div>
     </div>
-    <!-- Mobile menu -->
-    <nav
-      id="mobileMenu"
-      class="hidden md:hidden bg-white border-t border-gray-200 shadow-md"
-    >
-      <a
-        href="venue.html"
-        class="block px-6 py-3 border-b border-gray-200 hover:bg-blue-50 hover:text-blue-700"
-        >Sewa Lapangan</a
-      >
-      <a
-        href="tempat_sehat.html"
-        class="block px-6 py-3 border-b border-gray-200 hover:bg-blue-50 hover:text-blue-700"
-        >Tempat Sehat</a
-      >
-      <a
-        href="community.html"
-        class="block px-6 py-3 border-b border-gray-200 hover:bg-blue-50 hover:text-blue-700"
-        >Komunitas</a
-      >
-      <a
-        href="club.html"
-        class="block px-6 py-3 border-b border-gray-200 hover:bg-blue-50 hover:text-blue-700"
-        >Klub</a
-      >
-      <a
-        href="blog&news.html"
-        class="block px-6 py-3 border-b border-gray-200 hover:bg-blue-50 hover:text-blue-700"
-        >Blog & News</a
-      >
-      <a
-        href="#"
-        class="block w-full text-center px-6 py-3 mb-2 border border-gray-300 rounded-md bg-white text-gray-700 font-semibold hover:bg-gray-100"
-        >Masuk</a
-      >
-      <a
-        href="#"
-        class="block w-full text-center px-6 py-3 rounded-md bg-blue-700 text-white font-semibold hover:bg-red-900"
-        >Daftar</a
-      >
-    </nav>
-  </header>
 
-  <!-- Blog & News Header Section -->
-  <section class="bg-[url('assets/blue-banner.png')] bg-no-repeat text-white py-12 relative overflow-hidden h-[225px] flex items-center" style="background-size: 1910px 225px;">
-    <div class="container mx-auto px-6 text-center">
-      <h1 class="text-3xl md:text-4xl font-bold text-white tracking-wide">
-        ARTIKEL & TIPS SEPUTAR OLAHRAGA
-      </h1>
-      <div class="mt-6 max-w-xl mx-auto">
-        <input
-          type="text"
-          placeholder="Cari artikel..."
-          class="w-full rounded-md py-3 px-4 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-900"
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- Blog & News Content -->
-  <section class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
-    <!-- Trending Posts -->
-    <aside class="md:col-span-1 space-y-6">
-      <h2 class="text-sm font-semibold text-gray-700 uppercase border-b border-gray-300 pb-2">
-        TRENDING POST
-      </h2>
-      <ol class="list-decimal list-inside space-y-4 text-sm text-gray-800 font-semibold">
-        <li>
-          <a href="#" class="hover:underline">
-            3 Hal Penting agar Main Bola Tetap Lancar di Bulan Puasa
-          </a>
-          <p class="text-xs text-gray-500">SEPAK BOLA - April 14, 2022</p>
-        </li>
-        <li>
-          <a href="#" class="hover:underline">
-            Cara Meningkatkan Stamina saat Bermain Badminton: Tips dan Latihan yang Efektif
-          </a>
-          <p class="text-xs text-gray-500">BADMINTON - May 18, 2023</p>
-        </li>
-        <li>
-          <a href="#" class="hover:underline">
-            Kenapa Sparring Tennis Penting? Ini Manfaat yang Bisa Didapat!
-          </a>
-          <p class="text-xs text-gray-500">TENNIS - March 28, 2025</p>
-        </li>
-        <li>
-          <a href="#" class="hover:underline">
-            Memahami Standar Keselamatan dan Keamanan Lapangan Mini Soccer
-          </a>
-          <p class="text-xs text-gray-500">MINI SOCCER - July 29, 2024</p>
-        </li>
-        <li>
-          <a href="#" class="hover:underline">
-            Inilah Ukuran Standar Lapangan Mini Soccer yang Harus Diketahui
-          </a>
-          <p class="text-xs text-gray-500">MINI SOCCER - July 29, 2024</p>
-        </li>
-      </ol>
-    </aside>
-
-    <!-- Blog Cards -->
-    <main class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-6">
-      <!-- Blog Card 1 -->
-       <a href="blog&news_detail.html">
-        <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-        <img
-          src="assets/tenis.jpg"
-          alt="Tennis Player"
-          class="w-full h-48 object-cover"
-        />
-        <div class="p-4">
-          <p class="text-xs text-blue-700 font-semibold uppercase mb-2">Tennis</p>
-          <h3 class="font-bold text-lg mb-2">
-            Kenapa Sparring Tennis Penting? Ini Manfaat yang Bisa Didapat!
-          </h3>
-          <p class="text-gray-600 text-sm mb-4">
-            Bukan hanya soal menang atau kalah, ada manfaat sparring tenis yang bisa membuat...
-          </p>
-          <div class="flex items-center justify-between text-xs text-gray-500">
-            <span>oleh Eren</span>
-            <time datetime="2025-03-28">28 March 2025</time>
-          </div>
+</nav>
+        <div class="container-fluid hero-section m-0 p-0">
+        <div class="container content text-center text-md-start vh-100 text-white">
+            
+            <img src="https://evabalitours.com/img/img-hero.webp" class="image-bg2 w-100 h-100" alt="Bali Nusa Penida Picture">
+            <div class="overlay"></div>
+            
+            <div class="row h-100 d-flex flex-column justify-content-center">
+                <section class="col-md-8 ">
+                    <h1 class="header-hero fs-1">EXPLORE BALI</h1>
+                    <p>Airport Transfers <span class="mx-3 d-inline-block">&#9733</span> Full & Half day tours <span class="mx-3 d-inline-block">&#9733</span> Ceremonies Adventure</p>
+                    <p class="" style="letter-spacing: 2px">Explore the Miracle of Bali with Bali Lady Tour. Discover stunning landscapes, exciting adventures, and vibrant culture with our expert <b>Female Tour Guide and driver</b>. Book now for an unforgettable experience on the Island of the Gods!</p>
+                    <a  target="_blank" href="https://wa.me/62881038591236?text=Hello%2C+I+want+to+ask+some+questions+about+the+Eva+Bali+Tours." class="btn btn-orange" id="floatinginput">Ask Question</a>
+                </section>
+            </div>
         </div>
-      </article>`
-       </a>
+    </div>    
+        
+        <section class="container value text-center d-flex ">
+            <div>
+                <h5 class="text-orange  fs-2 fw-semibold">Top Values For You</h5>
+                <p class="mb-3 text-secondary">Try Variety of Benefits when using our services</p>
+                <div class="row mt-5">
+                    <section class="col-md-3 ">
+                        <div class="icon-container fs-2 rounded-circle mx-auto text-white m-0 p-0">
+                            <i class="fa-solid fa-camera"></i>
+                        </div>
+                        <h5 class="fw-bold text-orange my-2">Documentation</h5>
+                        <small class="text-secondary">Our Female Tour Guide and Driver will document your journey, capturing every memorable moment. </small>
+                    </section>
+                    <section class="col-md-3 ">
+                        <div class="icon-container fs-2 rounded-circle mx-auto text-white m-0 p-0">
+                            <i class="fa-regular fa-calendar-check"></i>
+                        </div>
+                        <h5 class="fw-bold text-orange my-2">Easy Booking </h5>
+                        <small class="text-secondary">Our seamless booking process ensures you can quickly arrange your Ubud day trip, nature adventure, or cultural exploration.</small>
+                    </section>
+                    <section class="col-md-3 ">
+                        <div class="icon-container fs-2 rounded-circle mx-auto text-white m-0 p-0">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h5 class="fw-bold text-orange my-2">Best Tour Guide</h5>
+                        <small class="text-secondary">Our experienced Female Tour Guide and Driver will lead you through breathtaking landscapes and vibrant Balinese culture. </small>
+                    </section>
+                    <section class="col-md-3 ">
+                        <div class="icon-container fs-2 rounded-circle mx-auto text-white m-0 p-0">
+                            <i class="fa-solid fa-face-grin-wink"></i>
+                        </div>
+                        <h5 class="fw-bold text-orange my-2">Happy Tour</h5>
+                        <small class="text-secondary"> Whether you're exploring nature, diving into Balinese culture, or enjoying an Ubud day trip, we promise a delightful and enriching experience.</small>
+                    </section>
+                </div>
+            </div>
 
-      <!-- Blog Card 2 -->
-      <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-        <img
-          src="assets/tenis.jpg"
-          alt="Indoor Court"
-          class="w-full h-48 object-cover"
-        />
-        <div class="p-4">
-          <p class="text-xs text-blue-700 font-semibold uppercase mb-2">Badminton</p>
-          <h3 class="font-bold text-lg mb-2">
-            Cara Meningkatkan Stamina saat Bermain Badminton: Tips dan Latihan yang Efektif
-          </h3>
-          <p class="text-gray-600 text-sm mb-4">
-            Tips dan latihan yang efektif untuk meningkatkan stamina saat bermain badminton...
-          </p>
-          <div class="flex items-center justify-between text-xs text-gray-500">
-            <span>oleh Rina</span>
-            <time datetime="2023-05-18">18 May 2023</time>
-          </div>
+        </section>
+        
+    </div>
+    
+    
+        
+    <div class="container about p-4 px-md-0 my-3">
+        <div class="row">
+            
+            <section class="col-md-6">
+                <h5 class="text-orange text-center d-md-none fs-2 fw-semibold">About Eva Bali Tour</h5>
+                <div class="row img-container g-2">
+                    <div class="col-12">
+                        <img src="https://evabalitours.com/img/img-about-2.webp" class=" rounded-2 w-100 " style="height: 14rem;object-fit: cover; object-position: center" alt="Ubud Rice Terrace">
+                    </div>
+                    <div class="col-6">
+                        <img src="https://evabalitours.com/img/img-about-1.webp" class=" rounded-2 w-100" alt="Tegenungan Waterfall" style="height: 10rem;object-fit: cover; object-position: bottom">
+                    </div>
+                    <div class="col-6">
+                        <img src="https://evabalitours.com/img/img-about-3.webp" class=" rounded-2 w-100 " style="height: 10rem;object-fit: cover; object-position: center" alt="Bali Nature">
+                    </div>
+                </div>
+            </section>
+            
+
+            
+            <section class="col-md-6 mt-3 mt-md-0">
+                <div>
+                    <h5 class="text-orange text-section fw-semibold d-none d-md-block">About Eva Bali Tour</h5>
+                    <h5 class="fs-2 fw-semibold">Discover Bali with Eva: Your Friendly and Experienced Guide</h5>
+                    <p class="mb-3 text-secondary" style="letter-spacing: 1px">Experience Bali in a whole new way with Eva, your friendly and experienced guide. Explore the island’s stunning natural beauty, from lush rice fields to amazing waterfalls. With Eva’s expert knowledge, you’ll find hidden gems, learn about local culture, and enjoy exciting adventures.</p>
+                    <p class="mb-3 text-secondary" style="letter-spacing: 1px">Eva’s tours offer the perfect mix of relaxation and fun. Whether you’re visiting ancient temples, tasting traditional Balinese food, or discovering less-known spots, Eva will make sure you have a memorable experience.
+                    </p>
+                </div>
+
+            </section>
+            
+
         </div>
-      </article>
-
-      <!-- Blog Card 3 -->
-      <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-        <img
-          src="assets/tenis.jpg"
-          alt="Mini Soccer Field"
-          class="w-full h-48 object-cover"
-        />
-        <div class="p-4">
-          <p class="text-xs text-blue-700 font-semibold uppercase mb-2">Mini Soccer</p>
-          <h3 class="font-bold text-lg mb-2">
-            Memahami Standar Keselamatan dan Keamanan Lapangan Mini Soccer
-          </h3>
-          <p class="text-gray-600 text-sm mb-4">
-            Standar keselamatan dan keamanan yang harus diperhatikan di lapangan mini soccer...
-          </p>
-          <div class="flex items-center justify-between text-xs text-gray-500">
-            <span>oleh Dedi</span>
-            <time datetime="2024-07-29">29 July 2024</time>
-          </div>
+    </div>
+    
+    <!-- Tour Packages Section Start -->
+    <div class="container my-5">
+        <h3 class="fs-3 fw-semibold mb-4">Tour Packages</h3>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card shadow-sm rounded-3">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" class="card-img-top rounded-top-3" alt="Package 5 Day Tour" style="height: 180px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title text-white bg-dark bg-opacity-50 p-2 rounded-3 position-absolute bottom-0 start-0 m-3" style="font-size: 0.9rem;">Package 5 Day Tour</h5>
+                        <p class="card-text mt-5" style="font-size: 0.9rem;">Take some magical photos at Besakih’s Gates of Lempuyang Temple with Mount Agung in the background. Enjoy the beauty of Tirtagangga, a unique royal palace, and visit stunning water palaces.</p>
+                        <p class="text-muted small mb-1">US$ 148 / Per son</p>
+                        <a href="#" class="text-decoration-none text-orange fw-semibold">VIEW DETAIL</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm rounded-3">
+                    <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=800&q=80" class="card-img-top rounded-top-3" alt="Package 3 Day Ubud & Kintamani Tour" style="height: 180px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title text-white bg-dark bg-opacity-50 p-2 rounded-3 position-absolute bottom-0 start-0 m-3" style="font-size: 0.9rem;">Package 3 Day Ubud & Kintamani Tour</h5>
+                        <p class="card-text mt-5" style="font-size: 0.9rem;">Discover the cultural heart of Bali around Ubud Monkey Forest, Tegenungan Waterfall, Tegallalang Rice Terrace. Perfect for those who love nature and calm.</p>
+                        <p class="text-muted small mb-1">US$ 116 / Per son</p>
+                        <a href="#" class="text-decoration-none text-orange fw-semibold">VIEW DETAIL</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm rounded-3">
+                    <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80" class="card-img-top rounded-top-3" alt="Package 4 Day Nusa Penida Adventure" style="height: 180px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title text-white bg-dark bg-opacity-50 p-2 rounded-3 position-absolute bottom-0 start-0 m-3" style="font-size: 0.9rem;">Package 4 Day Nusa Penida Adventure</h5>
+                        <p class="card-text mt-5" style="font-size: 0.9rem;">Explore the stunning island of Nusa Penida with its breathtaking beaches and cliffs. Visit Kelingking Beach, Angel’s Billabong, and Crystal Bay, a mini adventure and relaxation combination.</p>
+                        <p class="text-muted small mb-1">US$ 135 / Per son</p>
+                        <a href="#" class="text-decoration-none text-orange fw-semibold">VIEW DETAIL</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </article>
-
-      <!-- Blog Card 4 -->
-      <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-        <img
-          src="assets/tenis.jpg"
-          alt="Arena Sport"
-          class="w-full h-48 object-cover"
-        />
-        <div class="p-4">
-          <p class="text-xs text-blue-700 font-semibold uppercase mb-2">Mini Soccer</p>
-          <h3 class="font-bold text-lg mb-2">
-            Inilah Ukuran Standar Lapangan Mini Soccer yang Harus Diketahui
-          </h3>
-          <p class="text-gray-600 text-sm mb-4">
-            Ukuran standar lapangan mini soccer yang wajib diketahui oleh para pemain dan pelatih...
-          </p>
-          <div class="flex items-center justify-between text-xs text-gray-500">
-            <span>oleh Dedi</span>
-            <time datetime="2024-07-29">29 July 2024</time>
-          </div>
+    </div>
+    <!-- Tour Packages Section End -->
+    
+    <div class="container-fluid gallery-container px-0 pb-2 py-2">
+        <h2 class="fs-1 text-center text-orange fw-semibold my-4">Our Gallery</h2>
+        <div class="swiper gallery">
+            <div class="swiper-wrapper ">
+                                <div class="swiper-slide p-0 m-0">
+                    <img src="https://evabalitours.com/storage/images/DUkERHS0GSZCBtGg7CPnWINwBvxKJ214JGyBlEJT.webp" class="w-100 h-100" alt="Gallery Images" style="object-fit: cover">
+                </div>
+                                <div class="swiper-slide p-0 m-0">
+                    <img src="https://evabalitours.com/storage/images/O7omCzhpVr4n2ScaCvds960I2ZoBvyeTLcX9qC2B.webp" class="w-100 h-100" alt="Gallery Images" style="object-fit: cover">
+                </div>
+                                <div class="swiper-slide p-0 m-0">
+                    <img src="https://evabalitours.com/storage/images/F73XjaZGfSZGvNMmWUUeR4XMTqx1bNXW3uZrrh2j.webp" class="w-100 h-100" alt="Gallery Images" style="object-fit: cover">
+                </div>
+                                <div class="swiper-slide p-0 m-0">
+                    <img src="https://evabalitours.com/storage/images/FhjlGhNPVyAHWoUJNEEC2i6gN98WIQFcqqgQXkDM.webp" class="w-100 h-100" alt="Gallery Images" style="object-fit: cover">
+                </div>
+                                <div class="swiper-slide p-0 m-0">
+                    <img src="https://evabalitours.com/storage/images/yy2b7jU6hnNOEiUDqz67EXcz1Bi4WdrgAayA6MIx.webp" class="w-100 h-100" alt="Gallery Images" style="object-fit: cover">
+                </div>
+                                <div class="swiper-slide p-0 m-0">
+                    <img src="https://evabalitours.com/storage/images/ZH43auzZUF9cnfCIC2NFxfFDVfjm1X073X9y00Gb.webp" class="w-100 h-100" alt="Gallery Images" style="object-fit: cover">
+                </div>
+                                <div class="swiper-slide p-0 m-0">
+                    <img src="https://evabalitours.com/storage/images/6qMKcrgjc9SYq5ccZOyualSZJK11MWaNqtuA7K7o.webp" class="w-100 h-100" alt="Gallery Images" style="object-fit: cover">
+                </div>
+                                <div class="swiper-slide p-0 m-0">
+                    <img src="https://evabalitours.com/storage/images/GpeQHE4wqYUlSzQeDCU2XKJIizLYxh1SRshIqCVB.webp" class="w-100 h-100" alt="Gallery Images" style="object-fit: cover">
+                </div>
+                                <div class="swiper-slide p-0 m-0">
+                    <img src="https://evabalitours.com/storage/images/FYotU5CtqXFu9RhUyi3Cu5yVBR5ensFJyKlC56xd.webp" class="w-100 h-100" alt="Gallery Images" style="object-fit: cover">
+                </div>
+                                <div class="swiper-slide p-0 m-0">
+                    <img src="https://evabalitours.com/storage/images/g8h7AqVbpbnEZD1ezPixsvzCDemYuvIpyN59eo4P.webp" class="w-100 h-100" alt="Gallery Images" style="object-fit: cover">
+                </div>
+                                <div class="swiper-slide p-0 m-0">
+                    <img src="https://evabalitours.com/storage/images/r9qXdBN1LfRCyBYGRDRw5hlcbkoIvr0a0rVHfDsQ.webp" class="w-100 h-100" alt="Gallery Images" style="object-fit: cover">
+                </div>
+                                <div class="swiper-slide p-0 m-0">
+                    <img src="https://evabalitours.com/storage/images/jHRDUXTQcwnk4YqQu4LXAPfDBeRbWQKt8205pOp0.webp" class="w-100 h-100" alt="Gallery Images" style="object-fit: cover">
+                </div>
+                                <div class="swiper-slide p-0 m-0">
+                    <img src="https://evabalitours.com/storage/images/EP22QhOYntbFan2XnI7M9f11WiR09dBWiykUjYT9.webp" class="w-100 h-100" alt="Gallery Images" style="object-fit: cover">
+                </div>
+                                <div class="swiper-slide p-0 m-0">
+                    <img src="https://evabalitours.com/storage/images/jQFHGXWznM7Uh1WpicBVa1geRFS191RpOL6COzxD.webp" class="w-100 h-100" alt="Gallery Images" style="object-fit: cover">
+                </div>
+                            </div>
         </div>
-      </article>
-    </main>
-  </section>
-
-  <!-- Cart Sidebar -->
-  <aside id="cartSidebar" class="fixed top-0 right-0 h-full w-80 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 overflow-y-auto">
-    <div class="flex justify-between items-center p-4 border-b border-gray-200">
-      <h2 class="font-bold text-lg">JADWAL DIPILIH</h2>
-      <button id="closeCartSidebar" aria-label="Close sidebar" class="text-gray-700 hover:text-gray-900 focus:outline-none">
-        <i class="fas fa-times fa-lg"></i>
-      </button>
     </div>
-    <div class="p-4 text-gray-600">
-      Belum ada jadwal di keranjang.
-    </div>
-  </aside>
+    
 
-  <!-- Footer -->
-  <footer class="bg-white text-gray-700 py-12">
-    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div>
-        <h3 class="font-bold text-lg mb-4">Olga Sehat</h3>
-        <p class="text-sm text-gray-600 max-w-xs">
-          Making sports easy to book, fun to play, and safe for everyone.
-        </p>
-      </div>
-      <div>
-        <h3 class="font-semibold mb-4">Perusahaan</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#" class="hover:text-blue-700">Tentang</a></li>
-          <li><a href="#" class="hover:text-blue-700">Kebijakan &amp; Privasi</a></li>
-          <li><a href="#" class="hover:text-blue-700">Syarat &amp; Ketentuan</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-semibold mb-4">Ekosistem</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#" class="hover:text-blue-700">Sewa Lapangan</a></li>
-          <li><a href="#" class="hover:text-blue-700">Tempat Sehat</a></li>
-          <li><a href="#" class="hover:text-blue-700">Komunitas</a></li>
-          <li><a href="#" class="hover:text-blue-700">Klub</a></li>
-          <li><a href="#" class="hover:text-blue-700">Blog & News</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-semibold mb-4">Support</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#" class="hover:text-blue-700">FAQs</a></li>
-          <li><a href="#" class="hover:text-blue-700">Support Center</a></li>
-          <li><a href="#" class="hover:text-blue-700">Contact Us</a></li>
-        </ul>
-        <div class="flex space-x-4 mt-4">
-          <a
-            href="#"
-            class="w-8 h-8 flex items-center justify-center bg-blue-700 text-white rounded-full hover:bg-blue-800 transition"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a
-            href="#"
-            class="w-8 h-8 flex items-center justify-center bg-blue-700 text-white rounded-full hover:bg-blue-800 transition"
-            ><i class="fab fa-youtube"></i
-          ></a>
-          <a
-            href="#"
-            class="w-8 h-8 flex items-center justify-center bg-blue-700 text-white rounded-full hover:bg-blue-800 transition"
-            ><i class="fab fa-instagram"></i
-          ></a>
+    
+    <div class="container articles py-3">
+        <h2 class="fs-1 text-center text-orange fw-semibold">Let's See What's New</h2>
+        <p class="text-center text-secondary">Let's see the newest article here</p>
+        <div class="swiper article">
+            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                    <a href="articles/6-hidden-gem-waterfalls-in-bali-that-you-must-visit" class="nav-link">
+                        <img src="https://evabalitours.com/storage/images/EP22QhOYntbFan2XnI7M9f11WiR09dBWiykUjYT9.webp" class="w-100 img-article" alt="6 Hidden Gem Waterfalls in Bali that You Must Visit! Image">
+                        <div>
+                            <h2 class="fw-semibold fs-5">6 Hidden Gem Waterfalls in Bali that You Must Visi...</h2>
+                            <div>Bali is often referred to as the Island of th...
+                        </div>
+                        <div class="text-end">
+                            <a href="articles/6-hidden-gem-waterfalls-in-bali-that-you-must-visit" class="text-decoration-none text-orange">Read More</a>
+                        </div>
+                    </a>
+                </div>
+                </div>
+                                <div class="swiper-slide">
+                    <a href="articles/are-you-an-animal-lovers-dont-miss-these-3-destinations-in-bali" class="nav-link">
+                        <img src="https://evabalitours.com/storage/images/R4wKTGGOF5qPwWtRLF45UrcBO0uMGL1YqqMHPvcI.jpg" class="w-100 img-article" alt="Are You an Animal Lovers? Don&#039;t Miss These 3 Destinations in Bali Image">
+                        <div>
+                            <h2 class="fw-semibold fs-5">Are You an Animal Lovers? Don&#039;t Miss These 3 Desti...</h2>
+                            <div>Bali is famous for its beautiful views, so Ba...
+                        </div>
+                        <div class="text-end">
+                            <a href="articles/are-you-an-animal-lovers-dont-miss-these-3-destinations-in-bali" class="text-decoration-none text-orange">Read More</a>
+                        </div>
+                    </a>
+                </div>
+                </div>
+                            </div>
         </div>
-      </div>
     </div>
-    <div class="container mx-auto px-6 text-center mt-8 pt-4 border-t border-gray-300 text-sm text-gray-500">
-      &copy; 2024 Olga Sehat. All rights reserved.
     </div>
-  </footer>
+    
 
-  <!-- Cart Sidebar -->
-  <aside id="cartSidebar" class="fixed top-0 right-0 h-full w-80 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 overflow-y-auto">
-    <div class="flex justify-between items-center p-4 border-b border-gray-200">
-      <h2 class="font-bold text-lg">JADWAL DIPILIH</h2>
-      <button id="closeCartSidebar" aria-label="Close sidebar" class="text-gray-700 hover:text-gray-900 focus:outline-none">
-        <i class="fas fa-times fa-lg"></i>
-      </button>
-    </div>
-    <div class="p-4 text-gray-600">
-      Belum ada jadwal di keranjang.
-    </div>
-  </aside>
+   
+    
+    <div class="container testimoni-container my-4">
+        <h3 class=" fs-1 text-center fw-semibold text-orange">Our Happy Customer Reviews</h3>
+        <div class="swiper testimoni my-4">
+            <div class="swiper-wrapper">
+                                <div class="swiper-slide text-center bg-orange-light px-5 py-3">
+                    <img src="https://evabalitours.com/img/colon.png" class="my-3" alt="Review Icon">
+                     <h5 class="fw-semibold mb-0">Mira A</h5>
+                    <p class="">" I had a wonderful tour in Bali with Eva, she’s very kind and friendly! She made me feel safe and welcomed, shared so much about Balinese culture, and also took beautiful photos for me. It was such a memorable and special experience, I highly recommend touring with Eva!"</p>
+                    
+                    <p class="text-secondary"></p>
+                </div>
+                                <div class="swiper-slide text-center bg-orange-light px-5 py-3">
+                    <img src="https://evabalitours.com/img/colon.png" class="my-3" alt="Review Icon">
+                     <h5 class="fw-semibold mb-0">Kalani F</h5>
+                    <p class="">" My tours with Eva were an absolute highlight of my Bali trip! She has such a sweet and welcoming personality that she instantly feels like a friend. I loved hearing all her amazing stories along the way, they added so much depth and fun to the experience. Eva is also an incredible photographer! She has a natural talent for capturing moments in a way that feels authentic and beautiful.
+She is truly a gem, and I can’t recommend her enough for anyone planning tours in Bali. She made my trip so much more memorable, and I’m so grateful for the time we spent together."</p>
+                    
+                    <p class="text-secondary"></p>
+                </div>
+                                <div class="swiper-slide text-center bg-orange-light px-5 py-3">
+                    <img src="https://evabalitours.com/img/colon.png" class="my-3" alt="Review Icon">
+                     <h5 class="fw-semibold mb-0">Sofie I</h5>
+                    <p class="">" Eva EN Wayan , EN super nice and enthusiastic couple who showed us DE most beautiful places of Bali for 5 days. Not only was it our guide, but it became a fun girl to hang out with from day 1. So EN enthusiastic and lots of love for her job! She is correct EN flexible. It was really EN gam with them and can highly recommend them. Lovely experience!"</p>
+                    
+                    <p class="text-secondary"></p>
+                </div>
+                                <div class="swiper-slide text-center bg-orange-light px-5 py-3">
+                    <img src="https://evabalitours.com/img/colon.png" class="my-3" alt="Review Icon">
+                     <h5 class="fw-semibold mb-0">Gabriela L</h5>
+                    <p class="">" I had the absolute pleasure of having Eva as my guide for 5 days in Bali, and I can honestly say she made my trip unforgettable. From the very first moment, Eva made me feel safe, welcomed, and deeply cared for. Her kindness, warmth, and positive energy are truly special.
+Eva doesn’t just show you Bali, she helps you feel its soul. She took me to breathtaking places, shared beautiful stories, and always made sure everything was just perfect. Every moment with her was filled with laughter, insight, and genuine connection.
+Thank you, Eva, for being more than just a guide, you were a friend, a light, and a beautiful part of my Bali journey. I will always carry your kindness in my heart. 💛"</p>
+                    
+                    <p class="text-secondary"></p>
+                </div>
+                                <div class="swiper-slide text-center bg-orange-light px-5 py-3">
+                    <img src="https://evabalitours.com/img/colon.png" class="my-3" alt="Review Icon">
+                     <h5 class="fw-semibold mb-0">Thalie G</h5>
+                    <p class="">" Eva is really the best tour guide in Bali, plus she’s the kindest person I’ve ever met 🥹 I recommend her 100% for your trip."</p>
+                    
+                    <p class="text-secondary"></p>
+                </div>
+                                <div class="swiper-slide text-center bg-orange-light px-5 py-3">
+                    <img src="https://evabalitours.com/img/colon.png" class="my-3" alt="Review Icon">
+                     <h5 class="fw-semibold mb-0">Allona Jane N</h5>
+                    <p class="">" Felt safe, seen and styled — a Bali Day to remember with Eva Bali Tours!
+I found Eva on IG a few mos ago and started chatting with her about my Bali trip. From the start, she was super kind, responsive and easy to talk to!
 
-    <!-- Swiper JS for slider -->
+I created my own itinerary based on the places I wanted to visit (pref. less touristy + with NO MONKEYS) and she was very accommodating with all my requests. She’s also incredibly talented at taking photos &amp; vids! I felt like a model for a day 🥹😭
+
+She was with her boyfriend Wayan (our driver) and both of them were so friendly and made me feel completely safe the whole time. Thank you so much, Eva and Wayan! Worth every penny. Highly recommended! 💛
+
+PS: Thank you as well for the birthday flowers!!! Super appreciate it! 🥹😭🥰"</p>
+                    
+                    <p class="text-secondary"></p>
+                </div>
+                                <div class="swiper-slide text-center bg-orange-light px-5 py-3">
+                    <img src="https://evabalitours.com/img/colon.png" class="my-3" alt="Review Icon">
+                     <h5 class="fw-semibold mb-0">Yvonne L</h5>
+                    <p class="">" I booked a day trip to Ubud—oh my gosh, Eva is so kind and organised! She listened to my wishes and made sure everything ran smoothly. She looked after my health and ensured the schedule and arrangements matched my needs and condition.
+Eva is talkative and knowledgeable about Balinese culture—I could always get an answer to my curiosity. She felt like a local friend going around places with you, which made me feel secure and comfortable.
+Even though I was travelling alone, she was such a great companion and tour guide that I never felt scared. I’ll definitely book another trip with Eva next time I visit Bali!"</p>
+                    
+                    <p class="text-secondary"></p>
+                </div>
+                                <div class="swiper-slide text-center bg-orange-light px-5 py-3">
+                    <img src="https://evabalitours.com/img/colon.png" class="my-3" alt="Review Icon">
+                     <h5 class="fw-semibold mb-0">Clemence N</h5>
+                    <p class="">" Eva is a great guide! I spent 2 days on excursion with her and Wayan, it was fantastic!! She puts all her heart into it to make you discover emblematic places. And she makes beautiful photos!! I will call on her again for my next trip to Bali, without hesitation!! She is really warm and kind, we talked a lot, it was really nice!
+You can trust him without hesitation!
+Thanks again Eva ❤️❤️"</p>
+                    
+                    <p class="text-secondary"></p>
+                </div>
+                                <div class="swiper-slide text-center bg-orange-light px-5 py-3">
+                    <img src="https://evabalitours.com/img/colon.png" class="my-3" alt="Review Icon">
+                     <h5 class="fw-semibold mb-0">Clariza L</h5>
+                    <p class="">" Eva provided an absolutely incredible day tour that exceeded all expectations! She picked us up from Kuta bright and early for the sunrise cafe tour in Kintamani, and the experience was magical. Watching the sunrise over the Kintamani volcano while sipping coffee was breathtaking - definitely a highlight of our Bali trip.
+The tour continued to Penglipuran village, one of the world&#039;s cleanest villages, where we had the wonderful opportunity to interact with locals and experience authentic traditional Balinese culture. Eva&#039;s knowledge of the area and her connections with the community made this visit truly special and meaningful.
+
+What sets Eva apart is her attention to detail and genuine care for her guests. She&#039;s an amazing photographer and knows all the best spots for Instagram-worthy shots - she&#039;ll even help you pose to get that perfect picture! Her photography skills are honestly professional level.
+
+For solo or group female travelers especially, Eva is a gem. She creates such a safe, comfortable environment where you can relax and be yourself. You can talk to her about anything, and she makes you feel like you&#039;re exploring with a trusted friend rather than just a tour guide.
+
+Eva&#039;s passion for sharing Bali&#039;s beauty and culture, combined with her warm personality and professional service, made this an unforgettable experience. Highly recommend booking a tour with her - you won&#039;t regret it!
+
+Would definitely book with Eva again on our next visit to Bali."</p>
+                    
+                    <p class="text-secondary"></p>
+                </div>
+                                <div class="swiper-slide text-center bg-orange-light px-5 py-3">
+                    <img src="https://evabalitours.com/img/colon.png" class="my-3" alt="Review Icon">
+                     <h5 class="fw-semibold mb-0">Sydney G</h5>
+                    <p class="">" I booked a super last minute tour with Eva and I’m so glad I did. She is friendly, fun and easy to get along with. I felt really comfortable from the start and enjoyed my day with Eva. She really takes care to ensure you are happy and having the best time. It really is like going out with your friend for the day. Plus all the pictures Eva takes for you are great. Highly recommend booking with Eva ☺️"</p>
+                    
+                    <p class="text-secondary"></p>
+                </div>
+                                <div class="swiper-slide text-center bg-orange-light px-5 py-3">
+                    <img src="https://evabalitours.com/img/colon.png" class="my-3" alt="Review Icon">
+                     <h5 class="fw-semibold mb-0">Nancy x</h5>
+                    <p class="">" I can really recommend the time with Eva. The trip was really nice and communication was super easy.
+Eva has a great, caring personality and knows her job. The pictures that were taken as a souvenir are really beautiful. Even for people like me who have hardly any experience in posing, we got great instructions and beautiful results. Thank you so much for the day!"</p>
+                    
+                    <p class="text-secondary"></p>
+                </div>
+                                <div class="swiper-slide text-center bg-orange-light px-5 py-3">
+                    <img src="https://evabalitours.com/img/colon.png" class="my-3" alt="Review Icon">
+                     <h5 class="fw-semibold mb-0">Shayy</h5>
+                    <p class="">" I enjoyed my two tours with Eva. She is so kind, warm and makes you feel so comfortable 💕 It felt like a day out with a friend!
+
+Eva takes the best photos as well and knows all the nice spots and hidden gems in Bali. I&#039;m so happy I found her!
+
+When I come back, I will definitely book again! Thank you so much dear Eva, you are the best 💗"</p>
+                    
+                    <p class="text-secondary"></p>
+                </div>
+                                <div class="swiper-slide text-center bg-orange-light px-5 py-3">
+                    <img src="https://evabalitours.com/img/colon.png" class="my-3" alt="Review Icon">
+                     <h5 class="fw-semibold mb-0">Katrina C</h5>
+                    <p class="">" I can’t recommend Eva enough! She picked me up from the airport when I first arrived in Bali and made the entire experience seamless from the start. The next day, she took me to some beautiful, lesser-known spots and even did a mini photoshoot for me – capturing some truly special moments. She’s funny, sweet, and full of positive energy, making every moment feel like an adventure.
+
+As a Bali local born and raised, Eva knows the ins and outs of the island. She’s full of great information, hidden gems, and all the little details that make a trip unforgettable. Whether you have a random question about the culture, need the perfect photo spot, or just want to hear about local life, she’s got you covered.
+
+Booking with Eva was super easy, and navigating the island with her felt effortless. She made me feel welcome and comfortable, turning what could have been just another tour into a genuinely memorable part of my trip. So grateful to have met her – thank you, Eva, for the unforgettable start to my Bali adventure!"</p>
+                    
+                    <p class="text-secondary"></p>
+                </div>
+                                <div class="swiper-slide text-center bg-orange-light px-5 py-3">
+                    <img src="https://evabalitours.com/img/colon.png" class="my-3" alt="Review Icon">
+                     <h5 class="fw-semibold mb-0">Nang</h5>
+                    <p class="">" I had two amazing day tours with Eva, and she truly made my Bali trip unforgettable. I now have such pleasant memories, all thanks to her! Eva is honestly one of the best tour guides I’ve ever met — professional, friendly, and full of positive energy.
+
+She planned everything so well, timing our visits to avoid long queues and making every moment count. Her hospitality is warm and genuine, and she’s always ready to help with a big smile.
+
+Worried about getting good photos? Don’t be! Eva is a pro behind the camera. She knows all the best spots and will even teach you how to pose to get those perfect, Instagram-worthy shots.
+
+And a little tip: make sure to book her in advance if you&#039;re planning a trip to Bali. She’s a very busy lady (for good reason!) so you’ll want to check her availability early.
+
+Highly, highly recommend Eva if you want a smooth, fun, and unforgettable Bali experience!"</p>
+                    
+                    <p class="text-secondary"></p>
+                </div>
+                                <div class="swiper-slide text-center bg-orange-light px-5 py-3">
+                    <img src="https://evabalitours.com/img/colon.png" class="my-3" alt="Review Icon">
+                     <h5 class="fw-semibold mb-0">Lareina A</h5>
+                    <p class="">" We used Eva Bali Tours on our honeymoon. Eva was busy the week we requested her &amp; she referred us to Fransischa. Fransischa was absolutely amazing! She was punctual &amp; knew exactly when to arrive at our destinations to avoid the crowds. She took the most stunning photos and videos of us. We came home with hundreds of beautiful photos of our honeymoon. She was a safe driver with a clean car. Always provided fresh water &amp; she even had a portable WiFi for us to use during the day. She took us to exchange money &amp; made sure it was a good rate &amp; we were given the proper amount. She was flexible when we wanted to switch around our itinerary. She spoke great English as well. She was a joy to have accompany us to all our tours &amp; would highly recommended her to anyone looking for a private guide. Eva &amp; her boyfriend was able to pick us up and drop us off at the airport. They were both punctual, &amp; managed to fit our tons of luggage into their car. They are both very sweet as well. Eva even gave us a beautiful handmade frame with a photo of us as a gift before leaving. Bali is a beautiful country &amp; by booking this company it will ensure you have the absolute best experience. 100/10 recommend!"</p>
+                    
+                    <p class="text-secondary"></p>
+                </div>
+                                <div class="swiper-slide text-center bg-orange-light px-5 py-3">
+                    <img src="https://evabalitours.com/img/colon.png" class="my-3" alt="Review Icon">
+                     <h5 class="fw-semibold mb-0">Kelly S</h5>
+                    <p class="">" My husband and I traveled from Canada to Bali for my 50th birthday and out 25th wedding Anniversary and wanted some beautiful pictures taken as a memory of the trip. Eva’s Bali Tour kept coming up in my instagram and Facebook feed so we messaged her. I can’t tell you how happy we were that we called her. She picked us up at our villa at 7:30AM to be first in line at Cretya Ubud. She carried my purse and shoes and got some breath taking pictures and videos. She was so sweet the entire time we we were together. If you’re looking for memorable photos I highly recommend Eva."</p>
+                    
+                    <p class="text-secondary"></p>
+                </div>
+                                <div class="swiper-slide text-center bg-orange-light px-5 py-3">
+                    <img src="https://evabalitours.com/img/colon.png" class="my-3" alt="Review Icon">
+                     <h5 class="fw-semibold mb-0">KO</h5>
+                    <p class="">" We were SO lucky to have come across Eva for our retreat group! She is bubbly, engaging, kind, and so informative. She will ask you questions to share further information on her culture and the area and took us to some of the most beautiful places that will be less populated to experience things from an off the beaten path approach but can really curate any experience you may be looking for. She always has a smile on her face despite the long days. I wish I could pack her in my suitcase and bring her back with me! I give my highest recommendation to use her for your trip. You won&#039;t regret it. 💕 thanks eva! Kay"</p>
+                    
+                    <p class="text-secondary"></p>
+                </div>
+                                <div class="swiper-slide text-center bg-orange-light px-5 py-3">
+                    <img src="https://evabalitours.com/img/colon.png" class="my-3" alt="Review Icon">
+                     <h5 class="fw-semibold mb-0">Tafao T</h5>
+                    <p class="">" The trip was amazing… both of my tour days were filled with phenomenal experiences with the culture and the views… not only Eva was a guide, she is also a friend… it felt like I was traveling with a friend back to her home town since she knows where to go and visit😂…. There were ups and downs with the weather changes but that did not stop her from giving you an unforgettable experience!!"</p>
+                    
+                    <p class="text-secondary"></p>
+                </div>
+                            </div>
+        </div>
+    </div>
+    
+    <footer class="container-fluid bg-orange py-4 text-white text-center text-md-start mt-4 w-100">
+    <div class="container py-3">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="fw-semibold">Eva Bali Tours</h3>
+                <p>Experience Bali in a whole new way with Eva, your friendly and experienced guide. Explore the island’s stunning natural beauty, from lush rice fields to amazing waterfalls. With Eva’s expert knowledge, you’ll find hidden gems, learn about local culture, and enjoy exciting adventures.</p>
+            </div>
+            <div class="col-md-6">
+                <h3 class="fw-semibold">Navigation</h3>
+                <ul class="navbar-nav">
+                    <li><a href="/" class="nav-link y">Home</a></li>
+                    <li><a href="/about-us" class="nav-link y">About Us</a></li>
+                    <li><a href="packages" class="nav-link y">Packages</a></li>
+                    <li><a href="destinations" class="nav-link y">Destination</a></li>
+                    <li><a href="articles" class="nav-link y">Articles</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="pt-2 text-center px-0 mx-0" style="border-top: 2px solid white">
+        <p>&copy; Eva Bali Tours</p>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="assets/olgasehat.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+    <script src="https://evabalitours.com/js/navbar.js"></script>
+    <script>
+    $(document).ready(function() {
+        var message = "";
+        if (message) {
+            $('#messageModal').modal('show');
+            $('#messageContent').text(message);
+        }
+    });
+        $('.timepicker').timepicker({
+            timeFormat: 'h:mm p',
+            interval: 60,
+            minTime: '4',
+            maxTime: '6:00pm',
+            defaultTime: '05',
+            startTime: '04:00',
+            dynamic: false,
+            dropdown: true,
+            scrollbar: true
+        });
+        $('#bookbtn').on('click',function(){
+            const from = $('#from').val()
+            const to = $('#to').val()
+            const date = $('#date').val()
+            const pickup = $('#pickup').val()
+            const message = `Hello, I would like to book a tour from ${from} to ${to} on ${date}. The pickup time is ${pickup}.`
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/62881038591236?text=${encodedMessage}`;
+            window.location.href = whatsappUrl;
+        })
+        $('#specialbtn').on('click',function(){
+            const name = $('#name_special').val()
+            const fax = $('#fax_special').val()
+            const from = $('#from_special').val()
+            const itinerary = $('#itinerary_special').val()
+            const ticket = $('input[name="ticket"]:checked').val();
+            const transport = $('input[name="transport"]:checked').val();
+            const message = `Hello, I would like to book a Special Tour. I am  ${name} and i'm with total ${fax} person/people from  ${from}. The Itinerary is ${itinerary} with ${ticket} ticket. The transport is ${transport}`
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/62881038591236?text=${encodedMessage}`;
+            window.location.href = whatsappUrl;
+        })
+    </script>
+    <script>
+        const swiper = new Swiper('.destinations',{
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            loop: true
+        })
+        // const package = new Swiper('.package',{
+        //     slidesPerView: 2,
+        //     spaceBetween: 10,
+        //     breakpoints: {
+        //         640: {
+        //             slidesPerView: 2,
+        //             spaceBetween: 20
+        //         },
+        //         768: {
+        //             slidesPerView: 3,
+        //             spaceBetween: 20
+        //         },
+        //         1024: {
+        //             slidesPerView: 4,
+        //             spaceBetween: 20
+        //         }
+        //     }
+        // })
+        const gallery = new Swiper('.gallery',{
+            slidesPerView: 3,
+            spaceBetween: 0,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 4,
+                    spaceBetween: 20
+                },
+                768: {
+                    slidesPerView: 5,
+                    spaceBetween: 20
+                },
+                1024: {
+                    slidesPerView: 6,
+                    spaceBetween: 20
+                }
+            }
+        })
+        const article = new Swiper('.article',{
+            slidesPerView: 1,
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 20
+                }
+            }
+        })
+        const testimoni = new Swiper('.testimoni',{
+            slidesPerView: 1,
+            loop : false,
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                },
+            }
+        })
+    </script>
 </body>
 </html>
