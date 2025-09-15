@@ -20,8 +20,10 @@ use App\Http\Controllers\ReviewController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('dashboard');
 });
+
+
 
 
 Route::get('/dashboard', [BeritaController::class, 'dashboard'])->name('dashboard');
