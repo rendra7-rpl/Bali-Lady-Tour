@@ -62,11 +62,12 @@ Route::get('/tambah_review', [ReviewController::class, 'create'])->name('review.
 Route::post('/simpan_review', [ReviewController::class, 'store'])->name('review.store');
 Route::get('/edit_review/{id}', [ReviewController::class, 'edit'])->name('review.edit');
 Route::post('/update_review/{id}', [ReviewController::class, 'update'])->name('review.update');
-Route::get('/delete_review/{id}', [ReviewController::class, 'destroy'])->name('review.destroy');
+Route::delete('/review/{id}', [ReviewController::class, 'destroy'])->name('review.destroy');
+
 
 //category
 
-Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+Route::get('/category', [CategoryController::class, 'category'])->name('category.index');
 Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
 Route::post('/category', [CategoryController::class, 'store'])->name('category.store');
 

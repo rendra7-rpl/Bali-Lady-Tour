@@ -42,7 +42,7 @@
         <div class="card-body">
             {{-- Tombol Tambah Data --}}
             <div class="mb-3">
-                <a href="{{ route('review.create') }}" class="btn btn-success">
+                <a href="{{ route('category.create') }}" class="btn btn-success">
                     + Tambah Data
                 </a>
             </div>
@@ -80,12 +80,18 @@
                                 <td>{{ $row->updated_at->translatedFormat('l') }}</td>
 
                                 <td>
-                                    <a href="{{ route('category.edit', $row->id) }}" 
-                                       class="btn btn-info btn-sm text-white">Edit</a>
-                                    <a href="#" 
-                                       class="btn btn-danger btn-sm delete" 
-                                       data-id="{{ $row->id }}">Delete</a>
-                                </td>
+    <a href="{{ route('category.edit', $row->id) }}" 
+       class="btn btn-info btn-sm text-white">Edit</a>
+
+    <form action="{{ route('category.destroy', $row->id) }}" 
+          method="POST" 
+          class="d-inline delete-form">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+    </form>
+</td>
+
                             </tr>
                             @empty
                             <tr>
@@ -110,11 +116,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <script>
-    document.querySelectorAll('.delete').forEach(function(button) {
-        button.addEventListener('click', function(e) {
+    document.querySelectorAll('.delete-form').forEach(function(form) {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
-            const id = this.getAttribute('data-id');
-
             Swal.fire({
                 title: 'Yakin ingin menghapus?',
                 text: "Data ini tidak bisa dikembalikan!",
@@ -124,11 +128,10 @@
                 cancelButtonText: 'Batal'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // arahkan ke route destroy
-                    window.location.href = '/category/' + id + '/delete';
+                    form.submit(); // kirim form dengan method DELETE
                 }
             });
         });
     });
 </script>
-@endpush 
+@endpush
