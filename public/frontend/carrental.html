@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bali Lady Tour - Car Rental</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Bali Lady Tour Packages</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="font-sans text-gray-800">
+<body class="font-sans antialiased">
 
-  
 <!-- Navbar -->
 <header id="navbar" class="fixed w-full top-0 z-50 bg-transparent transition-colors duration-300 ease-in-out">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -76,22 +75,21 @@
   </div>
 </header>
 
-  <!-- Hero Section -->
-  <section class="relative h-[500px] bg-cover bg-center flex items-center"
-           style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80');">
-    <div class="absolute inset-0 bg-black/50"></div>
-    <div class="container relative z-10 text-white px-6">
-      <h2 class="text-4xl font-bold mb-4">LET’S SEE OUR <br> CAR RENTAL</h2>
-      <p class="max-w-2xl">Discover our variety of Bali car packages tailored to your requirement and guide-driven trip. 
-        From economy to luxurious rides, Bali Lady Tour offers the perfect travel companion for an 
-        unforgettable experience.</p>
+<!-- Hero -->
+<section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('assets/bg1.png');">
+  <div class="absolute inset-0 bg-black/45"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
+    <div class="max-w-xl">
+      <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4">
+        LET'S SEE OUR <br/> CAR RENTAL
+      </h1>
+      <p class="text-white/90 text-sm sm:text-base md:text-lg">
+         Discover a variety of tour packages tailored to your interests and preferences. From serene beach escapes to thrilling adventure tours, Eva Bali Tours offers something for everyone. Explore our packages and find the perfect one to make your Bali experience truly unique and memorable.
     </div>
-    <div class="absolute bottom-0 right-10">
-      <img src="https://i.ibb.co/QHqHdPz/car.png" alt="Car" class="h-72">
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Car Rental Section -->
+   <!-- Car Rental Section -->
   <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-3xl font-bold mb-2">Car Rental</h2>
@@ -119,8 +117,6 @@
         </div>
 
         <div class="flex items-center gap-6 mt-4 text-gray-600 text-sm">
-          <span class="flex items-center gap-1"><i class="fa-solid fa-user-group"></i> 5</span>
-          <span class="flex items-center gap-1"><i class="fa-solid fa-suitcase"></i> 4</span>
         </div>
 
         <ul class="mt-4 space-y-2 text-sm text-gray-700">
@@ -154,7 +150,7 @@
     <h2 class="text-2xl font-bold text-gray-800 mb-6">Booking Rental Mobil</h2>
 
     <!-- FORM -->
-    <form class="space-y-6">
+    <form class="space-y-1">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label class="block text-sm font-medium text-gray-600">Nama Lengkap</label>
@@ -165,11 +161,11 @@
           <input type="text" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
         </div>
         <div>
-          <label class="block text-sm font-medium text-gray-600">Email</label>
+          <label class="block text-sm font-medium text-gray-600">Nama Hotel</label>
           <input type="email" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
         </div>
         <div>
-          <label class="block text-sm font-medium text-gray-600">Alamat</label>
+          <label class="block text-sm font-medium text-gray-600">Link Gmaps</label>
           <input type="text" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
         </div>
       </div>
@@ -236,11 +232,22 @@
   function closeModal() {
     document.getElementById('bookingModal').classList.add('hidden');
     document.getElementById('bookingModal').classList.remove('flex');
+    
   }
+  
 </script>
-
-  <!-- Footer -->
-  <!-- Footer -->
+<!-- Pagination -->
+  <div class="flex justify-center mt-10">
+    <nav class="inline-flex -space-x-px text-sm">
+      <a href="#" class="px-4 py-2 border border-gray-300 bg-red-600 text-white font-semibold">1</a>
+      <a href="#" class="px-4 py-2 border border-gray-300 text-blue-600 hover:bg-gray-100">2</a>
+      <a href="#" class="px-4 py-2 border border-gray-300 text-blue-600 hover:bg-gray-100">3</a>
+      <a href="#" class="px-4 py-2 border border-gray-300 text-blue-600 hover:bg-gray-100">Next</a>
+      <a href="#" class="px-4 py-2 border border-gray-300 text-blue-600 hover:bg-gray-100">Last</a>
+    </nav>
+  </div>
+</section>
+<!-- Footer -->
 <footer class="bg-white border-t border-gray-200 py-10 mt-10">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-6">
     <div>
@@ -295,6 +302,56 @@
   </div>
 </footer>
 
+<!-- Script -->
+<script>
+  const navbar = document.getElementById('navbar');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const globeIcon = document.querySelector('.globe-icon');
+  const globeBtn = document.getElementById('globeBtn');
+  const langMenu = document.getElementById('langMenu');
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
 
+  function handleNavbar() {
+    if (window.scrollY > 80) {
+      navbar.classList.add('bg-white', 'shadow-md');
+      navbar.classList.remove('bg-transparent');
+      navLinks.forEach(a => { a.classList.replace('text-white','text-gray-800'); });
+      globeIcon.classList.replace('text-white','text-gray-800');
+      menuIcon.classList.replace('text-white','text-gray-800');
+      mobileMenu.classList.add('bg-white');
+      mobileMenu.classList.remove('bg-black/70');
+      mobileLinks.forEach(a => { a.classList.replace('text-white','text-gray-800'); });
+    } else {
+      navbar.classList.remove('bg-white','shadow-md');
+      navbar.classList.add('bg-transparent');
+      navLinks.forEach(a => { a.classList.replace('text-gray-800','text-white'); });
+      globeIcon.classList.replace('text-gray-800','text-white');
+      menuIcon.classList.replace('text-gray-800','text-white');
+      mobileMenu.classList.add('bg-black/70');
+      mobileMenu.classList.remove('bg-white');
+      mobileLinks.forEach(a => { a.classList.replace('text-gray-800','text-white'); });
+    }
+  }
+
+  window.addEventListener('scroll', handleNavbar);
+  document.addEventListener('DOMContentLoaded', handleNavbar);
+
+  globeBtn.addEventListener('click', () => {
+    langMenu.classList.toggle('hidden');
+  });
+
+  window.addEventListener('click', (e) => {
+    if (!globeBtn.contains(e.target) && !langMenu.contains(e.target)) {
+      langMenu.classList.add('hidden');
+    }
+  });
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
 </body>
 </html>
