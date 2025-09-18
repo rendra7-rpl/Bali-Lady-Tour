@@ -13,7 +13,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Data Kelebihan</h1>
+                    <h1 class="m-0">Data Review Pengguna</h1>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
                             <td>
                                 <a href="{{ route('review.edit', $row->id) }}" 
                                    class="btn btn-info btn-sm text-white">Edit</a>
-                                <a href="#" 
+                                <a href="/delete/{{ $row->id }}" 
                                    class="btn btn-danger btn-sm delete" 
                                    data-id="{{ $row->id }}">Delete</a>
                             </td>
