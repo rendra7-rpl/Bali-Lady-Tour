@@ -137,13 +137,14 @@
             </a>
           </li>
 
-          <!-- Program -->
+         <!-- Advantage -->
           <li class="nav-item">
             <a href="/programs" class="nav-link">
-              <i class="nav-icon fas fa-heartbeat"></i>
+              <i class="nav-icon fas fa-rocket"></i>
               <p>Advantage</p>
             </a>
           </li>
+
 
           <!-- Review -->
           <li class="nav-item">
@@ -245,13 +246,14 @@
   @yield('content')
 
   <!-- Main Footer -->
-   <footer class="main-footer">
-    <strong>Copyright &copy; 2025 Bali Lady Tour.</strong>
-    All rights reserved.
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2025 <a href="https://www.indoapps.id/">PT. Indo Apss Solusindo</a>.</strong>
+    
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0
+     
     </div>
   </footer>
+
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
