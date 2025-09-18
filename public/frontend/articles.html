@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Olga Sehat - Booking Venue Olahraga</title>
+  <title>Article - Bali Lady Tour</title>
   <link rel="icon" href="assets/olgasehat-icon.png" type="image/png" />
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -30,314 +30,244 @@
 </head>
 <body class="bg-white text-gray-800 font-sans">
 
-  <!-- Header -->
-  <header class="shadow-md">
-    <div class="container mx-auto flex items-center justify-between py-4 px-6">
-      <a href="#" class="flex items-center space-x-2">
-        <img src="assets/olgasehat-icon.png" alt="Olga Sehat Logo" class="w-100 h-10" />
-      </a>
-      <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
-        <a href="venue.html" class="hover:text-blue-700">Sewa Lapangan</a>
-        <a href="tempat_sehat.html" class="hover:text-blue-700">Tempat Sehat</a>
-        <a href="community.html" class="hover:text-blue-700">Komunitas</a>
-        <a href="club.html" class="hover:text-blue-700">Klub</a>
-        <a href="blog&news.html" class="hover:text-blue-700">Blog & News</a>
+  <!-- Navbar -->
+  <header id="navbar" class="fixed w-full top-0 z-50 bg-transparent transition-colors duration-300 ease-in-out">
+  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+      <img src="assets/logo.png" alt="Logo" class="h-10">
+    </div>
+
+    <!-- Menu desktop -->
+      <nav class="hidden md:flex gap-6 font-medium">
+        <a href="home.html" class="nav-link text-gray-800">Home</a>
+        <a href="tourpackage.html" class="nav-link text-gray-800">Tour</a>
+        <a href="carrental.html" class="nav-link text-gray-800">Car Rental</a>
+        <a href="tourexperience.html" class="nav-link text-gray-800">Tour Experience</a>
+        <a href="articles.html" class="nav-link text-gray-800">Articles</a>
       </nav>
-      <div class="hidden md:flex items-center space-x-4">
-        <button aria-label="Cart" class="text-gray-700 hover:text-blue-700 relative">
-          <i class="fas fa-shopping-cart fa-lg"></i>
-          <span
-            class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full px-1.5"
-            >0</span
-          >
-        </button>
-        <a href="#" class="text-gray-700 hover:text-blue-700">Masuk</a>
-        <a
-          href="#"
-          class="bg-blue-700 text-white px-4 py-2 rounded-md hover:bg-blue-800 transition"
-          >Daftar</a
-        >
+
+      <!-- Right Side -->
+      <div class="flex items-center space-x-4">
+        <!-- Language Dropdown -->
+      <div class="relative">
+        <button id="globeBtn" class="globe-icon text-white text-xl">🌐</button>
+        <div id="langMenu" class="hidden absolute right-0 mt-2 w-32 bg-white rounded shadow-lg">
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Indonesia</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">English</a>
+        </div>
       </div>
-      <div class="flex md:hidden items-center space-x-4">
-        <button aria-label="Cart" class="text-gray-700 hover:text-blue-700 relative">
-          <i class="fas fa-shopping-cart fa-lg"></i>
-          <span
-            class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full px-1.5"
-            >0</span
-          >
-        </button>
+        <!-- Book Button -->
+        <a href="#"
+           class="hidden md:inline-block bg-yellow-500 text-white font-semibold px-4 py-2 rounded hover:bg-yellow-600 transition">
+           Book
+        </a>
         <!-- Mobile menu button -->
-        <button
-          id="mobileMenuBtn"
-          class="text-gray-700 hover:text-blue-700 focus:outline-none"
-          aria-label="Open menu"
-        >
-          <i class="fas fa-bars fa-lg"></i>
+        <button id="menuBtn" class="md:hidden focus:outline-none">
+          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg"
+               class="h-8 w-8 text-gray-800 transition-colors duration-300" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
         </button>
       </div>
     </div>
-    <!-- Mobile menu -->
-    <nav
-      id="mobileMenu"
-      class="hidden md:hidden bg-white border-t border-gray-200 shadow-md"
-    >
-      <a
-        href="venue.html"
-        class="block px-6 py-3 border-b border-gray-200 hover:bg-blue-50 hover:text-blue-700"
-        >Sewa Lapangan</a
-      >
-      <a
-        href="tempat_sehat.html"
-        class="block px-6 py-3 border-b border-gray-200 hover:bg-blue-50 hover:text-blue-700"
-        >Tempat Sehat</a
-      >
-      <a
-        href="community.html"
-        class="block px-6 py-3 border-b border-gray-200 hover:bg-blue-50 hover:text-blue-700"
-        >Komunitas</a
-      >
-      <a
-        href="club.html"
-        class="block px-6 py-3 border-b border-gray-200 hover:bg-blue-50 hover:text-blue-700"
-        >Klub</a
-      >
-      <a
-        href="blog&news.html"
-        class="block px-6 py-3 border-b border-gray-200 hover:bg-blue-50 hover:text-blue-700"
-        >Blog & News</a
-      >
-      <a
-        href="#"
-        class="block w-full text-center px-6 py-3 mb-2 border border-gray-300 rounded-md bg-white text-gray-700 font-semibold hover:bg-gray-100"
-        >Masuk</a
-      >
-      <a
-        href="#"
-        class="block w-full text-center px-6 py-3 rounded-md bg-blue-700 text-white font-semibold hover:bg-red-900"
-        >Daftar</a
-      >
-    </nav>
-  </header>
 
-  <!-- Blog & News Header Section -->
-  <section class="bg-[url('assets/blue-banner.png')] bg-no-repeat text-white py-12 relative overflow-hidden h-[225px] flex items-center" style="background-size: 1910px 225px;">
-    <div class="container mx-auto px-6 text-center">
-      <h1 class="text-3xl md:text-4xl font-bold text-white tracking-wide">
-        ARTIKEL & TIPS SEPUTAR OLAHRAGA
-      </h1>
-      <div class="mt-6 max-w-xl mx-auto">
-        <input
-          type="text"
-          placeholder="Cari artikel..."
-          class="w-full rounded-md py-3 px-4 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-900"
-        />
+    <!-- Mobile menu dropdown -->
+    <div id="mobileMenu" class="hidden flex-col md:hidden bg-white text-gray-800 absolute w-full left-0 top-full transition-all duration-300 shadow-md">
+      <div class="px-6 py-4 space-y-4">
+        <a href="home.html" class="mobile-link block hover:text-blue-700">Home</a>
+        <a href="tourpackage.html" class="mobile-link block hover:text-blue-700">Tour</a>
+        <a href="carrental.html" class="mobile-link block hover:text-blue-700">Car Rental</a>
+        <a href="tourexperience.html" class="mobile-link block hover:text-blue-700">Tour Experience</a>
+        <a href="articles.html" class="mobile-link block hover:text-blue-700">Articles</a>
+        <a href="#" class="block bg-yellow-500 px-4 py-2 rounded text-white font-semibold text-center">Book</a>
       </div>
     </div>
-  </section>
+</header>
 
-  <!-- Blog & News Content -->
-  <section class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
-    <!-- Trending Posts -->
-    <aside class="md:col-span-1 space-y-6">
-      <h2 class="text-sm font-semibold text-gray-700 uppercase border-b border-gray-300 pb-2">
-        TRENDING POST
-      </h2>
-      <ol class="list-decimal list-inside space-y-4 text-sm text-gray-800 font-semibold">
-        <li>
-          <a href="#" class="hover:underline">
-            3 Hal Penting agar Main Bola Tetap Lancar di Bulan Puasa
-          </a>
-          <p class="text-xs text-gray-500">SEPAK BOLA - April 14, 2022</p>
-        </li>
-        <li>
-          <a href="#" class="hover:underline">
-            Cara Meningkatkan Stamina saat Bermain Badminton: Tips dan Latihan yang Efektif
-          </a>
-          <p class="text-xs text-gray-500">BADMINTON - May 18, 2023</p>
-        </li>
-        <li>
-          <a href="#" class="hover:underline">
-            Kenapa Sparring Tennis Penting? Ini Manfaat yang Bisa Didapat!
-          </a>
-          <p class="text-xs text-gray-500">TENNIS - March 28, 2025</p>
-        </li>
-        <li>
-          <a href="#" class="hover:underline">
-            Memahami Standar Keselamatan dan Keamanan Lapangan Mini Soccer
-          </a>
-          <p class="text-xs text-gray-500">MINI SOCCER - July 29, 2024</p>
-        </li>
-        <li>
-          <a href="#" class="hover:underline">
-            Inilah Ukuran Standar Lapangan Mini Soccer yang Harus Diketahui
-          </a>
-          <p class="text-xs text-gray-500">MINI SOCCER - July 29, 2024</p>
-        </li>
-      </ol>
-    </aside>
-
-    <!-- Blog Cards -->
-    <main class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-6">
-      <!-- Blog Card 1 -->
-       <a href="blog&news_detail.html">
-        <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-        <img
-          src="assets/tenis.jpg"
-          alt="Tennis Player"
-          class="w-full h-48 object-cover"
-        />
-        <div class="p-4">
-          <p class="text-xs text-blue-700 font-semibold uppercase mb-2">Tennis</p>
-          <h3 class="font-bold text-lg mb-2">
-            Kenapa Sparring Tennis Penting? Ini Manfaat yang Bisa Didapat!
-          </h3>
-          <p class="text-gray-600 text-sm mb-4">
-            Bukan hanya soal menang atau kalah, ada manfaat sparring tenis yang bisa membuat...
-          </p>
-          <div class="flex items-center justify-between text-xs text-gray-500">
-            <span>oleh Eren</span>
-            <time datetime="2025-03-28">28 March 2025</time>
-          </div>
-        </div>
-      </article>`
-       </a>
-
-      <!-- Blog Card 2 -->
-      <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-        <img
-          src="assets/tenis.jpg"
-          alt="Indoor Court"
-          class="w-full h-48 object-cover"
-        />
-        <div class="p-4">
-          <p class="text-xs text-blue-700 font-semibold uppercase mb-2">Badminton</p>
-          <h3 class="font-bold text-lg mb-2">
-            Cara Meningkatkan Stamina saat Bermain Badminton: Tips dan Latihan yang Efektif
-          </h3>
-          <p class="text-gray-600 text-sm mb-4">
-            Tips dan latihan yang efektif untuk meningkatkan stamina saat bermain badminton...
-          </p>
-          <div class="flex items-center justify-between text-xs text-gray-500">
-            <span>oleh Rina</span>
-            <time datetime="2023-05-18">18 May 2023</time>
-          </div>
-        </div>
-      </article>
-
-      <!-- Blog Card 3 -->
-      <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-        <img
-          src="assets/tenis.jpg"
-          alt="Mini Soccer Field"
-          class="w-full h-48 object-cover"
-        />
-        <div class="p-4">
-          <p class="text-xs text-blue-700 font-semibold uppercase mb-2">Mini Soccer</p>
-          <h3 class="font-bold text-lg mb-2">
-            Memahami Standar Keselamatan dan Keamanan Lapangan Mini Soccer
-          </h3>
-          <p class="text-gray-600 text-sm mb-4">
-            Standar keselamatan dan keamanan yang harus diperhatikan di lapangan mini soccer...
-          </p>
-          <div class="flex items-center justify-between text-xs text-gray-500">
-            <span>oleh Dedi</span>
-            <time datetime="2024-07-29">29 July 2024</time>
-          </div>
-        </div>
-      </article>
-
-      <!-- Blog Card 4 -->
-      <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-        <img
-          src="assets/tenis.jpg"
-          alt="Arena Sport"
-          class="w-full h-48 object-cover"
-        />
-        <div class="p-4">
-          <p class="text-xs text-blue-700 font-semibold uppercase mb-2">Mini Soccer</p>
-          <h3 class="font-bold text-lg mb-2">
-            Inilah Ukuran Standar Lapangan Mini Soccer yang Harus Diketahui
-          </h3>
-          <p class="text-gray-600 text-sm mb-4">
-            Ukuran standar lapangan mini soccer yang wajib diketahui oleh para pemain dan pelatih...
-          </p>
-          <div class="flex items-center justify-between text-xs text-gray-500">
-            <span>oleh Dedi</span>
-            <time datetime="2024-07-29">29 July 2024</time>
-          </div>
-        </div>
-      </article>
-    </main>
-  </section>
-
-  <!-- Cart Sidebar -->
-  <aside id="cartSidebar" class="fixed top-0 right-0 h-full w-80 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 overflow-y-auto">
-    <div class="flex justify-between items-center p-4 border-b border-gray-200">
-      <h2 class="font-bold text-lg">JADWAL DIPILIH</h2>
-      <button id="closeCartSidebar" aria-label="Close sidebar" class="text-gray-700 hover:text-gray-900 focus:outline-none">
-        <i class="fas fa-times fa-lg"></i>
-      </button>
+  <!-- Hero -->
+  <section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('assets/tour.png');">
+  <div class="absolute inset-0 bg-black/45"></div>
+  <div class="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 max-w-3xl">
+        LET’S SEE OUR <br> ARTICLES
+      </h1>
+      <p class="text-white text-lg max-w-2xl mb-6">
+        Discover our variety of Bali car packages tailored to your requirement and guide-driven trip. 
+        From economy to luxurious rides, Bali Lady Tour offers the perfect travel companion for an 
+        unforgettable experience.
+      </p>
     </div>
-    <div class="p-4 text-gray-600">
-      Belum ada jadwal di keranjang.
+</section>
+
+  <!-- Content -->
+<section class="container mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-8">
+  
+  <!-- Trending Posts -->
+  <aside class="md:col-span-1">
+    <h2 class="text-sm font-semibold text-gray-700 uppercase border-b border-gray-300 pb-2 mb-6">
+      TRENDING POST
+    </h2>
+    <div class="space-y-6">
+      <div>
+        <h3 class="font-bold text-lg text-gray-900">1</h3>
+        <a href="#" class="block font-semibold text-gray-800 hover:underline">
+          Paket Wisata Bali 3 Hari 2 Malam: Liburan Hemat & Nyaman
+        </a>
+        <p class="text-xs text-gray-500">TRAVEL PACKAGE - April 10, 2025</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg text-gray-900">2</h3>
+        <a href="#" class="block font-semibold text-gray-800 hover:underline">
+          Sewa Mobil Lepas Kunci di Bali: Mulai dari 250K/Hari
+        </a>
+        <p class="text-xs text-gray-500">CAR RENTAL - April 08, 2025</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg text-gray-900">3</h3>
+        <a href="#" class="block font-semibold text-gray-800 hover:underline">
+          Honeymoon Package Bali: Private Villa & Tour Romantis
+        </a>
+        <p class="text-xs text-gray-500">TRAVEL PACKAGE - April 05, 2025</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg text-gray-900">4</h3>
+        <a href="#" class="block font-semibold text-gray-800 hover:underline">
+          Explore Ubud & Kintamani: Paket Tour Sehari Penuh
+        </a>
+        <p class="text-xs text-gray-500">DAY TOUR - April 02, 2025</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg text-gray-900">5</h3>
+        <a href="#" class="block font-semibold text-gray-800 hover:underline">
+          Airport Transfer Bali: Jemput & Antar dengan Harga Terjangkau
+        </a>
+        <p class="text-xs text-gray-500">CAR RENTAL - March 30, 2025</p>
+      </div>
     </div>
   </aside>
+
+  <!-- Article Cards -->
+  <main class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+    
+    <!-- Card 1 -->
+    <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+      <img src="assets/gallery1.jpg" alt="Article" class="w-full h-48 object-cover" />
+      <div class="p-4">
+        <p class="text-sm text-red-500 font-semibold mb-1">Travel Package</p>
+        <h3 class="font-bold text-lg text-gray-800 mb-2">
+          Paket Liburan Bali 4 Hari 3 Malam dengan Hotel Bintang 4
+        </h3>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+          <span>April 12, 2025</span>
+          <a href="#" class="text-red-500 font-medium hover:underline">Read More</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+      <img src="assets/gallery3.jpg" alt="Article" class="w-full h-48 object-cover" />
+      <div class="p-4">
+        <p class="text-sm text-red-500 font-semibold mb-1">Car Rental</p>
+        <h3 class="font-bold text-lg text-gray-800 mb-2">
+          Sewa Mobil dengan Supir: Nikmati Liburan Tanpa Repot
+        </h3>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+          <span>April 09, 2025</span>
+          <a href="#" class="text-red-500 font-medium hover:underline">Read More</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+      <img src="assets/gallery4.jpg" alt="Article" class="w-full h-48 object-cover" />
+      <div class="p-4">
+        <p class="text-sm text-red-500 font-semibold mb-1">Travel Package</p>
+        <h3 class="font-bold text-lg text-gray-800 mb-2">
+          Paket Tour Nusa Penida: Snorkeling & Pantai Eksotis
+        </h3>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+          <span>April 06, 2025</span>
+          <a href="#" class="text-red-500 font-medium hover:underline">Read More</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+      <img src="assets/gallery5.jpg" alt="Article" class="w-full h-48 object-cover" />
+      <div class="p-4">
+        <p class="text-sm text-red-500 font-semibold mb-1">Car Rental</p>
+        <h3 class="font-bold text-lg text-gray-800 mb-2">
+          Promo Sewa Mobil Avanza & Xpander di Bali – Diskon 20%
+        </h3>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+          <span>April 03, 2025</span>
+          <a href="#" class="text-red-500 font-medium hover:underline">Read More</a>
+        </div>
+      </div>
+    </article>
+    <!-- Pagination -->
+<div class="flex justify-center mt-10">
+  <nav class="inline-flex -space-x-px text-sm">
+    <a href="#" class="px-4 py-2 border border-gray-300 bg-red-600 text-white font-semibold">1</a>
+    <a href="#" class="px-4 py-2 border border-gray-300 text-blue-600 hover:bg-gray-100">2</a>
+    <a href="#" class="px-4 py-2 border border-gray-300 text-blue-600 hover:bg-gray-100">3</a>
+    <a href="#" class="px-4 py-2 border border-gray-300 text-blue-600 hover:bg-gray-100">Next</a>
+  </nav>
+</div>
+
+  </main>
+</section>
+
 
   <!-- Footer -->
   <footer class="bg-white text-gray-700 py-12">
     <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
       <div>
-        <h3 class="font-bold text-lg mb-4">Olga Sehat</h3>
-        <p class="text-sm text-gray-600 max-w-xs">
-          Making sports easy to book, fun to play, and safe for everyone.
-        </p>
-      </div>
-      <div>
-        <h3 class="font-semibold mb-4">Perusahaan</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#" class="hover:text-blue-700">Tentang</a></li>
-          <li><a href="#" class="hover:text-blue-700">Kebijakan &amp; Privasi</a></li>
-          <li><a href="#" class="hover:text-blue-700">Syarat &amp; Ketentuan</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-semibold mb-4">Ekosistem</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#" class="hover:text-blue-700">Sewa Lapangan</a></li>
-          <li><a href="#" class="hover:text-blue-700">Tempat Sehat</a></li>
-          <li><a href="#" class="hover:text-blue-700">Komunitas</a></li>
-          <li><a href="#" class="hover:text-blue-700">Klub</a></li>
-          <li><a href="#" class="hover:text-blue-700">Blog & News</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-semibold mb-4">Support</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#" class="hover:text-blue-700">FAQs</a></li>
-          <li><a href="#" class="hover:text-blue-700">Support Center</a></li>
-          <li><a href="#" class="hover:text-blue-700">Contact Us</a></li>
-        </ul>
-        <div class="flex space-x-4 mt-4">
-          <a
-            href="#"
-            class="w-8 h-8 flex items-center justify-center bg-blue-700 text-white rounded-full hover:bg-blue-800 transition"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a
-            href="#"
-            class="w-8 h-8 flex items-center justify-center bg-blue-700 text-white rounded-full hover:bg-blue-800 transition"
-            ><i class="fab fa-youtube"></i
-          ></a>
-          <a
-            href="#"
-            class="w-8 h-8 flex items-center justify-center bg-blue-700 text-white rounded-full hover:bg-blue-800 transition"
-            ><i class="fab fa-instagram"></i
-          ></a>
-        </div>
-      </div>
+      <img src="assets/logo.png" alt="Logo" class="h-14 mb-4 max-w-full">
+      <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+        With our reliable Bali Lady Tour services, you can explore breathtaking islands,
+        soak up the sun, and travel comfortably.
+      </p>
+      <a href="#" class="inline-block bg-indigo-900 text-white px-6 py-2 rounded-full font-semibold hover:bg-indigo-800 transition">Contact</a>
     </div>
+      <div>
+      <h4 class="font-bold text-indigo-900 mb-4 uppercase">Menu</h4>
+      <ul class="space-y-2 text-gray-600">
+        <li><a href="#" class="hover:text-indigo-900">Home</a></li>
+        <li><a href="#" class="hover:text-indigo-900">Tour</a></li>
+        <li><a href="#" class="hover:text-indigo-900">Hotel & Airport</a></li>
+        <li><a href="#" class="hover:text-indigo-900">Transfers</a></li>
+        <li><a href="#" class="hover:text-indigo-900">Articles</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-bold text-indigo-900 mb-4 uppercase">Info</h4>
+      <ul class="space-y-2 text-gray-600">
+        <li><a href="#" class="hover:text-indigo-900">FAQs</a></li>
+        <li><a href="#" class="hover:text-indigo-900">Support Center</a></li>
+        <li><a href="#" class="hover:text-indigo-900">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-bold text-indigo-900 mb-4 uppercase">Social</h4>
+      <ul class="space-y-2 text-gray-600">
+        <li><a href="#" class="hover:text-indigo-900">Instagram</a></li>
+        <li><a href="#" class="hover:text-indigo-900">Facebook</a></li>
+        <li><a href="#" class="hover:text-indigo-900">Youtube</a></li>
+      </ul>
+    </div>
+  </div>
     <div class="container mx-auto px-6 text-center mt-8 pt-4 border-t border-gray-300 text-sm text-gray-500">
-      &copy; 2024 Olga Sehat. All rights reserved.
+      <p class="md:text-left">© 2025 baliladytour.id All Rights Reserved </p>
+      <p class="md:text-right">Designed by <span class="font-medium text-indigo-900">IndoAppsSolusindo</span></p>
     </div>
   </footer>
 
@@ -354,8 +284,93 @@
     </div>
   </aside>
 
-    <!-- Swiper JS for slider -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="assets/olgasehat.js"></script>
+    <!-- Script -->
+<script>
+  const navbar = document.getElementById('navbar');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const globeBtn = document.getElementById('globeBtn');
+  const globeIcon = document.querySelector('.globe-icon');
+  const langMenu = document.getElementById('langMenu');
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+
+  const SCROLL_THRESHOLD = 80;
+
+  function applyTopState() {
+    // Navbar transparan
+    navbar.classList.remove('bg-white', 'shadow-md');
+    navbar.classList.add('bg-transparent');
+
+    // Desktop links putih
+    navLinks.forEach(a => {
+      a.classList.remove('text-gray-800');
+      a.classList.add('text-white');
+    });
+
+    // Icon putih
+    globeIcon.classList.add('text-white');
+    globeIcon.classList.remove('text-gray-800');
+    menuIcon.classList.add('text-white');
+    menuIcon.classList.remove('text-gray-800');
+
+    // Mobile menu transparan penuh
+    mobileMenu.classList.remove('bg-white', 'text-gray-800', 'bg-white/70');
+    mobileMenu.classList.add('bg-transparent', 'text-white');
+  }
+
+  function applyScrolledState() {
+    // Navbar putih solid
+    navbar.classList.remove('bg-transparent');
+    navbar.classList.add('bg-white', 'shadow-md');
+
+    // Desktop links gelap
+    navLinks.forEach(a => {
+      a.classList.remove('text-white');
+      a.classList.add('text-gray-800');
+    });
+
+    // Icon gelap
+    globeIcon.classList.add('text-gray-800');
+    globeIcon.classList.remove('text-white');
+    menuIcon.classList.add('text-gray-800');
+    menuIcon.classList.remove('text-white');
+
+    // Mobile menu putih solid
+    mobileMenu.classList.remove('bg-transparent', 'text-white');
+    mobileMenu.classList.add('bg-white', 'text-gray-800');
+  }
+
+  function handleNavbar() {
+    if (window.scrollY > SCROLL_THRESHOLD) {
+      applyScrolledState();
+    } else {
+      applyTopState();
+    }
+  }
+
+  // Jalankan saat load & scroll
+  window.addEventListener('scroll', handleNavbar);
+  document.addEventListener('DOMContentLoaded', handleNavbar);
+
+  // Toggle mobile menu
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    handleNavbar();
+  });
+
+  // Toggle language
+  globeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langMenu.classList.toggle('hidden');
+  });
+
+  // Tutup dropdown language kalau klik di luar
+  window.addEventListener('click', (e) => {
+    if (!globeBtn.contains(e.target) && !langMenu.contains(e.target)) {
+      langMenu.classList.add('hidden');
+    }
+  });
+</script>
 </body>
 </html>
