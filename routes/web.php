@@ -63,12 +63,14 @@ Route::get('/deletenews/{id}',[BeritaController::class, 'deletenews'])->name('de
 Route::get('/exportpdf',[BeritaController::class, 'exportpdf'])->name('exportpdf');
 
 //Review
+
 Route::get('/review', [ReviewController::class, 'index'])->name('review.index');
 Route::get('/tambah_review', [ReviewController::class, 'create'])->name('review.create');
 Route::post('/simpan_review', [ReviewController::class, 'store'])->name('review.store');
 Route::get('/edit_review/{id}', [ReviewController::class, 'edit'])->name('review.edit');
-Route::post('/update_review/{id}', [ReviewController::class, 'update'])->name('review.update');
+Route::put('/update_review/{id}', [ReviewController::class, 'update'])->name('review.update');
 Route::delete('/review/{id}', [ReviewController::class, 'destroy'])->name('review.destroy');
+
 
 
 //category
