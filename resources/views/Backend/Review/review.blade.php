@@ -1,19 +1,61 @@
 @extends('Backend.Layout.admin')
-@push('css')
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-<!-- Toastr CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+@push('css')
+
 @endpush
+
 @section('content')
+
+<div class="content-wrapper review-page">
+    <section class="content pt-4">
+        <div class="container-fluid">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-white">
+                    <h3 class="card-title fw-bold text-center fs-4">Data Ulasan Pengguna</h3>
+                </div>
+                <div class="card-body">
+                    <a href="{{ route('review.create') }}" class="btn btn-success mb-3">+ Tambah Data</a>
+                    <div class="table-responsive">
+                        <table class="table table-bordered align-middle text-center">
+                            <thead class="table-secondary">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nama</th>
+                                    <th>Ulasan</th>
+                                    <th>Rate</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @php $no = 1; @endphp
+                                @forelse ($data as $row)
+                                <tr>
+                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $row->nama }}</td>
+                                    <td class="text-start">{{ $row->ulasan }}</td>
+                                    <td>⭐ {{ $row->rate }}</td>
+                                    <td>
+                                        <a href="{{ route('review.edit', $row->id) }}" class="btn btn-info btn-sm text-white">Edit</a>
+                                        <a href="#" class="btn btn-danger btn-sm delete" data-id="{{ $row->id }}">Delete</a>
+                                    </td>
+                                </tr>
+                                @empty
+                                <tr>
+                                    <td colspan="5" class="text-center text-muted py-4">Belum ada ulasan pengguna</td>
+                                </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Data Kelebihan</h1>
+                    <h1 class="m-0">Data Review Pengguna</h1>
                 </div>
             </div>
         </div>
@@ -62,7 +104,7 @@
                             <td>
                                 <a href="{{ route('review.edit', $row->id) }}" 
                                    class="btn btn-info btn-sm text-white">Edit</a>
-                                <a href="#" 
+                                <a href="/delete/{{ $row->id }}" 
                                    class="btn btn-danger btn-sm delete" 
                                    data-id="{{ $row->id }}">Delete</a>
                             </td>
@@ -78,20 +120,19 @@
                 </table>
             </div>
         </div>
-    </div>    
-        </div>
-      </div>
     </section>
+</div>
 @endsection
+
 
 @push('scripts')
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+    // SweetAlert untuk hapus
     document.querySelectorAll('.delete').forEach(function(button) {
         button.addEventListener('click', function(e) {
             e.preventDefault();
             const id = this.getAttribute('data-id');
-
             Swal.fire({
                 title: 'Yakin ingin menghapus?',
                 text: "Data ini tidak bisa dikembalikan!",
@@ -107,6 +148,7 @@
         });
     });
 </script>
+@endpush
 
 <!-- jQuery first -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -136,3 +178,4 @@
   @endif
 </script>
 @endpush
+

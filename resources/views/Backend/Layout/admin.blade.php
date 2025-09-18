@@ -28,21 +28,23 @@
 
   <!-- Custom Override -->
   <style>
-    /* Hilangkan geser ke kanan saat sidebar collapse */
+    /* Default AdminLTE behaviour */
     body.sidebar-collapse .content-wrapper {
       margin-left: 0 !important;
     }
-    /* Supaya pas sidebar normal, tetap ada margin */
     .content-wrapper {
       transition: margin-left .3s ease-in-out;
+    }
+
+    /* Tambahan khusus halaman review */
+    body.review-shift.sidebar-open .content-wrapper {
+      margin-left: 250px !important; /* geser ke kanan sesuai lebar sidebar */
     }
   </style>
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed sidebar-collapse"><!-- pakai collapse -->
-
-
-<body class="hold-transition sidebar-mini layout-fixed">
+<!-- Tambahkan class review-shift HANYA jika di halaman review -->
+<body class="hold-transition sidebar-mini layout-fixed @if(request()->is('review*')) review-shift @endif">
 
 <div class="wrapper">
 
@@ -124,7 +126,6 @@
             </a>
           </li>
 
-
           <!-- Gallery -->
           <li class="nav-item">
             <a href="/galeri" class="nav-link">
@@ -160,15 +161,15 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/venue" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Komunitas</p>
+                  <p>Booking Rental</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/tempat-sehat" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Klub</p>
+                  <p>Booking Tour</p>
                 </a>
               </li>
             </ul>
@@ -238,14 +239,7 @@
     <!-- /.sidebar -->
   </aside>
 
-
-
-    @yield('content')
-
-
-
-
-
+  @yield('content')
 
   <!-- Main Footer -->
    <footer class="main-footer">
@@ -268,7 +262,6 @@
 <script src="{{ asset('template/plugins/jquery/jquery.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ asset('template/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
@@ -294,9 +287,6 @@
 <script src="{{ asset('template/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('template/dist/js/adminlte.js') }}"></script>
-
-
-
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('template/dist/js/demo.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
