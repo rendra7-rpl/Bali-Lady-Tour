@@ -411,16 +411,43 @@
 
 
   <!-- Gallery Section -->
-  <section class="container mx-auto px-6 py-16">
-    <h2 class="text-3xl font-bold mb-8 text-center">Our Gallery</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
-      <img src="assets/gallery1.jpg" alt="Gallery Image 1" class="rounded-lg shadow-md" />
-      <img src="assets/gallery2.jpg" alt="Gallery Image 2" class="rounded-lg shadow-md" />
-      <img src="assets/gallery3.jpg" alt="Gallery Image 3" class="rounded-lg shadow-md" />
-      <img src="assets/gallery1.jpg" alt="Gallery Image 4" class="rounded-lg shadow-md" />
-      <img src="assets/gallery5.jpg" alt="Gallery Image 5" class="rounded-lg shadow-md" />
+<section class="container mx-auto px-6 py-16 overflow-hidden">
+  <h2 class="text-3xl font-bold mb-8 text-center">Our Gallery</h2>
+
+  <!-- Wrapper untuk animasi -->
+  <div class="relative">
+    <div class="flex gap-4 animate-scroll">
+      <!-- Gandakan isi supaya loop terlihat mulus -->
+      <img src="assets/gallery1.jpg" alt="Gallery 1" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="assets/gallery2.jpg" alt="Gallery 2" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="assets/gallery3.jpg" alt="Gallery 3" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="assets/gallery4.jpg" alt="Gallery 4" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="assets/gallery5.jpg" alt="Gallery 5" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+
+      <!-- Duplikat supaya seamless -->
+      <img src="assets/gallery1.jpg" alt="Gallery 1" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="assets/gallery2.jpg" alt="Gallery 2" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="assets/gallery3.jpg" alt="Gallery 3" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="assets/gallery4.jpg" alt="Gallery 4" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="assets/gallery5.jpg" alt="Gallery 5" class="w-40 h-28 object-cover rounded-lg shadow-md" />
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Tambahkan CSS -->
+<style>
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+</style>
+
 
   <!-- Customer Reviews Section -->
 <section class="container mx-auto px-6 py-16">
