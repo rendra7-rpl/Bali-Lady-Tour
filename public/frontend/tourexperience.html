@@ -6,7 +6,7 @@
   <title>Tour Experience - Bali Lady Tour</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Navbar -->
-<header id="navbar" class="fixed w-full top-0 z-50 bg-transparent transition-colors duration-300 ease-in-out">
+<header id="navbar" class="fixed w-full top-0 z-50 transition-colors duration-300 ease-in-out bg-transparent">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <!-- Logo -->
     <div class="flex items-center gap-3">
@@ -15,11 +15,11 @@
 
     <!-- Menu desktop -->
     <nav class="hidden md:flex gap-6 font-medium">
-      <a href="#" class="nav-link text-white">Home</a>
-      <a href="#" class="nav-link text-white">Tour</a>
-      <a href="#" class="nav-link text-white">Transfer</a>
-      <a href="#" class="nav-link text-white">Tour Experience</a>
-      <a href="#" class="nav-link text-white">Articles</a>
+      <a href="home.html" class="nav-link text-white">Home</a>
+      <a href="tourpackage.html" class="nav-link text-white">Tour</a>
+      <a href="carrental.html" class="nav-link text-white">Car Rental</a>
+      <a href="tourexperience.html" class="nav-link text-white">Tour Experience</a>
+      <a href="articles.html" class="nav-link text-white">Articles</a>
     </nav>
 
     <!-- Mobile menu button -->
@@ -86,62 +86,82 @@
   </div>
 </section>
 
-
-  <!-- Toggle Buttons (as tablist) -->
-  <section class="py-8 bg-white flex justify-center">
-    <div role="tablist" aria-label="Toggle media" class="flex gap-4">
-      <button id="btnVideo" role="tab" aria-controls="galleryVideo" aria-selected="true"
-        class="bg-blue-900 text-white px-6 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300">Video</button>
-      <button id="btnFoto" role="tab" aria-controls="galleryFoto" aria-selected="false"
-        class="bg-blue-900 text-white px-6 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300 opacity-70">Foto</button>
-    </div>
+ <!-- Section Judul -->
+  <section class="text-center py-10">
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Video & Foto</h2>
+    <p class="text-gray-500 mt-2">Try Variety of Benefits when using our services</p>
   </section>
 
- <section class="px-4 md:px-20 pb-12">
-  <!-- Galeri Video -->
-  <h2 class="text-xl font-semibold mb-3">Galeri Video</h2>
-  <div id="galleryVideo"
-       class="flex flex-nowrap gap-4 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent"
-       tabindex="0" aria-label="Galeri Video">
+  <!-- Tombol Switch -->
+  <div class="flex justify-center gap-3 my-6">
+    <button id="btnVideo" 
+      class="px-6 py-2 rounded-md font-medium bg-gray-300 text-gray-700 focus:outline-none">
+      Video
+    </button>
+    <button id="btnFoto" 
+      class="px-6 py-2 rounded-md font-medium bg-gray-300 text-gray-700 focus:outline-none">
+      Foto
+    </button>
+  </div>
 
-    <!-- Video 1 -->
-    <button class="flex-none w-[280px] md:w-[340px] h-48 md:h-56 bg-black rounded-lg shadow-lg"></button>
-    <!-- Video 2 -->
-    <button class="flex-none w-[280px] md:w-[340px] h-48 md:h-56 bg-black rounded-lg shadow-lg"></button>
-    <!-- Video 3 -->
-    <button class="flex-none w-[280px] md:w-[340px] h-48 md:h-56 bg-black rounded-lg shadow-lg"></button>
-    <!-- Video 4 -->
-    <button class="flex-none w-[280px] md:w-[340px] h-48 md:h-56 bg-black rounded-lg shadow-lg"></button>
-    <!-- Video 5 -->
-    <button class="flex-none w-[280px] md:w-[340px] h-48 md:h-56 bg-black rounded-lg shadow-lg"></button>
-    <!-- Tambah sesuai kebutuhan -->
+  <!-- Galeri Video -->
+  <div id="galleryVideo" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-8">
+    <!-- 3 video pertama -->
+    <div class="relative bg-black text-white rounded-lg overflow-hidden">
+      <img src="https://picsum.photos/id/1015/400/250" class="w-full h-48 object-cover opacity-70">
+      <span class="absolute bottom-3 left-3">Leke-Leke Waterfall with Indo Bali Tour</span>
+    </div>
+    <div class="relative bg-black text-white rounded-lg overflow-hidden">
+      <img src="https://picsum.photos/id/1016/400/250" class="w-full h-48 object-cover opacity-70">
+      <span class="absolute bottom-3 left-3">Lunch in Kintamani</span>
+    </div>
+    <div class="relative bg-black text-white rounded-lg overflow-hidden">
+      <img src="https://picsum.photos/id/1019/400/250" class="w-full h-48 object-cover opacity-70">
+      <span class="absolute bottom-3 left-3">Wonderful Day with Indo Bali Tour</span>
+    </div>
+    <!-- Tambahan 3 video lagi -->
+    <div class="relative bg-black text-white rounded-lg overflow-hidden">
+      <img src="https://picsum.photos/id/1020/400/250" class="w-full h-48 object-cover opacity-70">
+      <span class="absolute bottom-3 left-3">Traditional Dance Performance</span>
+    </div>
+    <div class="relative bg-black text-white rounded-lg overflow-hidden">
+      <img src="https://picsum.photos/id/1021/400/250" class="w-full h-48 object-cover opacity-70">
+      <span class="absolute bottom-3 left-3">Temple Ceremony</span>
+    </div>
+    <div class="relative bg-black text-white rounded-lg overflow-hidden">
+      <img src="https://picsum.photos/id/1022/400/250" class="w-full h-48 object-cover opacity-70">
+      <span class="absolute bottom-3 left-3">Bali Sunset Tour</span>
+    </div>
   </div>
 
   <!-- Galeri Foto -->
-  <h2 class="text-xl font-semibold mt-8 mb-3">Galeri Foto</h2>
-  <div id="galleryFoto"
-       class="flex flex-nowrap gap-3 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent"
-       tabindex="0" aria-label="Galeri Foto">
+  <div id="galleryFoto" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 px-8 hidden">
+    <!-- Deret 1 -->
+    <img src="https://picsum.photos/id/1035/400/250" class="w-full h-48 object-cover rounded-lg">
+    <img src="https://picsum.photos/id/1036/400/250" class="w-full h-48 object-cover rounded-lg">
+    <img src="https://picsum.photos/id/1037/400/250" class="w-full h-48 object-cover rounded-lg">
+    <img src="https://picsum.photos/id/1038/400/250" class="w-full h-48 object-cover rounded-lg">
+    <img src="https://picsum.photos/id/1039/400/250" class="w-full h-48 object-cover rounded-lg">
+    <!-- Deret 2 -->
+    <img src="https://picsum.photos/id/1040/400/250" class="w-full h-48 object-cover rounded-lg">
+    <img src="https://picsum.photos/id/1041/400/250" class="w-full h-48 object-cover rounded-lg">
+    <img src="https://picsum.photos/id/1042/400/250" class="w-full h-48 object-cover rounded-lg">
+    <img src="https://picsum.photos/id/1043/400/250" class="w-full h-48 object-cover rounded-lg">
+    <img src="https://picsum.photos/id/1044/400/250" class="w-full h-48 object-cover rounded-lg">
+  </div>
+</body>
 
-    <img src="assets/bg1.png" alt="Bali Lady" class="flex-none w-40 h-40 object-cover rounded cursor-pointer" loading="lazy" />
-    <img src="assets/bg1.png" alt="Profile" class="flex-none w-40 h-40 object-cover rounded cursor-pointer" loading="lazy" />
-    <img src="assets/bg2.jpg" alt="Program" class="flex-none w-40 h-40 object-cover rounded cursor-pointer" loading="lazy" />
-    <img src="assets/konten.jpg" alt="Tour" class="flex-none w-40 h-40 object-cover rounded cursor-pointer" loading="lazy" />
-    <img src="assets/bg2.jpg" alt="Konten" class="flex-none w-40 h-40 object-cover rounded cursor-pointer" loading="lazy" />
-    <img src="assets/konten.jpg" alt="Logo" class="flex-none w-40 h-40 object-cover rounded cursor-pointer" loading="lazy" />
-    <!-- Tambah sesuai kebutuhan -->
+<!-- Pagination -->
+  <div class="flex justify-center mt-10">
+    <nav class="inline-flex -space-x-px text-sm">
+      <a href="#" class="px-4 py-2 border border-gray-300 bg-red-600 text-white font-semibold">1</a>
+      <a href="#" class="px-4 py-2 border border-gray-300 text-blue-600 hover:bg-gray-100">2</a>
+      <a href="#" class="px-4 py-2 border border-gray-300 text-blue-600 hover:bg-gray-100">3</a>
+      <a href="#" class="px-4 py-2 border border-gray-300 text-blue-600 hover:bg-gray-100">Next</a>
+      <a href="#" class="px-4 py-2 border border-gray-300 text-blue-600 hover:bg-gray-100">Last</a>
+    </nav>
   </div>
 </section>
-
-
-  <!-- Media Display Modal -->
-  <div id="mediaModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 hidden z-50" role="dialog" aria-modal="true" aria-labelledby="mediaTitle">
-    <div class="relative max-w-4xl w-full max-h-full">
-      <h2 id="mediaTitle" class="sr-only">Media preview</h2>
-      <button id="closeModal" class="absolute top-2 right-2 text-white text-3xl font-bold focus:outline-none" aria-label="Tutup preview">&times;</button>
-      <div id="mediaContent" class="w-full h-full flex items-center justify-center"></div>
-    </div>
-  </div>
 
   <!-- Footer -->
 <footer class="bg-white border-t border-gray-200 py-10 mt-10">
@@ -199,163 +219,120 @@
 </footer>
 
 <!-- Script -->
+
 <script>
+    const btnVideo = document.getElementById("btnVideo");
+    const btnFoto = document.getElementById("btnFoto");
+    const galleryVideo = document.getElementById("galleryVideo");
+    const galleryFoto = document.getElementById("galleryFoto");
+
+    // Set default aktif di Video
+    btnVideo.classList.add("bg-blue-900", "text-white");
+
+    btnVideo.addEventListener("click", () => {
+      galleryVideo.classList.remove("hidden");
+      galleryFoto.classList.add("hidden");
+      btnVideo.classList.add("bg-blue-900", "text-white");
+      btnVideo.classList.remove("bg-gray-300", "text-gray-700");
+      btnFoto.classList.add("bg-gray-300", "text-gray-700");
+      btnFoto.classList.remove("bg-blue-900", "text-white");
+    });
+
+    btnFoto.addEventListener("click", () => {
+      galleryFoto.classList.remove("hidden");
+      galleryVideo.classList.add("hidden");
+      btnFoto.classList.add("bg-blue-900", "text-white");
+      btnFoto.classList.remove("bg-gray-300", "text-gray-700");
+      btnVideo.classList.add("bg-gray-300", "text-gray-700");
+      btnVideo.classList.remove("bg-blue-900", "text-white");
+    });
+  </script>
+  <script>
   const navbar = document.getElementById('navbar');
   const navLinks = document.querySelectorAll('.nav-link');
-  const globeIcon = document.querySelector('.globe-icon');
   const globeBtn = document.getElementById('globeBtn');
+  const globeIcon = document.querySelector('.globe-icon');
   const langMenu = document.getElementById('langMenu');
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   const menuIcon = document.getElementById('menuIcon');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  const SCROLL_THRESHOLD = 80;
+
+  function applyTopState() {
+    // Navbar transparan
+    navbar.classList.remove('bg-white', 'shadow-md');
+    navbar.classList.add('bg-transparent');
+
+    // Desktop links putih
+    navLinks.forEach(a => {
+      a.classList.remove('text-gray-800');
+      a.classList.add('text-white');
+    });
+
+    // Icon putih
+    globeIcon.classList.add('text-white');
+    globeIcon.classList.remove('text-gray-800');
+    menuIcon.classList.add('text-white');
+    menuIcon.classList.remove('text-gray-800');
+
+    // Mobile menu transparan penuh
+    mobileMenu.classList.remove('bg-white', 'text-gray-800', 'bg-white/70');
+    mobileMenu.classList.add('bg-transparent', 'text-white');
+  }
+
+  function applyScrolledState() {
+    // Navbar putih solid
+    navbar.classList.remove('bg-transparent');
+    navbar.classList.add('bg-white', 'shadow-md');
+
+    // Desktop links gelap
+    navLinks.forEach(a => {
+      a.classList.remove('text-white');
+      a.classList.add('text-gray-800');
+    });
+
+    // Icon gelap
+    globeIcon.classList.add('text-gray-800');
+    globeIcon.classList.remove('text-white');
+    menuIcon.classList.add('text-gray-800');
+    menuIcon.classList.remove('text-white');
+
+    // Mobile menu putih solid
+    mobileMenu.classList.remove('bg-transparent', 'text-white');
+    mobileMenu.classList.add('bg-white', 'text-gray-800');
+  }
 
   function handleNavbar() {
-    if (window.scrollY > 80) {
-      navbar.classList.add('bg-white', 'shadow-md');
-      navbar.classList.remove('bg-transparent');
-      navLinks.forEach(a => { a.classList.replace('text-white','text-gray-800'); });
-      globeIcon.classList.replace('text-white','text-gray-800');
-      menuIcon.classList.replace('text-white','text-gray-800');
-      mobileMenu.classList.add('bg-white');
-      mobileMenu.classList.remove('bg-black/70');
-      mobileLinks.forEach(a => { a.classList.replace('text-white','text-gray-800'); });
+    if (window.scrollY > SCROLL_THRESHOLD) {
+      applyScrolledState();
     } else {
-      navbar.classList.remove('bg-white','shadow-md');
-      navbar.classList.add('bg-transparent');
-      navLinks.forEach(a => { a.classList.replace('text-gray-800','text-white'); });
-      globeIcon.classList.replace('text-gray-800','text-white');
-      menuIcon.classList.replace('text-gray-800','text-white');
-      mobileMenu.classList.add('bg-black/70');
-      mobileMenu.classList.remove('bg-white');
-      mobileLinks.forEach(a => { a.classList.replace('text-gray-800','text-white'); });
+      applyTopState();
     }
   }
 
+  // Jalankan saat load & scroll
   window.addEventListener('scroll', handleNavbar);
   document.addEventListener('DOMContentLoaded', handleNavbar);
 
-  globeBtn.addEventListener('click', () => {
+  // Toggle mobile menu
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    handleNavbar();
+  });
+
+  // Toggle language
+  globeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
     langMenu.classList.toggle('hidden');
   });
 
+  // Tutup dropdown language kalau klik di luar
   window.addEventListener('click', (e) => {
     if (!globeBtn.contains(e.target) && !langMenu.contains(e.target)) {
       langMenu.classList.add('hidden');
     }
   });
-
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
 </script>
-</body>
-</html>
-
-  <script>
-    // Elements
-    const btnVideo = document.getElementById('btnVideo');
-    const btnFoto = document.getElementById('btnFoto');
-    const galleryVideo = document.getElementById('galleryVideo');
-    const galleryFoto = document.getElementById('galleryFoto');
-    const mediaModal = document.getElementById('mediaModal');
-    const mediaContent = document.getElementById('mediaContent');
-    const closeModal = document.getElementById('closeModal');
-
-    // Toggle function
-    function setActiveTab(tab) {
-      if (tab === 'video') {
-        btnVideo.classList.remove('opacity-70');
-        btnVideo.setAttribute('aria-selected', 'true');
-        btnFoto.classList.add('opacity-70');
-        btnFoto.setAttribute('aria-selected', 'false');
-        galleryVideo.classList.remove('hidden');
-        galleryFoto.classList.add('hidden');
-      } else {
-        btnFoto.classList.remove('opacity-70');
-        btnFoto.setAttribute('aria-selected', 'true');
-        btnVideo.classList.add('opacity-70');
-        btnVideo.setAttribute('aria-selected', 'false');
-        galleryFoto.classList.remove('hidden');
-        galleryVideo.classList.add('hidden');
-      }
-    }
-
-    btnVideo.addEventListener('click', () => setActiveTab('video'));
-    btnFoto.addEventListener('click', () => setActiveTab('foto'));
-
-    // Show media in modal
-    function showMedia(src, type, title = '') {
-      mediaContent.innerHTML = '';
-      if (type === 'video') {
-        const video = document.createElement('video');
-        video.src = src;
-        video.controls = true;
-        video.autoplay = true;
-        video.playsInline = true;
-        video.className = 'max-w-full max-h-[80vh] rounded';
-        mediaContent.appendChild(video);
-      } else {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = title || 'Media';
-        img.className = 'max-w-full max-h-[80vh] rounded';
-        mediaContent.appendChild(img);
-      }
-      // Show modal and trap scroll
-      mediaModal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      closeModal.focus();
-    }
-
-    function closeModalFunc() {
-      mediaModal.classList.add('hidden');
-      mediaContent.innerHTML = '';
-      document.body.style.overflow = '';
-    }
-
-    // Thumbnail click listeners (data-src)
-    document.querySelectorAll('[data-src]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const src = btn.getAttribute('data-src');
-        const type = btn.getAttribute('data-type') || 'video';
-        const title = btn.getAttribute('aria-label') || '';
-        showMedia(src, type, title);
-      });
-      // keyboard accessible (Enter/Space)
-      btn.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          btn.click();
-        }
-      });
-    });
-
-    // Photo click listeners
-    document.querySelectorAll('#galleryFoto img').forEach(img => {
-      img.addEventListener('click', () => {
-        showMedia(img.src, 'image', img.alt);
-      });
-      img.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          img.click();
-        }
-      });
-    });
-
-    // Close handlers
-    closeModal.addEventListener('click', closeModalFunc);
-    mediaModal.addEventListener('click', (e) => {
-      if (e.target === mediaModal) closeModalFunc();
-    });
-
-    // ESC to close
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !mediaModal.classList.contains('hidden')) {
-        closeModalFunc();
-      }
-    });
-  </script>
 </body>
 </html>
