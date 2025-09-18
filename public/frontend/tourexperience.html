@@ -64,7 +64,7 @@
     <div class="px-6 py-4 space-y-4">
       <a href="#" class="mobile-link block">Home</a>
       <a href="#" class="mobile-link block">Tour</a>
-      <a href="#" class="mobile-link block">Transfer</a>
+      <a href="#" class="mobile-link block">Car Rental</a>
       <a href="#" class="mobile-link block">Tour Experience</a>
       <a href="#" class="mobile-link block">Articles</a>
       <a href="#" class="block bg-yellow-500 px-4 py-2 rounded text-white font-semibold text-center">Book</a>
@@ -251,111 +251,5 @@
 </script>
 </body>
 </html>
-
-  <script>
-    // Elements
-    const btnVideo = document.getElementById('btnVideo');
-    const btnFoto = document.getElementById('btnFoto');
-    const galleryVideo = document.getElementById('galleryVideo');
-    const galleryFoto = document.getElementById('galleryFoto');
-    const mediaModal = document.getElementById('mediaModal');
-    const mediaContent = document.getElementById('mediaContent');
-    const closeModal = document.getElementById('closeModal');
-
-    // Toggle function
-    function setActiveTab(tab) {
-      if (tab === 'video') {
-        btnVideo.classList.remove('opacity-70');
-        btnVideo.setAttribute('aria-selected', 'true');
-        btnFoto.classList.add('opacity-70');
-        btnFoto.setAttribute('aria-selected', 'false');
-        galleryVideo.classList.remove('hidden');
-        galleryFoto.classList.add('hidden');
-      } else {
-        btnFoto.classList.remove('opacity-70');
-        btnFoto.setAttribute('aria-selected', 'true');
-        btnVideo.classList.add('opacity-70');
-        btnVideo.setAttribute('aria-selected', 'false');
-        galleryFoto.classList.remove('hidden');
-        galleryVideo.classList.add('hidden');
-      }
-    }
-
-    btnVideo.addEventListener('click', () => setActiveTab('video'));
-    btnFoto.addEventListener('click', () => setActiveTab('foto'));
-
-    // Show media in modal
-    function showMedia(src, type, title = '') {
-      mediaContent.innerHTML = '';
-      if (type === 'video') {
-        const video = document.createElement('video');
-        video.src = src;
-        video.controls = true;
-        video.autoplay = true;
-        video.playsInline = true;
-        video.className = 'max-w-full max-h-[80vh] rounded';
-        mediaContent.appendChild(video);
-      } else {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = title || 'Media';
-        img.className = 'max-w-full max-h-[80vh] rounded';
-        mediaContent.appendChild(img);
-      }
-      // Show modal and trap scroll
-      mediaModal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      closeModal.focus();
-    }
-
-    function closeModalFunc() {
-      mediaModal.classList.add('hidden');
-      mediaContent.innerHTML = '';
-      document.body.style.overflow = '';
-    }
-
-    // Thumbnail click listeners (data-src)
-    document.querySelectorAll('[data-src]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const src = btn.getAttribute('data-src');
-        const type = btn.getAttribute('data-type') || 'video';
-        const title = btn.getAttribute('aria-label') || '';
-        showMedia(src, type, title);
-      });
-      // keyboard accessible (Enter/Space)
-      btn.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          btn.click();
-        }
-      });
-    });
-
-    // Photo click listeners
-    document.querySelectorAll('#galleryFoto img').forEach(img => {
-      img.addEventListener('click', () => {
-        showMedia(img.src, 'image', img.alt);
-      });
-      img.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          img.click();
-        }
-      });
-    });
-
-    // Close handlers
-    closeModal.addEventListener('click', closeModalFunc);
-    mediaModal.addEventListener('click', (e) => {
-      if (e.target === mediaModal) closeModalFunc();
-    });
-
-    // ESC to close
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !mediaModal.classList.contains('hidden')) {
-        closeModalFunc();
-      }
-    });
-  </script>
 </body>
 </html>
