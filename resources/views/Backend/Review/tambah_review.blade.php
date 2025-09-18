@@ -4,10 +4,10 @@
 <div class="content-wrapper">
     <!-- Content Header -->
     <section class="content-header">
-    <div class="container-fluid text-center">
-        <h2>Tambah Review</h2>
-    </div>
-</section>
+        <div class="container-fluid text-center">
+            <h2>Tambah Review</h2>
+        </div>
+    </section>
 
     <!-- Main Content -->
     <section class="content">
@@ -16,7 +16,7 @@
                 <div class="col-md-8">
                     <div class="card">
 
-                        <form action="{{ route('review.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('review.store') }}" method="POST">
                             @csrf
 
                             <div class="card-body">
@@ -53,15 +53,10 @@
                                         <option value="5">5 ⭐⭐⭐⭐⭐</option>
                                     </select>
                                 </div>
-
-                                <div class="form-group">
-                                    <label>Foto (Opsional)</label>
-                                    <input type="file" name="foto" class="form-control">
-                                </div>
                             </div>
 
                             <div class="card-footer">
-                               <button type="submit" class="btn btn-success">Simpan</button>
+                                <button type="submit" class="btn btn-success">Simpan</button>
                                 <a href="{{ route('review.index') }}" class="btn btn-secondary">Kembali</a>
                             </div>
                         </form>

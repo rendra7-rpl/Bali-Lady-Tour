@@ -26,6 +26,9 @@
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('template/plugins/summernote/summernote-bs4.min.css') }}">
 
+  <!-- Toastr CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
   <!-- Custom Override -->
   <style>
     /* Default AdminLTE behaviour */
@@ -291,6 +294,11 @@
 <script src="{{ asset('template/dist/js/demo.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('template/dist/js/pages/dashboard.js') }}"></script>
+
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+@stack('scripts')
 
 </body>
 </html>

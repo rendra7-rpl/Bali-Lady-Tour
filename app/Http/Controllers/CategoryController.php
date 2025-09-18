@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     // Tampilkan halaman index (daftar kategori)
-    public function index()
+    public function category()
     {
         // ambil semua kategori (urut terbaru dulu)
         $categories = Category::latest()->get();
