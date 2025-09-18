@@ -1,13 +1,28 @@
 @extends('Backend.Layout.admin')
+@push('css')
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+<!-- Toastr CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+@endpush
 @section('content')
-<div class="container-fluid mt-4">
-    <div class="card shadow-sm border-0">
-        <div class="card-header bg-white">
-            <h3 class="card-title m-0 text-dark fw-bold">Data Ulasan Pengguna</h3>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Data Kelebihan</h1>
+                </div>
+            </div>
         </div>
-
-        <div class="card-body">
+    </div>    
+  <section class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-body">
             {{-- Tombol Tambah Data --}}
             <div class="mb-3">
                 <a href="{{ route('review.create') }}" class="btn btn-success">
@@ -63,10 +78,13 @@
                 </table>
             </div>
         </div>
-    </div>
-</div>
+    </div>    
+        </div>
+      </div>
+    </section>
+@endsection
 
-{{-- SweetAlert2 --}}
+@push('scripts')
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     document.querySelectorAll('.delete').forEach(function(button) {
@@ -89,4 +107,32 @@
         });
     });
 </script>
-@endsection
+
+<!-- jQuery first -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<!-- Toastr Alerts -->
+<script>
+  @if (Session::has('Success'))
+    toastr.success("{{ Session::get('Success') }}");
+  @endif
+
+  @if (Session::has('update'))
+    toastr.success("{{ Session::get('update') }}");
+  @endif
+
+  @if (Session::has('delete'))
+    toastr.success("{{ Session::get('delete') }}");
+  @endif
+
+  @if (Session::has('error'))
+    toastr.error("{{ Session::get('error') }}");
+  @endif
+</script>
+@endpush

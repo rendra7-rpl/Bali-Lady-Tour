@@ -13,7 +13,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Data Program</h1>
+                    <h1 class="m-0">Data Kelebihan</h1>
                 </div>
             </div>
         </div>
@@ -67,7 +67,7 @@
                                         <img src="{{ asset('fotoprogram/'.$row->foto) }}" alt="{{ $row->title }}" class="img-thumbnail" style="max-height: 60px;">
                                     </td>
                                     <td>{{ $row->title }}</td>
-                                    <td>{{ $row->content }}</td>
+                                    <td>{!! $row->content !!}</td>
                                     
                                     <td>
                                         <a href="/tampilkanprogram/{{ $row->id }}" type="button" class="btn btn-info">Edit</a>

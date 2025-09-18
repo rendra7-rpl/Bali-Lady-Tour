@@ -1,7 +1,9 @@
-@extends('backend.layout.admin')
+@extends('Backend.Layout.admin')
 
 @section('content')
-<div class="container mt-4">
+<div class="content-wrapper">
+    <body>
+    <div class="container mt-4">
     <h2>Edit Review</h2>
 
     {{-- Notifikasi error --}}
@@ -59,4 +61,5 @@
         <a href="{{ route('review.index') }}" class="btn btn-secondary">Kembali</a>
     </form>
 </div>
+<body/
 @endsection

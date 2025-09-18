@@ -1,6 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ShortController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +26,10 @@ Route::get('/', function () {
 
 
 Route::get('/dashboard', [BeritaController::class, 'dashboard'])->name('dashboard');
+
+// ## SHORT CONTENT ## //
+Route::get('/short', [ShortController::class, 'short'])->name('short');
+
 
 // ## GALERY ## //
 Route::get('/galeri', [GaleriController::class, 'galeri'])->name('galeri');
@@ -52,3 +63,14 @@ Route::post('/simpan_review', [ReviewController::class, 'store'])->name('review.
 Route::get('/edit_review/{id}', [ReviewController::class, 'edit'])->name('review.edit');
 Route::post('/update_review/{id}', [ReviewController::class, 'update'])->name('review.update');
 Route::get('/delete_review/{id}', [ReviewController::class, 'destroy'])->name('review.destroy');
+
+//category
+
+Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
+Route::post('/category', [CategoryController::class, 'store'])->name('category.store');
+
+Route::get('/category/{id}/edit', [CategoryController::class, 'edit'])->name('category.edit');
+Route::put('/category/{id}', [CategoryController::class, 'update'])->name('category.update');
+Route::delete('/category/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
+
