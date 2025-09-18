@@ -29,6 +29,12 @@ Route::get('/dashboard', [BeritaController::class, 'dashboard'])->name('dashboar
 
 // ## SHORT CONTENT ## //
 Route::get('/short', [ShortController::class, 'short'])->name('short');
+Route::get('/tambahsc',[ShortController::class, 'tambahsc'])->name('tambahsc');
+Route::post('/insertsc',[ShortController::class, 'insertsc'])->name('insertsc');
+Route::get('/tampilkansc/{id}',[ShortController::class, 'tampilkansc'])->name('tampilkansc');
+Route::post('/updatesc/{id}',[ShortController::class, 'updatesc'])->name('updatesc');
+Route::get('/deletesc/{id}',[ShortController::class, 'deletesc'])->name('deletesc');
+
 
 
 // ## GALERY ## //

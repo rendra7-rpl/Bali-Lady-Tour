@@ -24,7 +24,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="/tambahprogram" class="btn btn-success">
+                            <a href="/tambahsc" class="btn btn-success">
                                 <i class="fas fa-plus"></i> Tambah Data
                             </a>
                         </div>
@@ -59,18 +59,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
+                                @foreach ($data as $index => $row)
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{ $index + $data->firstItem() }}</td>
+                                    <td>{{ $row->title }}</td>
+                                    <td>{!! $row->content !!}</td>
                                     
                                     <td>
-                                        <a href="" type="button" class="btn btn-info">Edit</a>
-                                        <a href="" class="btn btn-danger btn-sm delete">Delete</a>
+                                        <a href="/tampilkansc/{{ $row->id }}" type="button" class="btn btn-info">Edit</a>
+                                        <a href="/deletesc/{{ $row->id }}" class="btn btn-danger btn-sm delete">Delete</a>
                                     </td>
                                 </tr>
-                                
+                                @endforeach
                             </tbody>
                         </table>
                           

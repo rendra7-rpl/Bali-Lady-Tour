@@ -164,15 +164,15 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/venue" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Komunitas</p>
+                  <p>Booking Rental</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/tempat-sehat" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Klub</p>
+                  <p>Booking Tour</p>
                 </a>
               </li>
             </ul>

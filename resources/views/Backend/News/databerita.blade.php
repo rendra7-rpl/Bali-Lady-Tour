@@ -59,6 +59,7 @@
                                     <th width="5%">No</th>
                                     <th width="15%">Gambar</th>
                                     <th>Judul</th>
+                                    <th>Excerpt</th>
                                     <th width="15%">Tanggal</th>
                                     <th width="15%">Aksi</th>
                                 </tr>
@@ -71,6 +72,7 @@
                                         <img src="{{ asset('fotoberita/'.$row->foto) }}" alt="{{ $row->title }}" class="img-thumbnail" style="max-height: 60px;">
                                     </td>
                                     <td>{{ $row->title }}</td>
+                                    <td>{{ $row->excerpt }}</td>
                                     <td>{{ \Carbon\Carbon::parse($row->date)->format('d M Y') }}</td>
                                     <td>
                                         <a href="/tampilkandata/{{ $row->id }}" type="button" class="btn btn-info">Edit</a>
