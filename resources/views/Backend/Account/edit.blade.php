@@ -12,35 +12,35 @@
         </div>
     </div>    
 
-    <h1 class="text-center mb-4">Tambah Akun</h1>
+    <h1 class="text-center mb-4">Edit Akun</h1>
 
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-8">
                 <div class="card">
                     <div class="card-body">
-                        <form action="/insertacc" method="POST">
+                        <form action="/updateacc/{{ $data->id }}" method="POST">
                             @csrf
                             
                             {{-- Nama --}}
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nama</label>
                                 <input type="text" id="name" name="name" class="form-control" 
-                                       value="{{ old('name') }}" required>
+                                       value="{{ old('name', $data->name) }}" required>
                             </div>
 
                             {{-- Email --}}
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" id="email" name="email" class="form-control" 
-                                       value="{{ old('email') }}" required>
+                                       value="{{ old('email', $data->email) }}" required>
                             </div>
 
                             {{-- Password --}}
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" id="password" name="password" class="form-control" 
-                                       required>
+                                       value="{{ old('password', $data->password) }}" required>
                             </div>
 
                             {{-- Tombol Submit --}}

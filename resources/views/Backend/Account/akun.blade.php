@@ -1,11 +1,13 @@
 @extends('Backend.Layout.admin')
+
 @push('css')
 <!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Toastr CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 @endpush
+
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -13,12 +15,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Data Account</h1>
+                    <h1 class="m-0">Data Admin</h1>
                 </div>
             </div>
         </div>
     </div>    
-  <section class="content">
+
+    <section class="content">
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
@@ -31,9 +34,9 @@
                         <div class="col-md-6">
                             <div class="row justify-content-end">
                                 <div class="col-auto">
-                                    <form action="/programs" method="GET" class="form-inline">
+                                    <form action="/akun" method="GET" class="form-inline">
                                         <div class="input-group">
-                                            <input type="search" name="search" class="form-control" placeholder="Cari Akun...">
+                                            <input type="search" name="search" class="form-control" placeholder="Cari akun...">
                                             <div class="input-group-append">
                                                 <button type="submit" class="btn btn-primary">
                                                     <i class="fas fa-search"></i>
@@ -47,50 +50,58 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover">
                             <thead class="thead-light">
                                 <tr>
                                     <th width="5%">No</th>
-                                    <th>Username</th>
+                                    <th>Nama</th>
+                                    <th>Email</th>
                                     <th>Password</th>
-                                    <th width="15%">Aksi</th>
+                                    <th width="20%">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                               
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    
-                                    <td>
-                                        <a href="" type="button" class="btn btn-info">Edit</a>
-                                        <a href="" class="btn btn-danger btn-sm delete">Delete</a>
-                                    </td>
-                                </tr>
-                             
+                                @forelse ($data as $index => $row)
+                                    <tr>
+                                        <td>{{ $index + $data->firstItem() }}</td>
+                                        <td>{{ $row->name }}</td>
+                                        <td>{{ $row->email }}</td>
+                                        <td>{{ $row->password }}</td>
+                                        <td>
+                                            <a href="/tampilkanacc/{{ $row->id }}" class="btn btn-info btn-sm">Edit</a>
+                                            <a href="{{ url('/akun/delete/'.$row->id) }}" class="btn btn-danger btn-sm delete">Delete</a>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="4" class="text-center">Data tidak ditemukan</td>
+                                    </tr>
+                                @endforelse
                             </tbody>
                         </table>
-                          
+
+                        {{-- Pagination --}}
+                        {{ $data->links() }}
                     </div>
                 </div>
             </div>
         </div>
-      </div>
     </section>
+</div>
 @endsection
 
 @push('scripts')
-<!-- jQuery first -->
+<!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- SweetAlert2 -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- Toastr JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<!-- Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- Bootstrap Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Toastr Alerts -->
 <script>

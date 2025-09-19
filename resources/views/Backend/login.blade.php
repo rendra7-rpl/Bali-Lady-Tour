@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Log in (v2)</title>
+  <title>Bali Lady Tour | Log in</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -17,14 +17,17 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <!-- /.login-logo -->
-  <div class="card card-outline card-primary">
-    <div class="card-header text-center">
-      <a href="#" class="h1"><b>Lady</b>Tour</a>
-    </div>
+ <div class="card-header text-center">
+  <a href="#">
+    <img src="{{ asset('aset/logo.png') }}" alt="Logo" style="width:80px; height:auto;"><br>
+  </a>
+</div>
+
     <div class="card-body">
       <p class="login-box-msg">Masukan Akun Anda</p>
 
-      <form action="#" method="post">
+      <form action="/loginproses" method="post">
+        @csrf
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Email">
           <div class="input-group-append">
