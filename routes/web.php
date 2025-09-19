@@ -7,6 +7,7 @@ use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ShortController;
+use App\Http\Controllers\LoginController;
 
 
 /*
@@ -24,8 +25,13 @@ Route::get('/', function () {
     return view('Backend.Dashboard.dashboard');
 });
 
-
+Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/dashboard', [BeritaController::class, 'dashboard'])->name('dashboard');
+
+// ## LOGIN ACCOUNT ## //
+Route::get('/akun', [LoginController::class, 'akun'])->name('akun');
+Route::get('/add', [LoginController::class, 'add'])->name('add');
+
 
 // ## SHORT CONTENT ## //
 Route::get('/short', [ShortController::class, 'short'])->name('short');
