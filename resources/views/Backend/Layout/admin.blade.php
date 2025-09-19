@@ -231,7 +231,7 @@
 
           <!-- Accounts -->
           <li class="nav-item">
-            <a href="/accounts" class="nav-link">
+            <a href="/akun" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>Accounts</p>
             </a>
