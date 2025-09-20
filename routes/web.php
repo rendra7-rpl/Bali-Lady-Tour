@@ -29,6 +29,7 @@ Route::get('/', function () {
 Route::controller(LoginController::class)->group(function () {
     Route::get('/login', 'login')->name('login');
     Route::post('/loginproses', 'loginproses')->name('login.proses');
+    Route::get('/logout', 'logout')->name('logout');
 });
 
 Route::get('/dashboard', [BeritaController::class, 'dashboard'])->name('dashboard');

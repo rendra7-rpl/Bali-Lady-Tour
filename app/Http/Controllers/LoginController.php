@@ -31,6 +31,11 @@ class LoginController extends Controller
         ]);
     }
 
+    public function logout(){
+        Auth::logout();
+        return redirect('Backend.login');
+    }
+
     public function akun(Request $request)
     {
         if ($request->has('search')) {

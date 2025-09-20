@@ -67,7 +67,7 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a href="/login" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+        <a href="/logout" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
           Logout
         </a>
         <form id="logout-form" action="/login" method="GET" style="display: none;">
