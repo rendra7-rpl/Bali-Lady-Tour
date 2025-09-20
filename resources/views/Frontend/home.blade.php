@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bali Lady Tour - Home</title>
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            blue: {
+              700: '#013D9D',
+              800: '#002D7A',
+              900: '#001F5C',
+            },
+            yellow: {
+              500: '#FBBF24',
+              600: '#F59E0B',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Font Awesome CDN for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <header id="navbar" class="fixed w-full top-0 z-50 bg-transparent transition-colors duration-300 ease-in-out">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="Logo" class="h-10" />
+      </div>
+
+      <!-- Menu desktop -->
+      <nav class="hidden md:flex gap-6 font-medium">
+        <a href="home.html" class="nav-link text-gray-800">Home</a>
+        <a href="tourpackage.html" class="nav-link text-gray-800">Tour</a>
+        <a href="carrental.html" class="nav-link text-gray-800">Car Rental</a>
+        <a href="tourexperience.html" class="nav-link text-gray-800">Tour Experience</a>
+        <a href="articles.html" class="nav-link text-gray-800">Articles</a>
+      </nav>
+
+      <!-- Right Side -->
+      <div class="flex items-center space-x-4">
+        <!-- Language Dropdown -->
+      <div class="relative">
+        <button id="globeBtn" class="globe-icon text-white text-xl">🌐</button>
+        <div id="langMenu" class="hidden absolute right-0 mt-2 w-32 bg-white rounded shadow-lg">
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Indonesia</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">English</a>
+        </div>
+      </div>
+        <!-- Book Button -->
+        <a href="#"
+           class="hidden md:inline-block bg-yellow-500 text-white font-semibold px-4 py-2 rounded hover:bg-yellow-600 transition">
+           Book
+        </a>
+        <!-- Mobile menu button -->
+        <button id="menuBtn" class="md:hidden focus:outline-none">
+          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg"
+               class="h-8 w-8 text-gray-800 transition-colors duration-300" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu dropdown -->
+    <div id="mobileMenu" class="hidden flex-col md:hidden bg-white text-gray-800 absolute w-full left-0 top-full transition-all duration-300 shadow-md">
+      <div class="px-6 py-4 space-y-4">
+        <a href="home.html" class="mobile-link block hover:text-blue-700">Home</a>
+        <a href="tourpackage.html" class="mobile-link block hover:text-blue-700">Tour</a>
+        <a href="carrental.html" class="mobile-link block hover:text-blue-700">Car Rental</a>
+        <a href="tourexperience.html" class="mobile-link block hover:text-blue-700">Tour Experience</a>
+        <a href="articles.html" class="mobile-link block hover:text-blue-700">Articles</a>
+        <a href="#" class="block bg-yellow-500 px-4 py-2 rounded text-white font-semibold text-center">Book</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('assets/bali-lady.jpg');">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 max-w-3xl">
+        EXPLORE BALI
+      </h1>
+      <p class="text-white text-lg max-w-2xl mb-6">
+        Explore the miracles of Bali with Bali Lady Tours. Discover stunning landscapes, exciting adventures, and vibrant culture with our expert Female Tour Guide and driver. Book your unforgettable experience now!
+      </p>
+      <a href="#" class="inline-block bg-yellow-500 text-white font-semibold px-6 py-3 rounded hover:bg-yellow-600 transition w-max">
+        Ask Question
+      </a>
+    </div>
+  </section>
+
+  <!-- Top Values Section -->
+  <section class="container mx-auto px-6 py-16 text-center">
+    <h2 class="text-3xl font-bold mb-4">Top Values For You</h2>
+    <p class="text-gray-600 mb-12">Try variety of benefits after using our services</p>
+    <div class="grid grid-cols-1 sm:grid-cols-4 gap-8">
+      <div class="space-y-4">
+        <div class="mx-auto w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center text-white text-2xl">
+          <i class="fas fa-camera"></i>
+        </div>
+        <h3 class="font-bold text-lg">Documentation</h3>
+        <p class="text-gray-600 text-sm">Our female tour guide and driver will document your journey, capturing every memorable moment.</p>
+      </div>
+      <div class="space-y-4">
+        <div class="mx-auto w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center text-white text-2xl">
+          <i class="fas fa-calendar-check"></i>
+        </div>
+        <h3 class="font-bold text-lg">Easy Booking</h3>
+        <p class="text-gray-600 text-sm">Our seamless booking process ensures you can quickly arrange your trip, no matter where you are.</p>
+      </div>
+      <div class="space-y-4">
+        <div class="mx-auto w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center text-white text-2xl">
+          <i class="fas fa-star"></i>
+        </div>
+        <h3 class="font-bold text-lg">Best Tour Guide</h3>
+        <p class="text-gray-600 text-sm">Our experienced female tour guide and driver will help you through breathtaking landscapes and vibrant Balinese culture.</p>
+      </div>
+      <div class="space-y-4">
+        <div class="mx-auto w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center text-white text-2xl">
+          <i class="fas fa-smile"></i>
+        </div>
+        <h3 class="font-bold text-lg">Happy Tour</h3>
+        <p class="text-gray-600 text-sm">Authentic and exciting tour experience in Bali, ensuring a fun and memorable trip.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+<section class="container mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+  
+  <!-- Left: Images -->
+  <div class="grid grid-cols-2 gap-4">
+    <!-- Big image -->
+    <div class="col-span-2 row-span-2">
+      <img src="assets/gallery1.jpg" alt="About Bali Lady Tour 1" 
+           class="w-full h-full object-cover rounded-lg shadow-md" />
+    </div>
+    <!-- Small images -->
+    <img src="assets/gallery2.jpg" alt="About Bali Lady Tour 2" 
+         class="w-full h-40 object-cover rounded-lg shadow-md" />
+    <img src="assets/gallery3.jpg" alt="About Bali Lady Tour 3" 
+         class="w-full h-40 object-cover rounded-lg shadow-md" />
+  </div>
+
+  <!-- Right: Text -->
+  <div class="space-y-6">
+    <h2 class="text-sm font-bold text-gray-600 uppercase">About Bali Lady Tour</h2>
+    <h3 class="text-3xl font-bold leading-snug">
+      Discover Bali with Bali Lady Tour: Your <br/> Friendly and Experienced Guide
+    </h3>
+    <p class="text-gray-700">
+      Experience Bali in a whole new way with Bali Lady Tour, your friendly and experienced guide. 
+      Explore the island’s stunning natural beauty, from lush rice fields to amazing waterfalls. 
+      With Bali Lady Tour expert knowledge, you’ll find hidden gems, learn about local culture, 
+      and enjoy exciting adventures.
+    </p>
+    <p class="text-gray-700">
+      Bali Lady Tour tours offer the perfect mix of relaxation and fun. Whether you’re visiting ancient temples, 
+      tasting traditional Balinese food, or discovering less-known spots, Eva will make sure you have a memorable experience.
+    </p>
+  </div>
+</section>
+
+
+  <!-- Tour Packages Section -->
+  <section class="container mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold mb-8">Tour Packages</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <div class="relative">
+        <img src="assets/konten.jpg" alt="Package" class="w-full h-60 object-cover">
+        <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 text-white drop-shadow-lg text-center">
+          <h4 class="font-bold text-lg leading-snug">Package Bali <br> Sunrise Trekking</h4>
+        </div>
+      </div>
+      <div class="p-4">
+        <p class="text-gray-600 text-sm mb-4">
+          Start your day with an unforgettable sunrise trekking at Mount Batur...
+        </p>
+        <div class="flex items-center justify-between text-sm font-medium">
+          <p class="text-gray-700 flex items-center"><span class="mr-1">💰</span> USD 95 / Person</p>
+          <a href="#" class="text-pink-600 font-semibold hover:underline">VIEW DETAIL</a>
+        </div>
+      </div>
+    </div>
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <div class="relative">
+        <img src="assets/konten.jpg" alt="Package" class="w-full h-60 object-cover">
+        <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 text-white drop-shadow-lg text-center">
+          <h4 class="font-bold text-lg leading-snug">Package Bali <br> Sunrise Trekking</h4>
+        </div>
+      </div>
+      <div class="p-4">
+        <p class="text-gray-600 text-sm mb-4">
+          Start your day with an unforgettable sunrise trekking at Mount Batur...
+        </p>
+        <div class="flex items-center justify-between text-sm font-medium">
+          <p class="text-gray-700 flex items-center"><span class="mr-1">💰</span> USD 95 / Person</p>
+          <a href="#" class="text-pink-600 font-semibold hover:underline">VIEW DETAIL</a>
+        </div>
+      </div>
+    </div>
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <div class="relative">
+        <img src="assets/konten.jpg" alt="Package" class="w-full h-60 object-cover">
+        <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 text-white drop-shadow-lg text-center">
+          <h4 class="font-bold text-lg leading-snug">Package Bali <br> Sunrise Trekking</h4>
+        </div>
+      </div>
+      <div class="p-4">
+        <p class="text-gray-600 text-sm mb-4">
+          Start your day with an unforgettable sunrise trekking at Mount Batur...
+        </p>
+        <div class="flex items-center justify-between text-sm font-medium">
+          <p class="text-gray-700 flex items-center"><span class="mr-1">💰</span> USD 95 / Person</p>
+          <a href="#" class="text-pink-600 font-semibold hover:underline">VIEW DETAIL</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Car Rental Section -->
+  <section class="container mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold mb-8">Car Rental</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div class="bg-white shadow-md rounded-xl overflow-hidden relative">
+      <span class="absolute top-3 right-3 bg-yellow-300 text-xs font-semibold px-3 py-1 rounded-full">Mid Class</span>
+      <img src="https://www.indobalitour.com/public/uploads/car/car_242209020908_toyota-rush.png" alt="Innova Reborn" class="w-full h-40 object-contain bg-gray-100">
+
+      <div class="p-6">
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="text-lg font-bold">Innova Reborn</h3>
+            <p class="text-gray-500 text-sm">Passenger van</p>
+          </div>
+          <div class="text-right">
+            <p class="text-xs text-gray-500">From</p>
+            <p class="text-red-600 font-bold">Rp 999.999</p>
+            <p class="text-xs text-gray-500">per 10 hours <br> overtime 10% / hour</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-6 mt-4 text-gray-600 text-sm">
+          <span class="flex items-center gap-1"><i class="fa-solid fa-user-group"></i> 5</span>
+          <span class="flex items-center gap-1"><i class="fa-solid fa-suitcase"></i> 4</span>
+        </div>
+
+        <ul class="mt-4 space-y-2 text-sm text-gray-700">
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Luxury car 7 seater</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> 10 hours for fullday charter</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> English speaking driver</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Fuel</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Parking fee</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Mineral water</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Note: Depend on pickup area and destination</li>
+        </ul>
+
+        <!-- Tombol Book -->
+        <button onclick="openModal()" 
+          class="mt-6 w-full bg-indigo-900 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700">Book</button>
+      </div>
+    </div>
+      <div class="bg-white shadow-md rounded-xl overflow-hidden relative">
+      <span class="absolute top-3 right-3 bg-yellow-300 text-xs font-semibold px-3 py-1 rounded-full">Mid Class</span>
+      <img src="https://www.indobalitour.com/public/uploads/car/car_242209020908_toyota-rush.png" alt="Toyota Rush" class="w-full h-40 object-contain bg-gray-100">
+
+      <div class="p-6">
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="text-lg font-bold">Toyota Rush</h3>
+            <p class="text-gray-500 text-sm">Passenger van</p>
+          </div>
+          <div class="text-right">
+            <p class="text-xs text-gray-500">From</p>
+            <p class="text-red-600 font-bold">Rp 999.999</p>
+            <p class="text-xs text-gray-500">per 10 hours <br> overtime 10% / hour</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-6 mt-4 text-gray-600 text-sm">
+          <span class="flex items-center gap-1"><i class="fa-solid fa-user-group"></i> 5</span>
+          <span class="flex items-center gap-1"><i class="fa-solid fa-suitcase"></i> 4</span>
+        </div>
+
+        <ul class="mt-4 space-y-2 text-sm text-gray-700">
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Luxury car 7 seater</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> 10 hours for fullday charter</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> English speaking driver</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Fuel</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Parking fee</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Mineral water</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Note: Depend on pickup area and destination</li>
+        </ul>
+
+        <!-- Tombol Book -->
+        <button onclick="openModal()" 
+          class="mt-6 w-full bg-indigo-900 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700">Book</button>
+      </div>
+    </div>
+      <div class="bg-white shadow-md rounded-xl overflow-hidden relative">
+      <span class="absolute top-3 right-3 bg-yellow-300 text-xs font-semibold px-3 py-1 rounded-full">High Class</span>
+      <img src="https://www.indobalitour.com/public/uploads/car/car_242209020908_toyota-rush.png" alt="Toyota Alphard" class="w-full h-40 object-contain bg-gray-100">
+
+      <div class="p-6">
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="text-lg font-bold">Toyota Alphard</h3>
+            <p class="text-gray-500 text-sm">Passenger van</p>
+          </div>
+          <div class="text-right">
+            <p class="text-xs text-gray-500">From</p>
+            <p class="text-red-600 font-bold">Rp 999.999</p>
+            <p class="text-xs text-gray-500">per 10 hours <br> overtime 10% / hour</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-6 mt-4 text-gray-600 text-sm">
+          <span class="flex items-center gap-1"><i class="fa-solid fa-user-group"></i> 8</span>
+          <span class="flex items-center gap-1"><i class="fa-solid fa-suitcase"></i> 5</span>
+        </div>
+
+        <ul class="mt-4 space-y-2 text-sm text-gray-700">
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Luxury car 7 seater</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> 10 hours for fullday charter</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> English speaking driver</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Fuel</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Parking fee</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Mineral water</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Note: Depend on pickup area and destination</li>
+        </ul>
+
+        <!-- Tombol Book -->
+        <button onclick="openModal()" 
+          class="mt-6 w-full bg-indigo-900 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700">Book</button>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Articles Section -->
+<section class="container mx-auto px-6 py-16">
+  <h2 class="text-3xl font-bold mb-8 text-center">Our Articles</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+
+    <!-- Article 1 -->
+    <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+      <img src="assets/gallery1.jpg" alt="Bali Car Rental" class="w-full h-40 object-cover" />
+      <div class="p-4">
+        <p class="text-sm text-red-500 font-semibold mb-1">Travel Package</p>
+        <h3 class="font-bold text-lg text-gray-800 mb-2">
+          Paket Tour Nusa Penida: Snorkeling & Pantai Eksotis
+        </h3>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+          <span>April 06, 2025</span>
+          <a href="articlesdetail.html" class="text-red-500 font-medium hover:underline">Read More</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Article 2 -->
+    <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+      <img src="assets/gallery3.jpg" alt="Bali Tour Guide" class="w-full h-40 object-cover" />
+      <div class="p-4">
+        <p class="text-sm text-red-500 font-semibold mb-1">Travel Package</p>
+        <h3 class="font-bold text-lg text-gray-800 mb-2">
+          Paket Tour Nusa Penida: Snorkeling & Pantai Eksotis
+        </h3>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+          <span>April 06, 2025</span>
+          <a href="#" class="text-red-500 font-medium hover:underline">Read More</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Article 3 -->
+    <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+      <img src="assets/gallery5.jpg" alt="Nusa Penida Tour" class="w-full h-40 object-cover" />
+      <div class="p-4">
+        <p class="text-sm text-red-500 font-semibold mb-1">Travel Package</p>
+        <h3 class="font-bold text-lg text-gray-800 mb-2">
+          Paket Tour Nusa Penida: Snorkeling & Pantai Eksotis
+        </h3>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+          <span>April 06, 2025</span>
+          <a href="#" class="text-red-500 font-medium hover:underline">Read More</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+  <!-- Gallery Section -->
+<section class="container mx-auto px-6 py-16 overflow-hidden">
+  <h2 class="text-3xl font-bold mb-8 text-center">Our Gallery</h2>
+
+  <!-- Wrapper untuk animasi -->
+  <div class="relative">
+    <div class="flex gap-4 animate-scroll">
+      <!-- Gandakan isi supaya loop terlihat mulus -->
+      <img src="assets/gallery1.jpg" alt="Gallery 1" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="assets/gallery2.jpg" alt="Gallery 2" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="assets/gallery3.jpg" alt="Gallery 3" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="assets/gallery4.jpg" alt="Gallery 4" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="assets/gallery5.jpg" alt="Gallery 5" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+
+      <!-- Duplikat supaya seamless -->
+      <img src="assets/gallery1.jpg" alt="Gallery 1" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="assets/gallery2.jpg" alt="Gallery 2" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="assets/gallery3.jpg" alt="Gallery 3" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="assets/gallery4.jpg" alt="Gallery 4" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="assets/gallery5.jpg" alt="Gallery 5" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+    </div>
+  </div>
+</section>
+
+<!-- Tambahkan CSS -->
+<style>
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+</style>
+
+
+  <!-- Customer Reviews Section -->
+<section class="container mx-auto px-6 py-16">
+  <h2 class="text-3xl font-bold mb-8 text-center">Our Happy Customer Reviews</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- Review 1 -->
+    <blockquote class="bg-yellow-100 p-6 rounded shadow flex flex-col justify-between h-full">
+      <div>
+        <div class="flex text-yellow-500 mb-3">
+          ★★★★★
+        </div>
+        <p class="italic">
+          "The Bali Lady Tour package was absolutely amazing! From the airport pickup to the full-day trip to Ubud and Kintamani, everything was perfectly arranged. The car was comfortable, the driver was friendly, and the guide shared so much about Balinese culture. Highly recommended!"
+        </p>
+      </div>
+      <footer class="mt-4 font-semibold">- Andrew W</footer>
+    </blockquote>
+
+    <!-- Review 2 -->
+    <blockquote class="bg-yellow-100 p-6 rounded shadow flex flex-col justify-between h-full">
+      <div>
+        <div class="flex text-yellow-500 mb-3">
+          ★★★★★
+        </div>
+        <p class="italic">
+          "I rented a car from Bali Lady Tour for three days and had a fantastic experience. The car was spotless and well-maintained, the booking process was quick, and the price was very reasonable. It made exploring Bali so easy and stress-free."
+        </p>
+      </div>
+      <footer class="mt-4 font-semibold">- Clara S</footer>
+    </blockquote>
+
+    <!-- Review 3 -->
+    <blockquote class="bg-yellow-100 p-6 rounded shadow flex flex-col justify-between h-full">
+      <div>
+        <div class="flex text-yellow-500 mb-3">
+          ★★★★★
+        </div>
+        <p class="italic">
+          "The Nusa Penida tour with Bali Lady Tour was the highlight of my holiday! The guide was super friendly, the photo spots were well planned, and lunch was delicious. Every little detail was taken care of, and we truly felt like VIP guests. Thank you Bali Lady Tour!"
+        </p>
+      </div>
+      <footer class="mt-4 font-semibold">- Michael T</footer>
+    </blockquote>
+
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer class="bg-white text-gray-700 py-12">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <img src="assets/logo.png" alt="Logo" class="h-14 mb-4 max-w-full" />
+        <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+          With our reliable Bali Lady Tour services, you can explore breathtaking islands,
+          soak up the sun, and travel comfortably.
+        </p>
+        <a href="#" class="inline-block bg-indigo-900 text-white px-6 py-2 rounded-full font-semibold hover:bg-indigo-800 transition">Contact</a>
+      </div>
+      <div>
+        <h4 class="font-bold text-indigo-900 mb-4 uppercase">Menu</h4>
+        <ul class="space-y-2 text-gray-600">
+          <li><a href="#" class="hover:text-indigo-900">Home</a></li>
+          <li><a href="#" class="hover:text-indigo-900">Tour</a></li>
+          <li><a href="#" class="hover:text-indigo-900">Car Rental</a></li>
+          <li><a href="#" class="hover:text-indigo-900">Tour Experience</a></li>
+          <li><a href="#" class="hover:text-indigo-900">Articles</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-indigo-900 mb-4 uppercase">Info</h4>
+        <ul class="space-y-2 text-gray-600">
+          <li><a href="#" class="hover:text-indigo-900">FAQs</a></li>
+          <li><a href="#" class="hover:text-indigo-900">Support Center</a></li>
+          <li><a href="#" class="hover:text-indigo-900">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-indigo-900 mb-4 uppercase">Social</h4>
+        <ul class="space-y-2 text-gray-600">
+          <li><a href="#" class="hover:text-indigo-900">Instagram</a></li>
+          <li><a href="#" class="hover:text-indigo-900">Facebook</a></li>
+          <li><a href="#" class="hover:text-indigo-900">Youtube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container mx-auto px-6 text-center mt-8 pt-4 border-t border-gray-300 text-sm text-gray-500">
+      <p class="md:text-left">© 2025 baliladytour.id All Rights Reserved </p>
+      <p class="md:text-right">Designed by <span class="font-medium text-indigo-900">IndoAppsSolusindo</span></p>
+    </div>
+  </footer>
+
+  <script>
+  const navbar = document.getElementById('navbar');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const globeBtn = document.getElementById('globeBtn');
+  const globeIcon = document.querySelector('.globe-icon');
+  const langMenu = document.getElementById('langMenu');
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+
+  const SCROLL_THRESHOLD = 80;
+
+  function applyTopState() {
+    // Navbar transparan
+    navbar.classList.remove('bg-white', 'shadow-md');
+    navbar.classList.add('bg-transparent');
+
+    // Desktop links putih
+    navLinks.forEach(a => {
+      a.classList.remove('text-gray-800');
+      a.classList.add('text-white');
+    });
+
+    // Icon putih
+    globeIcon.classList.add('text-white');
+    globeIcon.classList.remove('text-gray-800');
+    menuIcon.classList.add('text-white');
+    menuIcon.classList.remove('text-gray-800');
+
+    // Mobile menu transparan penuh
+    mobileMenu.classList.remove('bg-white', 'text-gray-800', 'bg-white/70');
+    mobileMenu.classList.add('bg-transparent', 'text-white');
+  }
+
+  function applyScrolledState() {
+    // Navbar putih solid
+    navbar.classList.remove('bg-transparent');
+    navbar.classList.add('bg-white', 'shadow-md');
+
+    // Desktop links gelap
+    navLinks.forEach(a => {
+      a.classList.remove('text-white');
+      a.classList.add('text-gray-800');
+    });
+
+    // Icon gelap
+    globeIcon.classList.add('text-gray-800');
+    globeIcon.classList.remove('text-white');
+    menuIcon.classList.add('text-gray-800');
+    menuIcon.classList.remove('text-white');
+
+    // Mobile menu putih solid
+    mobileMenu.classList.remove('bg-transparent', 'text-white');
+    mobileMenu.classList.add('bg-white', 'text-gray-800');
+  }
+
+  function handleNavbar() {
+    if (window.scrollY > SCROLL_THRESHOLD) {
+      applyScrolledState();
+    } else {
+      applyTopState();
+    }
+  }
+
+  // Jalankan saat load & scroll
+  window.addEventListener('scroll', handleNavbar);
+  document.addEventListener('DOMContentLoaded', handleNavbar);
+
+  // Toggle mobile menu
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    handleNavbar();
+  });
+
+  // Toggle language
+  globeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langMenu.classList.toggle('hidden');
+  });
+
+  // Tutup dropdown language kalau klik di luar
+  window.addEventListener('click', (e) => {
+    if (!globeBtn.contains(e.target) && !langMenu.contains(e.target)) {
+      langMenu.classList.add('hidden');
+    }
+  });
+</script>
+</body>
+</html>

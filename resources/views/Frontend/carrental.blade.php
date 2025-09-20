@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Bali Lady Tour Packages</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans antialiased">
+
+<!-- Navbar -->
+  <header id="navbar" class="fixed w-full top-0 z-50 bg-transparent transition-colors duration-300 ease-in-out">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="Logo" class="h-10" />
+      </div>
+
+      <!-- Menu desktop -->
+      <nav class="hidden md:flex gap-6 font-medium">
+        <a href="home.html" class="nav-link text-gray-800">Home</a>
+        <a href="tourpackage.html" class="nav-link text-gray-800">Tour</a>
+        <a href="carrental.html" class="nav-link text-gray-800">Car Rental</a>
+        <a href="tourexperience.html" class="nav-link text-gray-800">Tour Experience</a>
+        <a href="articles.html" class="nav-link text-gray-800">Articles</a>
+      </nav>
+
+      <!-- Right Side -->
+      <div class="flex items-center space-x-4">
+        <!-- Language Dropdown -->
+      <div class="relative">
+        <button id="globeBtn" class="globe-icon text-white text-xl">🌐</button>
+        <div id="langMenu" class="hidden absolute right-0 mt-2 w-32 bg-white rounded shadow-lg">
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Indonesia</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">English</a>
+        </div>
+      </div>
+        <!-- Book Button -->
+        <a href="#"
+           class="hidden md:inline-block bg-yellow-500 text-white font-semibold px-4 py-2 rounded hover:bg-yellow-600 transition">
+           Book
+        </a>
+        <!-- Mobile menu button -->
+        <button id="menuBtn" class="md:hidden focus:outline-none">
+          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg"
+               class="h-8 w-8 text-gray-800 transition-colors duration-300" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu dropdown -->
+    <div id="mobileMenu" class="hidden flex-col md:hidden bg-white text-gray-800 absolute w-full left-0 top-full transition-all duration-300 shadow-md">
+      <div class="px-6 py-4 space-y-4">
+        <a href="home.html" class="mobile-link block hover:text-blue-700">Home</a>
+        <a href="tourpackage.html" class="mobile-link block hover:text-blue-700">Tour</a>
+        <a href="carrental.html" class="mobile-link block hover:text-blue-700">Car Rental</a>
+        <a href="tourexperience.html" class="mobile-link block hover:text-blue-700">Tour Experience</a>
+        <a href="articles.html" class="mobile-link block hover:text-blue-700">Articles</a>
+        <a href="#" class="block bg-yellow-500 px-4 py-2 rounded text-white font-semibold text-center">Book</a>
+      </div>
+    </div>
+  </header>
+
+<!-- Hero -->
+<section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('assets/bg1.png');">
+  <div class="absolute inset-0 bg-black/45"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
+    <div class="max-w-xl">
+      <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4">
+        LET'S SEE OUR <br/> CAR RENTAL
+      </h1>
+      <p class="text-white/90 text-sm sm:text-base md:text-lg">
+         Discover a variety of tour packages tailored to your interests and preferences. From serene beach escapes to thrilling adventure tours, Eva Bali Tours offers something for everyone. Explore our packages and find the perfect one to make your Bali experience truly unique and memorable.
+    </div>
+  </div>
+</section>
+
+   <!-- Car Rental Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-2">Car Rental</h2>
+      <p class="text-gray-500 mb-10">Try Variety of Elements when using our services</p>
+
+      <section class="py-12">
+  <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
+
+    <!-- Card 1 -->
+    <div class="bg-white shadow-md rounded-xl overflow-hidden relative">
+      <span class="absolute top-3 right-3 bg-yellow-300 text-xs font-semibold px-3 py-1 rounded-full">Mid Class</span>
+      <img src="https://i.ibb.co/93N12Rt/car2.png" alt="Innova Reborn" class="w-full h-40 object-contain bg-gray-100">
+
+      <div class="p-6">
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="text-lg font-bold">Innova Reborn</h3>
+            <p class="text-gray-500 text-sm">Passenger van</p>
+          </div>
+          <div class="text-right">
+            <p class="text-xs text-gray-500">From</p>
+            <p class="text-red-600 font-bold">Rp 999.999</p>
+            <p class="text-xs text-gray-500">per 10 hours <br> overtime 10% / hour</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-6 mt-4 text-gray-600 text-sm">
+        </div>
+
+        <ul class="mt-4 space-y-2 text-sm text-gray-700">
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Luxury car 7 seater</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> 10 hours for fullday charter</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> English speaking driver</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Fuel</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Parking fee</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Mineral water</li>
+          <li class="flex items-center gap-2"><span class="text-yellow-500">✔</span> Note: Depend on pickup area and destination</li>
+        </ul>
+
+        <!-- Tombol Book -->
+        <button onclick="openModal()" 
+          class="mt-6 w-full bg-indigo-900 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700">Book</button>
+      </div>
+    </div>
+
+    <!-- Tambahkan Card 2, Card 3, dst... dengan struktur yang sama -->
+    
+  </div>
+</section>
+
+<!-- Modal (cukup satu kali) -->
+<div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <div class="bg-white rounded-lg shadow-lg w-full max-w-2xl p-6 relative">
+
+    <!-- Tombol Close -->
+    <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">✕</button>
+
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">Booking Rental Mobil</h2>
+
+    <!-- FORM -->
+    <form class="space-y-1">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Nama Lengkap</label>
+          <input type="text" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Nomor Telepon</label>
+          <input type="text" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Nama Hotel</label>
+          <input type="email" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Link Gmaps</label>
+          <input type="text" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Pilih Mobil</label>
+          <select class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+            <option>Avanza - Rp 500.000/hari</option>
+            <option>Innova Reborn - Rp 800.000/hari</option>
+            <option>Alphard - Rp 1.200.000/hari</option>
+            <option>Fortuner - Rp 1.500.000/hari</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Tipe Sewa</label>
+          <select class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+            <option>Harian</option>
+            <option>Mingguan</option>
+            <option>Bulanan</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Tanggal Mulai</label>
+          <input type="date" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Tanggal Selesai</label>
+          <input type="date" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Lokasi Penjemputan</label>
+          <input type="text" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Lokasi Pengembalian</label>
+          <input type="text" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300">
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-600">Catatan Tambahan</label>
+        <textarea rows="3" class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring focus:ring-indigo-300"></textarea>
+      </div>
+
+      <div class="text-right">
+        <button type="submit" class="bg-indigo-900 text-white px-6 py-2 rounded-lg font-semibold hover:bg-indigo-700">
+          Kirim Booking
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Script Modal -->
+<script>
+  function openModal() {
+    document.getElementById('bookingModal').classList.remove('hidden');
+    document.getElementById('bookingModal').classList.add('flex');
+  }
+  function closeModal() {
+    document.getElementById('bookingModal').classList.add('hidden');
+    document.getElementById('bookingModal').classList.remove('flex');
+    
+  }
+  
+</script>
+<!-- Pagination -->
+  <div class="flex justify-center mt-10">
+    <nav class="inline-flex -space-x-px text-sm">
+      <a href="#" class="px-4 py-2 border border-gray-300 bg-red-600 text-white font-semibold">1</a>
+      <a href="#" class="px-4 py-2 border border-gray-300 text-blue-600 hover:bg-gray-100">2</a>
+      <a href="#" class="px-4 py-2 border border-gray-300 text-blue-600 hover:bg-gray-100">3</a>
+      <a href="#" class="px-4 py-2 border border-gray-300 text-blue-600 hover:bg-gray-100">Next</a>
+      <a href="#" class="px-4 py-2 border border-gray-300 text-blue-600 hover:bg-gray-100">Last</a>
+    </nav>
+  </div>
+</section>
+<!-- Footer -->
+  <footer class="bg-white text-gray-700 py-12">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <img src="assets/logo.png" alt="Logo" class="h-14 mb-4 max-w-full" />
+        <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+          With our reliable Bali Lady Tour services, you can explore breathtaking islands,
+          soak up the sun, and travel comfortably.
+        </p>
+        <a href="#" class="inline-block bg-indigo-900 text-white px-6 py-2 rounded-full font-semibold hover:bg-indigo-800 transition">Contact</a>
+      </div>
+      <div>
+        <h4 class="font-bold text-indigo-900 mb-4 uppercase">Menu</h4>
+        <ul class="space-y-2 text-gray-600">
+          <li><a href="#" class="hover:text-indigo-900">Home</a></li>
+          <li><a href="#" class="hover:text-indigo-900">Tour</a></li>
+          <li><a href="#" class="hover:text-indigo-900">Car Rental</a></li>
+          <li><a href="#" class="hover:text-indigo-900">Tour Experience</a></li>
+          <li><a href="#" class="hover:text-indigo-900">Articles</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-indigo-900 mb-4 uppercase">Info</h4>
+        <ul class="space-y-2 text-gray-600">
+          <li><a href="#" class="hover:text-indigo-900">FAQs</a></li>
+          <li><a href="#" class="hover:text-indigo-900">Support Center</a></li>
+          <li><a href="#" class="hover:text-indigo-900">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-indigo-900 mb-4 uppercase">Social</h4>
+        <ul class="space-y-2 text-gray-600">
+          <li><a href="#" class="hover:text-indigo-900">Instagram</a></li>
+          <li><a href="#" class="hover:text-indigo-900">Facebook</a></li>
+          <li><a href="#" class="hover:text-indigo-900">Youtube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container mx-auto px-6 text-center mt-8 pt-4 border-t border-gray-300 text-sm text-gray-500">
+      <p class="md:text-left">© 2025 baliladytour.id All Rights Reserved </p>
+      <p class="md:text-right">Designed by <span class="font-medium text-indigo-900">IndoAppsSolusindo</span></p>
+    </div>
+  </footer>
+
+<!-- Script -->
+<script>
+  const navbar = document.getElementById('navbar');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const globeBtn = document.getElementById('globeBtn');
+  const globeIcon = document.querySelector('.globe-icon');
+  const langMenu = document.getElementById('langMenu');
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+
+  const SCROLL_THRESHOLD = 80;
+
+  function applyTopState() {
+    // Navbar transparan
+    navbar.classList.remove('bg-white', 'shadow-md');
+    navbar.classList.add('bg-transparent');
+
+    // Desktop links putih
+    navLinks.forEach(a => {
+      a.classList.remove('text-gray-800');
+      a.classList.add('text-white');
+    });
+
+    // Icon putih
+    globeIcon.classList.add('text-white');
+    globeIcon.classList.remove('text-gray-800');
+    menuIcon.classList.add('text-white');
+    menuIcon.classList.remove('text-gray-800');
+
+    // Mobile menu transparan penuh
+    mobileMenu.classList.remove('bg-white', 'text-gray-800', 'bg-white/70');
+    mobileMenu.classList.add('bg-transparent', 'text-white');
+  }
+
+  function applyScrolledState() {
+    // Navbar putih solid
+    navbar.classList.remove('bg-transparent');
+    navbar.classList.add('bg-white', 'shadow-md');
+
+    // Desktop links gelap
+    navLinks.forEach(a => {
+      a.classList.remove('text-white');
+      a.classList.add('text-gray-800');
+    });
+
+    // Icon gelap
+    globeIcon.classList.add('text-gray-800');
+    globeIcon.classList.remove('text-white');
+    menuIcon.classList.add('text-gray-800');
+    menuIcon.classList.remove('text-white');
+
+    // Mobile menu putih solid
+    mobileMenu.classList.remove('bg-transparent', 'text-white');
+    mobileMenu.classList.add('bg-white', 'text-gray-800');
+  }
+
+  function handleNavbar() {
+    if (window.scrollY > SCROLL_THRESHOLD) {
+      applyScrolledState();
+    } else {
+      applyTopState();
+    }
+  }
+
+  // Jalankan saat load & scroll
+  window.addEventListener('scroll', handleNavbar);
+  document.addEventListener('DOMContentLoaded', handleNavbar);
+
+  // Toggle mobile menu
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    handleNavbar();
+  });
+
+  // Toggle language
+  globeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langMenu.classList.toggle('hidden');
+  });
+
+  // Tutup dropdown language kalau klik di luar
+  window.addEventListener('click', (e) => {
+    if (!globeBtn.contains(e.target) && !langMenu.contains(e.target)) {
+      langMenu.classList.add('hidden');
+    }
+  });
+</script>
+</body>
+</html>
