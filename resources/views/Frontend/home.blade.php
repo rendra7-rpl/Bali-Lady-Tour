@@ -1,98 +1,94 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bali Lady Tour - Home</title>
-  <link rel="icon" href="assets/logo.png" type="image/png" />
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            blue: {
-              700: '#013D9D',
-              800: '#002D7A',
-              900: '#001F5C',
-            },
-            yellow: {
-              500: '#FBBF24',
-              600: '#F59E0B',
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title', 'Bali Lady Tour')</title>
+    <link rel="icon" href="{{ asset('frontend/assets/logo.png') }}" type="image/png" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blue: {
+                            700: '#013D9D',
+                            800: '#002D7A',
+                            900: '#001F5C',
+                        },
+                        yellow: {
+                            500: '#FBBF24',
+                            600: '#F59E0B',
+                        }
+                    }
+                }
             }
-          }
         }
-      }
-    }
-  </script>
-  <!-- Font Awesome CDN for icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  />
+    </script>
+
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    @stack('css')
 </head>
 <body class="bg-white text-gray-800 font-sans">
+    <!-- Navbar -->
+    <header id="navbar" class="fixed w-full top-0 z-50 bg-transparent transition-colors duration-300 ease-in-out">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <img src="{{ asset('frontend/assets/logo.png') }}" alt="Logo" class="h-10" />
+            </div>
 
-  <!-- Navbar -->
-  <header id="navbar" class="fixed w-full top-0 z-50 bg-transparent transition-colors duration-300 ease-in-out">
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-      <!-- Logo -->
-      <div class="flex items-center gap-3">
-        <img src="assets/logo.png" alt="Logo" class="h-10" />
-      </div>
+            <!-- Menu desktop -->
+            <nav class="hidden md:flex gap-6 font-medium">
+                <a href="{{ url('/') }}" class="nav-link text-white">Home</a>
+                <a href="{{ url('/tourpackage') }}" class="nav-link text-white">Tour</a>
+                <a href="{{ url('/carrental') }}" class="nav-link text-white">Car Rental</a>
+                <a href="{{ url('/tourexperience') }}" class="nav-link text-white">Tour Experience</a>
+                <a href="{{ url('/articles') }}" class="nav-link text-white">Articles</a>
+            </nav>
 
-      <!-- Menu desktop -->
-      <nav class="hidden md:flex gap-6 font-medium">
-        <a href="home.html" class="nav-link text-gray-800">Home</a>
-        <a href="tourpackage.html" class="nav-link text-gray-800">Tour</a>
-        <a href="carrental.html" class="nav-link text-gray-800">Car Rental</a>
-        <a href="tourexperience.html" class="nav-link text-gray-800">Tour Experience</a>
-        <a href="articles.html" class="nav-link text-gray-800">Articles</a>
-      </nav>
-
-      <!-- Right Side -->
-      <div class="flex items-center space-x-4">
-        <!-- Language Dropdown -->
-      <div class="relative">
-        <button id="globeBtn" class="globe-icon text-white text-xl">🌐</button>
-        <div id="langMenu" class="hidden absolute right-0 mt-2 w-32 bg-white rounded shadow-lg">
-          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Indonesia</a>
-          <a href="#" class="block px-4 py-2 hover:bg-gray-100">English</a>
+            <!-- Right Side -->
+            <div class="flex items-center space-x-4">
+                <!-- Language Dropdown -->
+                <div class="relative">
+                    <button id="globeBtn" class="globe-icon text-white text-xl">🌐</button>
+                    <div id="langMenu" class="hidden absolute right-0 mt-2 w-32 bg-white rounded shadow-lg">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Indonesia</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">English</a>
+                    </div>
+                </div>
+                <!-- Book Button -->
+                <a href="#" class="hidden md:inline-block bg-yellow-500 text-white font-semibold px-4 py-2 rounded hover:bg-yellow-600 transition">
+                    Book
+                </a>
+                <!-- Mobile menu button -->
+                <button id="menuBtn" class="md:hidden focus:outline-none">
+                    <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-800 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
         </div>
-      </div>
-        <!-- Book Button -->
-        <a href="#"
-           class="hidden md:inline-block bg-yellow-500 text-white font-semibold px-4 py-2 rounded hover:bg-yellow-600 transition">
-           Book
-        </a>
-        <!-- Mobile menu button -->
-        <button id="menuBtn" class="md:hidden focus:outline-none">
-          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg"
-               class="h-8 w-8 text-gray-800 transition-colors duration-300" fill="none"
-               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </div>
 
-    <!-- Mobile menu dropdown -->
-    <div id="mobileMenu" class="hidden flex-col md:hidden bg-white text-gray-800 absolute w-full left-0 top-full transition-all duration-300 shadow-md">
-      <div class="px-6 py-4 space-y-4">
-        <a href="home.html" class="mobile-link block hover:text-blue-700">Home</a>
-        <a href="tourpackage.html" class="mobile-link block hover:text-blue-700">Tour</a>
-        <a href="carrental.html" class="mobile-link block hover:text-blue-700">Car Rental</a>
-        <a href="tourexperience.html" class="mobile-link block hover:text-blue-700">Tour Experience</a>
-        <a href="articles.html" class="mobile-link block hover:text-blue-700">Articles</a>
-        <a href="#" class="block bg-yellow-500 px-4 py-2 rounded text-white font-semibold text-center">Book</a>
-      </div>
-    </div>
-  </header>
+        <!-- Mobile menu dropdown -->
+        <div id="mobileMenu" class="hidden flex-col md:hidden bg-white text-gray-800 absolute w-full left-0 top-full transition-all duration-300 shadow-md">
+            <div class="px-6 py-4 space-y-4">
+                <a href="{{ url('/') }}" class="mobile-link block hover:text-blue-700">Home</a>
+                <a href="{{ url('/tourpackage') }}" class="mobile-link block hover:text-blue-700">Tour</a>
+                <a href="{{ url('/carrental') }}" class="mobile-link block hover:text-blue-700">Car Rental</a>
+                <a href="{{ url('/tourexperience') }}" class="mobile-link block hover:text-blue-700">Tour Experience</a>
+                <a href="{{ url('/articles') }}" class="mobile-link block hover:text-blue-700">Articles</a>
+                <a href="#" class="block bg-yellow-500 px-4 py-2 rounded text-white font-semibold text-center">Book</a>
+            </div>
+        </div>
+    </header>
 
   <!-- Hero Section -->
-  <section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('assets/bali-lady.jpg');">
+  <section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('{{ asset('frontend/assets/bali-lady.jpg') }}')">
     <div class="absolute inset-0 bg-black/40"></div>
     <div class="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center">
       <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 max-w-3xl">
@@ -145,18 +141,18 @@
 
   <!-- About Section -->
 <section class="container mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-  
+
   <!-- Left: Images -->
   <div class="grid grid-cols-2 gap-4">
     <!-- Big image -->
     <div class="col-span-2 row-span-2">
-      <img src="assets/gallery1.jpg" alt="About Bali Lady Tour 1" 
+      <img src="{{ asset('frontend/assets/gallery1.jpg') }}" alt="About Bali Lady Tour 1"
            class="w-full h-full object-cover rounded-lg shadow-md" />
     </div>
     <!-- Small images -->
-    <img src="assets/gallery2.jpg" alt="About Bali Lady Tour 2" 
+    <img src="{{ asset('frontend/assets/gallery2.jpg') }}" alt="About Bali Lady Tour 2"
          class="w-full h-40 object-cover rounded-lg shadow-md" />
-    <img src="assets/gallery3.jpg" alt="About Bali Lady Tour 3" 
+    <img src="{{ asset('frontend/assets/gallery3.jpg') }}" alt="About Bali Lady Tour 3"
          class="w-full h-40 object-cover rounded-lg shadow-md" />
   </div>
 
@@ -167,13 +163,13 @@
       Discover Bali with Bali Lady Tour: Your <br/> Friendly and Experienced Guide
     </h3>
     <p class="text-gray-700">
-      Experience Bali in a whole new way with Bali Lady Tour, your friendly and experienced guide. 
-      Explore the island’s stunning natural beauty, from lush rice fields to amazing waterfalls. 
-      With Bali Lady Tour expert knowledge, you’ll find hidden gems, learn about local culture, 
+      Experience Bali in a whole new way with Bali Lady Tour, your friendly and experienced guide.
+      Explore the island's stunning natural beauty, from lush rice fields to amazing waterfalls.
+      With Bali Lady Tour expert knowledge, you'll find hidden gems, learn about local culture,
       and enjoy exciting adventures.
     </p>
     <p class="text-gray-700">
-      Bali Lady Tour tours offer the perfect mix of relaxation and fun. Whether you’re visiting ancient temples, 
+      Bali Lady Tour tours offer the perfect mix of relaxation and fun. Whether you're visiting ancient temples,
       tasting traditional Balinese food, or discovering less-known spots, Eva will make sure you have a memorable experience.
     </p>
   </div>
@@ -186,7 +182,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
       <div class="bg-white rounded-lg shadow-md overflow-hidden">
       <div class="relative">
-        <img src="assets/konten.jpg" alt="Package" class="w-full h-60 object-cover">
+        <img src="{{ asset('frontend/assets/konten.jpg') }}" alt="Package" class="w-full h-60 object-cover">
         <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 text-white drop-shadow-lg text-center">
           <h4 class="font-bold text-lg leading-snug">Package Bali <br> Sunrise Trekking</h4>
         </div>
@@ -203,7 +199,7 @@
     </div>
       <div class="bg-white rounded-lg shadow-md overflow-hidden">
       <div class="relative">
-        <img src="assets/konten.jpg" alt="Package" class="w-full h-60 object-cover">
+        <img src="{{ asset('frontend/assets/konten.jpg') }}" alt="Package" class="w-full h-60 object-cover">
         <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 text-white drop-shadow-lg text-center">
           <h4 class="font-bold text-lg leading-snug">Package Bali <br> Sunrise Trekking</h4>
         </div>
@@ -220,7 +216,7 @@
     </div>
       <div class="bg-white rounded-lg shadow-md overflow-hidden">
       <div class="relative">
-        <img src="assets/konten.jpg" alt="Package" class="w-full h-60 object-cover">
+        <img src="{{ asset('frontend/assets/konten.jpg') }}" alt="Package" class="w-full h-60 object-cover">
         <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 text-white drop-shadow-lg text-center">
           <h4 class="font-bold text-lg leading-snug">Package Bali <br> Sunrise Trekking</h4>
         </div>
@@ -275,7 +271,7 @@
         </ul>
 
         <!-- Tombol Book -->
-        <button onclick="openModal()" 
+        <button onclick="openModal()"
           class="mt-6 w-full bg-indigo-900 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700">Book</button>
       </div>
     </div>
@@ -312,7 +308,7 @@
         </ul>
 
         <!-- Tombol Book -->
-        <button onclick="openModal()" 
+        <button onclick="openModal()"
           class="mt-6 w-full bg-indigo-900 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700">Book</button>
       </div>
     </div>
@@ -349,7 +345,7 @@
         </ul>
 
         <!-- Tombol Book -->
-        <button onclick="openModal()" 
+        <button onclick="openModal()"
           class="mt-6 w-full bg-indigo-900 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700">Book</button>
       </div>
     </div>
@@ -363,7 +359,7 @@
 
     <!-- Article 1 -->
     <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
-      <img src="assets/gallery1.jpg" alt="Bali Car Rental" class="w-full h-40 object-cover" />
+      <img src="{{ asset('frontend/assets/gallery1.jpg') }}" alt="Bali Car Rental" class="w-full h-40 object-cover" />
       <div class="p-4">
         <p class="text-sm text-red-500 font-semibold mb-1">Travel Package</p>
         <h3 class="font-bold text-lg text-gray-800 mb-2">
@@ -371,14 +367,14 @@
         </h3>
         <div class="flex items-center justify-between text-sm text-gray-500">
           <span>April 06, 2025</span>
-          <a href="articlesdetail.html" class="text-red-500 font-medium hover:underline">Read More</a>
+          <a href="{{ url('/articlesdetail') }}" class="text-red-500 font-medium hover:underline">Read More</a>
         </div>
       </div>
     </article>
 
     <!-- Article 2 -->
     <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
-      <img src="assets/gallery3.jpg" alt="Bali Tour Guide" class="w-full h-40 object-cover" />
+      <img src="{{ asset('frontend/assets/gallery3.jpg') }}" alt="Bali Tour Guide" class="w-full h-40 object-cover" />
       <div class="p-4">
         <p class="text-sm text-red-500 font-semibold mb-1">Travel Package</p>
         <h3 class="font-bold text-lg text-gray-800 mb-2">
@@ -393,7 +389,7 @@
 
     <!-- Article 3 -->
     <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
-      <img src="assets/gallery5.jpg" alt="Nusa Penida Tour" class="w-full h-40 object-cover" />
+      <img src="{{ asset('frontend/assets/gallery5.jpg') }}" alt="Nusa Penida Tour" class="w-full h-40 object-cover" />
       <div class="p-4">
         <p class="text-sm text-red-500 font-semibold mb-1">Travel Package</p>
         <h3 class="font-bold text-lg text-gray-800 mb-2">
@@ -418,18 +414,18 @@
   <div class="relative">
     <div class="flex gap-4 animate-scroll">
       <!-- Gandakan isi supaya loop terlihat mulus -->
-      <img src="assets/gallery1.jpg" alt="Gallery 1" class="w-40 h-28 object-cover rounded-lg shadow-md" />
-      <img src="assets/gallery2.jpg" alt="Gallery 2" class="w-40 h-28 object-cover rounded-lg shadow-md" />
-      <img src="assets/gallery3.jpg" alt="Gallery 3" class="w-40 h-28 object-cover rounded-lg shadow-md" />
-      <img src="assets/gallery4.jpg" alt="Gallery 4" class="w-40 h-28 object-cover rounded-lg shadow-md" />
-      <img src="assets/gallery5.jpg" alt="Gallery 5" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="{{ asset('frontend/assets/gallery1.jpg') }}" alt="Gallery 1" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="{{ asset('frontend/assets/gallery2.jpg') }}" alt="Gallery 2" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="{{ asset('frontend/assets/gallery3.jpg') }}" alt="Gallery 3" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="{{ asset('frontend/assets/gallery4.jpg') }}" alt="Gallery 4" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="{{ asset('frontend/assets/gallery5.jpg') }}" alt="Gallery 5" class="w-40 h-28 object-cover rounded-lg shadow-md" />
 
       <!-- Duplikat supaya seamless -->
-      <img src="assets/gallery1.jpg" alt="Gallery 1" class="w-40 h-28 object-cover rounded-lg shadow-md" />
-      <img src="assets/gallery2.jpg" alt="Gallery 2" class="w-40 h-28 object-cover rounded-lg shadow-md" />
-      <img src="assets/gallery3.jpg" alt="Gallery 3" class="w-40 h-28 object-cover rounded-lg shadow-md" />
-      <img src="assets/gallery4.jpg" alt="Gallery 4" class="w-40 h-28 object-cover rounded-lg shadow-md" />
-      <img src="assets/gallery5.jpg" alt="Gallery 5" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="{{ asset('frontend/assets/gallery1.jpg') }}" alt="Gallery 1" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="{{ asset('frontend/assets/gallery2.jpg') }}" alt="Gallery 2" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="{{ asset('frontend/assets/gallery3.jpg') }}" alt="Gallery 3" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="{{ asset('frontend/assets/gallery4.jpg') }}" alt="Gallery 4" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      <img src="{{ asset('frontend/assets/gallery5.jpg') }}" alt="Gallery 5" class="w-40 h-28 object-cover rounded-lg shadow-md" />
     </div>
   </div>
 </section>
@@ -502,7 +498,7 @@
   <footer class="bg-white text-gray-700 py-12">
     <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
       <div>
-        <img src="assets/logo.png" alt="Logo" class="h-14 mb-4 max-w-full" />
+        <img src="{{ asset('assets/logo.png') }}" alt="Logo" class="h-14 mb-4 max-w-full" />
         <p class="text-gray-600 text-sm mb-6 leading-relaxed">
           With our reliable Bali Lady Tour services, you can explore breathtaking islands,
           soak up the sun, and travel comfortably.
@@ -512,11 +508,11 @@
       <div>
         <h4 class="font-bold text-indigo-900 mb-4 uppercase">Menu</h4>
         <ul class="space-y-2 text-gray-600">
-          <li><a href="#" class="hover:text-indigo-900">Home</a></li>
-          <li><a href="#" class="hover:text-indigo-900">Tour</a></li>
-          <li><a href="#" class="hover:text-indigo-900">Car Rental</a></li>
-          <li><a href="#" class="hover:text-indigo-900">Tour Experience</a></li>
-          <li><a href="#" class="hover:text-indigo-900">Articles</a></li>
+          <li><a href="{{ url('/') }}" class="hover:text-indigo-900">Home</a></li>
+          <li><a href="{{ url('/tourpackage') }}" class="hover:text-indigo-900">Tour</a></li>
+          <li><a href="{{ url('/carrental') }}" class="hover:text-indigo-900">Car Rental</a></li>
+          <li><a href="{{ url('/tourexperience') }}" class="hover:text-indigo-900">Tour Experience</a></li>
+          <li><a href="{{ url('/articles') }}" class="hover:text-indigo-900">Articles</a></li>
         </ul>
       </div>
       <div>

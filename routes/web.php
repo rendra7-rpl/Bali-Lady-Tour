@@ -21,16 +21,41 @@ use App\Http\Controllers\LoginController;
 |
 */
 
+// Frontend Routes
 Route::get('/', function () {
-    return view('Backend.login');
+    return view('Frontend.home');
 });
+
+// Frontend Pages
+Route::get('/tourpackage', function () {
+    return view('Frontend.tourpackage');
+})->name('tourpackage');
+
+Route::get('/carrental', function () {
+    return view('Frontend.carrental');
+})->name('carrental');
+
+Route::get('/tourexperience', function () {
+    return view('Frontend.tourexperience');
+})->name('tourexperience');
+
+Route::get('/articles', function () {
+    return view('Frontend.articles');
+})->name('articles');
+
+Route::get('/articlesdetail', function () {
+    return view('Frontend.articlesdetail');
+})->name('articlesdetail');
+
+Route::get('/detailtour', function () {
+    return view('Frontend.detailtour');
+})->name('detailtour');
 
 // Authentication Routes
 Route::controller(LoginController::class)->group(function () {
     Route::get('/login', 'login')->name('login');
     Route::post('/loginproses', 'loginproses')->name('login.proses');
     Route::post('/logout', 'logout')->name('logout');
-
 });
 
 // Protected Backoffice Routes
