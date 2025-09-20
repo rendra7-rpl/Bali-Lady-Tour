@@ -67,10 +67,10 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a href="" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+        <a href="/login" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
           Logout
         </a>
-        <form id="logout-form" action="" method="GET" style="display: none;">
+        <form id="logout-form" action="/login" method="GET" style="display: none;">
           @csrf
         </form>
       </li>
@@ -137,13 +137,14 @@
             </a>
           </li>
 
-          <!-- Program -->
+         <!-- Advantage -->
           <li class="nav-item">
             <a href="/programs" class="nav-link">
-              <i class="nav-icon fas fa-heartbeat"></i>
+              <i class="nav-icon fas fa-rocket"></i>
               <p>Advantage</p>
             </a>
           </li>
+
 
           <!-- Review -->
           <li class="nav-item">
@@ -230,7 +231,7 @@
 
           <!-- Accounts -->
           <li class="nav-item">
-            <a href="/accounts" class="nav-link">
+            <a href="/akun" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>Accounts</p>
             </a>
@@ -245,13 +246,14 @@
   @yield('content')
 
   <!-- Main Footer -->
-   <footer class="main-footer">
-    <strong>Copyright &copy; 2025 Bali Lady Tour.</strong>
-    All rights reserved.
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2025 <a href="https://www.indoapps.id/">PT. Indo Apss Solusindo</a>.</strong>
+    
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0
+     
     </div>
   </footer>
+
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

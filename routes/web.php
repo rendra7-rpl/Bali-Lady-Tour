@@ -7,6 +7,7 @@ use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ShortController;
+use App\Http\Controllers\LoginController;
 
 
 /*
@@ -21,11 +22,24 @@ use App\Http\Controllers\ShortController;
 */
 
 Route::get('/', function () {
-    return view('Backend.Dashboard.dashboard');
+    return view('Backend.login');
 });
 
+// Authentication Routes
+Route::controller(LoginController::class)->group(function () {
+    Route::get('/login', 'login')->name('login');
+    Route::post('/loginproses', 'loginproses')->name('login.proses');
+});
 
 Route::get('/dashboard', [BeritaController::class, 'dashboard'])->name('dashboard');
+
+// ## LOGIN ACCOUNT ## //
+Route::get('/akun', [LoginController::class, 'akun'])->name('akun');
+Route::get('/add', [LoginController::class, 'add'])->name('add');
+Route::post('/insertacc',[LoginController::class, 'insertacc'])->name('insertacc');
+Route::get('/tampilkanacc/{id}', [LoginController::class, 'tampilkanacc'])->name('tampilkanacc');
+Route::post('/updateacc/{id}', [LoginController::class, 'updateacc'])->name('updateacc');
+
 
 // ## SHORT CONTENT ## //
 Route::get('/short', [ShortController::class, 'short'])->name('short');
