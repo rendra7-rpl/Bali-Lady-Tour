@@ -17,9 +17,19 @@
                 <div class="col-sm-6">
                     <h1 class="m-0">Data Admin</h1>
                 </div>
+                <div class="col-sm-6">
+                    <div class="float-right">
+                        <a href="/logout" class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                        <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>    
+    </div>
 
     <section class="content">
         <div class="container-fluid">
@@ -45,7 +55,7 @@
                                         </div>
                                     </form>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -69,15 +79,15 @@
                                         <td>{{ $index + $data->firstItem() }}</td>
                                         <td>{{ $row->name }}</td>
                                         <td>{{ $row->email }}</td>
-                                        <td>{{ $row->password }}</td>
+                                        <td>••••••••</td>
                                         <td>
                                             <a href="/tampilkanacc/{{ $row->id }}" class="btn btn-info btn-sm">Edit</a>
-                                            <a href="{{ url('/akun/delete/'.$row->id) }}" class="btn btn-danger btn-sm delete">Delete</a>
+                                            <button type="button" class="btn btn-danger btn-sm" onclick="deleteAccount({{ $row->id }})">Delete</button>
                                         </td>
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="4" class="text-center">Data tidak ditemukan</td>
+                                        <td colspan="5" class="text-center">Data tidak ditemukan</td>
                                     </tr>
                                 @endforelse
                             </tbody>
@@ -103,10 +113,47 @@
 <!-- Bootstrap Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<script>
+function deleteAccount(id) {
+    Swal.fire({
+        title: 'Apakah Anda yakin?',
+        text: "Data akun akan dihapus permanen!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Ya, Hapus!',
+        cancelButtonText: 'Batal'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Create a form to submit the delete request
+            var form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/deleteacc/' + id;
+
+            var csrfToken = document.createElement('input');
+            csrfToken.type = 'hidden';
+            csrfToken.name = '_token';
+            csrfToken.value = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || '';
+
+            var methodInput = document.createElement('input');
+            methodInput.type = 'hidden';
+            methodInput.name = '_method';
+            methodInput.value = 'DELETE';
+
+            form.appendChild(csrfToken);
+            form.appendChild(methodInput);
+            document.body.appendChild(form);
+            form.submit();
+        }
+    });
+}
+</script>
+
 <!-- Toastr Alerts -->
 <script>
-  @if (Session::has('Success'))
-    toastr.success("{{ Session::get('Success') }}");
+  @if (Session::has('success'))
+    toastr.success("{{ Session::get('success') }}");
   @endif
 
   @if (Session::has('update'))
