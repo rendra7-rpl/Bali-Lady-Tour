@@ -102,5 +102,31 @@ class LoginController extends Controller
 
         return redirect()->route('akun')->with('update', 'User berhasil diperbarui!');
     }
-}
 
+    // Logout
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/login')->with('success', 'Berhasil logout!');
+    }
+
+    // Delete user
+    public function deleteacc($id)
+    {
+        try {
+            $user = User::findOrFail($id);
+
+            // Prevent deleting the currently logged in user
+            if ($user->id === Auth::id()) {
+                return redirect()->route('akun')->with('error', 'Tidak dapat menghapus akun yang sedang digunakan!');
+            }
+
+            $user->delete();
+            return redirect()->route('akun')->with('delete', 'User berhasil dihapus!');
+        } catch (\Exception $e) {
+            return redirect()->route('akun')->with('error', 'Gagal menghapus user!');
+        }
+    }
+}

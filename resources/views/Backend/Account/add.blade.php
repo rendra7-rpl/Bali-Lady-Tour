@@ -10,7 +10,7 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
 
     <h1 class="text-center mb-4">Tambah Akun</h1>
 
@@ -19,27 +19,44 @@
             <div class="col-8">
                 <div class="card">
                     <div class="card-body">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul class="mb-3">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                         <form action="/insertacc" method="POST">
                             @csrf
-                            
+
                             {{-- Nama --}}
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nama</label>
-                                <input type="text" id="name" name="name" class="form-control" 
+                                <input type="text" id="name" name="name" class="form-control"
                                        value="{{ old('name') }}" required>
                             </div>
 
                             {{-- Email --}}
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" id="email" name="email" class="form-control" 
+                                <input type="email" id="email" name="email" class="form-control"
                                        value="{{ old('email') }}" required>
                             </div>
 
                             {{-- Password --}}
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" id="password" name="password" class="form-control" 
+                                <input type="password" id="password" name="password" class="form-control"
+                                       required>
+                            </div>
+
+                            {{-- Konfirmasi Password --}}
+                            <div class="mb-3">
+                                <label for="password_confirmation" class="form-label">Konfirmasi Password</label>
+                                <input type="password" id="password_confirmation" name="password_confirmation" class="form-control"
                                        required>
                             </div>
 
