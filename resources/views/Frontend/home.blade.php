@@ -1,11 +1,10 @@
 @extends('Frontend.Layout.frontend')
 
-@section('title', 'Bali Lady Tour - Home')
+@section('title', 'home - Bali Lady Tour')
 
 @section('content')
-
-  <!-- Hero Section -->
-  <section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('{{ asset('frontend/assets/bali-lady.jpg') }}')">
+<!-- Hero Section -->
+  <section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('{{ asset('frontend/assets/bali-lady.jpg') }}');">
     <div class="absolute inset-0 bg-black/40"></div>
     <div class="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center">
       <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 max-w-3xl">
@@ -58,7 +57,7 @@
 
   <!-- About Section -->
 <section class="container mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
+  
   <!-- Left: Images -->
   <div class="grid grid-cols-2 gap-4">
     <!-- Big image -->
@@ -80,13 +79,13 @@
       Discover Bali with Bali Lady Tour: Your <br/> Friendly and Experienced Guide
     </h3>
     <p class="text-gray-700">
-      Experience Bali in a whole new way with Bali Lady Tour, your friendly and experienced guide.
-      Explore the island's stunning natural beauty, from lush rice fields to amazing waterfalls.
-      With Bali Lady Tour expert knowledge, you'll find hidden gems, learn about local culture,
+      Experience Bali in a whole new way with Bali Lady Tour, your friendly and experienced guide. 
+      Explore the island’s stunning natural beauty, from lush rice fields to amazing waterfalls. 
+      With Bali Lady Tour expert knowledge, you’ll find hidden gems, learn about local culture, 
       and enjoy exciting adventures.
     </p>
     <p class="text-gray-700">
-      Bali Lady Tour tours offer the perfect mix of relaxation and fun. Whether you're visiting ancient temples,
+      Bali Lady Tour tours offer the perfect mix of relaxation and fun. Whether you’re visiting ancient temples, 
       tasting traditional Balinese food, or discovering less-known spots, Eva will make sure you have a memorable experience.
     </p>
   </div>
@@ -188,7 +187,7 @@
         </ul>
 
         <!-- Tombol Book -->
-        <button onclick="openModal()"
+        <button onclick="openModal()" 
           class="mt-6 w-full bg-indigo-900 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700">Book</button>
       </div>
     </div>
@@ -225,7 +224,7 @@
         </ul>
 
         <!-- Tombol Book -->
-        <button onclick="openModal()"
+        <button onclick="openModal()" 
           class="mt-6 w-full bg-indigo-900 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700">Book</button>
       </div>
     </div>
@@ -262,7 +261,7 @@
         </ul>
 
         <!-- Tombol Book -->
-        <button onclick="openModal()"
+        <button onclick="openModal()" 
           class="mt-6 w-full bg-indigo-900 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700">Book</button>
       </div>
     </div>
@@ -284,7 +283,7 @@
         </h3>
         <div class="flex items-center justify-between text-sm text-gray-500">
           <span>April 06, 2025</span>
-          <a href="{{ url('/articlesdetail') }}" class="text-red-500 font-medium hover:underline">Read More</a>
+          <a href="articlesdetail.html" class="text-red-500 font-medium hover:underline">Read More</a>
         </div>
       </div>
     </article>
@@ -408,222 +407,4 @@
 
   </div>
 </section>
-
-
-
-  <!-- Footer -->
-  <footer class="bg-white text-gray-700 py-12">
-    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div>
-        <img src="{{ asset('assets/logo.png') }}" alt="Logo" class="h-14 mb-4 max-w-full" />
-        <p class="text-gray-600 text-sm mb-6 leading-relaxed">
-          With our reliable Bali Lady Tour services, you can explore breathtaking islands,
-          soak up the sun, and travel comfortably.
-        </p>
-        <a href="#" class="inline-block bg-indigo-900 text-white px-6 py-2 rounded-full font-semibold hover:bg-indigo-800 transition">Contact</a>
-      </div>
-      <div>
-        <h4 class="font-bold text-indigo-900 mb-4 uppercase">Menu</h4>
-        <ul class="space-y-2 text-gray-600">
-          <li><a href="{{ url('/') }}" class="hover:text-indigo-900">Home</a></li>
-          <li><a href="{{ url('/tourpackage') }}" class="hover:text-indigo-900">Tour</a></li>
-          <li><a href="{{ url('/carrental') }}" class="hover:text-indigo-900">Car Rental</a></li>
-          <li><a href="{{ url('/tourexperience') }}" class="hover:text-indigo-900">Tour Experience</a></li>
-          <li><a href="{{ url('/articles') }}" class="hover:text-indigo-900">Articles</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-bold text-indigo-900 mb-4 uppercase">Info</h4>
-        <ul class="space-y-2 text-gray-600">
-          <li><a href="#" class="hover:text-indigo-900">FAQs</a></li>
-          <li><a href="#" class="hover:text-indigo-900">Support Center</a></li>
-          <li><a href="#" class="hover:text-indigo-900">Contact Us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-bold text-indigo-900 mb-4 uppercase">Social</h4>
-        <ul class="space-y-2 text-gray-600">
-          <li><a href="#" class="hover:text-indigo-900">Instagram</a></li>
-          <li><a href="#" class="hover:text-indigo-900">Facebook</a></li>
-          <li><a href="#" class="hover:text-indigo-900">Youtube</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container mx-auto px-6 text-center mt-8 pt-4 border-t border-gray-300 text-sm text-gray-500">
-      <p class="md:text-left">© 2025 baliladytour.id All Rights Reserved </p>
-      <p class="md:text-right">Designed by <span class="font-medium text-indigo-900">IndoAppsSolusindo</span></p>
-    </div>
-  </footer>
-
-  <script>
-  const navbar = document.getElementById('navbar');
-  const navLinks = document.querySelectorAll('.nav-link');
-  const globeBtn = document.getElementById('globeBtn');
-  const globeIcon = document.querySelector('.globe-icon');
-  const langMenu = document.getElementById('langMenu');
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const menuIcon = document.getElementById('menuIcon');
-
-  const SCROLL_THRESHOLD = 80;
-
-  function applyTopState() {
-    // Navbar transparan
-    navbar.classList.remove('bg-white', 'shadow-md');
-    navbar.classList.add('bg-transparent');
-
-    // Desktop links putih
-    navLinks.forEach(a => {
-      a.classList.remove('text-gray-800');
-      a.classList.add('text-white');
-    });
-
-    // Icon putih
-    globeIcon.classList.add('text-white');
-    globeIcon.classList.remove('text-gray-800');
-    menuIcon.classList.add('text-white');
-    menuIcon.classList.remove('text-gray-800');
-
-    // Mobile menu transparan penuh
-    mobileMenu.classList.remove('bg-white', 'text-gray-800', 'bg-white/70');
-    mobileMenu.classList.add('bg-transparent', 'text-white');
-  }
-
-  function applyScrolledState() {
-    // Navbar putih solid
-    navbar.classList.remove('bg-transparent');
-    navbar.classList.add('bg-white', 'shadow-md');
-
-    // Desktop links gelap
-    navLinks.forEach(a => {
-      a.classList.remove('text-white');
-      a.classList.add('text-gray-800');
-    });
-
-    // Icon gelap
-    globeIcon.classList.add('text-gray-800');
-    globeIcon.classList.remove('text-white');
-    menuIcon.classList.add('text-gray-800');
-    menuIcon.classList.remove('text-white');
-
-    // Mobile menu putih solid
-    mobileMenu.classList.remove('bg-transparent', 'text-white');
-    mobileMenu.classList.add('bg-white', 'text-gray-800');
-  }
-
-  function handleNavbar() {
-    if (window.scrollY > SCROLL_THRESHOLD) {
-      applyScrolledState();
-    } else {
-      applyTopState();
-    }
-  }
-
-  // Jalankan saat load & scroll
-  window.addEventListener('scroll', handleNavbar);
-  document.addEventListener('DOMContentLoaded', handleNavbar);
-
-  // Toggle mobile menu
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    handleNavbar();
-  });
-
-  // Toggle language
-  globeBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    langMenu.classList.toggle('hidden');
-  });
-
-  // Tutup dropdown language kalau klik di luar
-  window.addEventListener('click', (e) => {
-    if (!globeBtn.contains(e.target) && !langMenu.contains(e.target)) {
-      langMenu.classList.add('hidden');
-    }
-  });
-</script>
-</body>
-</html>
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const menuIcon = document.getElementById('menuIcon');
-
-  const SCROLL_THRESHOLD = 80;
-
-  function applyTopState() {
-    // Navbar transparan
-    navbar.classList.remove('bg-white', 'shadow-md');
-    navbar.classList.add('bg-transparent');
-
-    // Desktop links putih
-    navLinks.forEach(a => {
-      a.classList.remove('text-gray-800');
-      a.classList.add('text-white');
-    });
-
-    // Icon putih
-    globeIcon.classList.add('text-white');
-    globeIcon.classList.remove('text-gray-800');
-    menuIcon.classList.add('text-white');
-    menuIcon.classList.remove('text-gray-800');
-
-    // Mobile menu transparan penuh
-    mobileMenu.classList.remove('bg-white', 'text-gray-800', 'bg-white/70');
-    mobileMenu.classList.add('bg-transparent', 'text-white');
-  }
-
-  function applyScrolledState() {
-    // Navbar putih solid
-    navbar.classList.remove('bg-transparent');
-    navbar.classList.add('bg-white', 'shadow-md');
-
-    // Desktop links gelap
-    navLinks.forEach(a => {
-      a.classList.remove('text-white');
-      a.classList.add('text-gray-800');
-    });
-
-    // Icon gelap
-    globeIcon.classList.add('text-gray-800');
-    globeIcon.classList.remove('text-white');
-    menuIcon.classList.add('text-gray-800');
-    menuIcon.classList.remove('text-white');
-
-    // Mobile menu putih solid
-    mobileMenu.classList.remove('bg-transparent', 'text-white');
-    mobileMenu.classList.add('bg-white', 'text-gray-800');
-  }
-
-  function handleNavbar() {
-    if (window.scrollY > SCROLL_THRESHOLD) {
-      applyScrolledState();
-    } else {
-      applyTopState();
-    }
-  }
-
-  // Jalankan saat load & scroll
-  window.addEventListener('scroll', handleNavbar);
-  document.addEventListener('DOMContentLoaded', handleNavbar);
-
-  // Toggle mobile menu
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    handleNavbar();
-  });
-
-  // Toggle language
-  globeBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    langMenu.classList.toggle('hidden');
-  });
-
-  // Tutup dropdown language kalau klik di luar
-  window.addEventListener('click', (e) => {
-    if (!globeBtn.contains(e.target) && !langMenu.contains(e.target)) {
-      langMenu.classList.add('hidden');
-    }
-  });
-</script>
-</body>
-</html>
+@endsection
