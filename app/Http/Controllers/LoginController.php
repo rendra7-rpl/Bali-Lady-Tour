@@ -103,15 +103,6 @@ class LoginController extends Controller
         return redirect()->route('akun')->with('update', 'User berhasil diperbarui!');
     }
 
-    // Logout
-    public function logout(Request $request)
-    {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        return redirect('/login')->with('success', 'Berhasil logout!');
-    }
-
     // Delete user
     public function deleteacc($id)
     {
