@@ -19,41 +19,34 @@
     </div>
   </section>
 
-  <!-- Top Values Section -->
-  <section class="container mx-auto px-6 py-16 text-center">
-    <h2 class="text-3xl font-bold mb-4">Top Values For You</h2>
-    <p class="text-gray-600 mb-12">Try variety of benefits after using our services</p>
-    <div class="grid grid-cols-1 sm:grid-cols-4 gap-8">
-      <div class="space-y-4">
-        <div class="mx-auto w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center text-white text-2xl">
+  <!-- Top Values Section - Updated dengan Programs -->
+<section class="container mx-auto px-6 py-16 text-center">
+  <h2 class="text-3xl font-bold mb-4">Top Values For You</h2>
+  <p class="text-gray-600 mb-12">Try variety of benefits after using our services</p>
+  <div class="grid grid-cols-1 sm:grid-cols-4 gap-8">
+    @foreach($programs as $index => $program)
+    <div class="space-y-4">
+      <div class="mx-auto w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center text-white text-2xl">
+        @if($index == 0)
           <i class="fas fa-camera"></i>
-        </div>
-        <h3 class="font-bold text-lg">Documentation</h3>
-        <p class="text-gray-600 text-sm">Our female tour guide and driver will document your journey, capturing every memorable moment.</p>
-      </div>
-      <div class="space-y-4">
-        <div class="mx-auto w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center text-white text-2xl">
+        @elseif($index == 1)
           <i class="fas fa-calendar-check"></i>
-        </div>
-        <h3 class="font-bold text-lg">Easy Booking</h3>
-        <p class="text-gray-600 text-sm">Our seamless booking process ensures you can quickly arrange your trip, no matter where you are.</p>
-      </div>
-      <div class="space-y-4">
-        <div class="mx-auto w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center text-white text-2xl">
+        @elseif($index == 2)
           <i class="fas fa-star"></i>
-        </div>
-        <h3 class="font-bold text-lg">Best Tour Guide</h3>
-        <p class="text-gray-600 text-sm">Our experienced female tour guide and driver will help you through breathtaking landscapes and vibrant Balinese culture.</p>
-      </div>
-      <div class="space-y-4">
-        <div class="mx-auto w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center text-white text-2xl">
+        @else
           <i class="fas fa-smile"></i>
-        </div>
-        <h3 class="font-bold text-lg">Happy Tour</h3>
-        <p class="text-gray-600 text-sm">Authentic and exciting tour experience in Bali, ensuring a fun and memorable trip.</p>
+        @endif
       </div>
+      <h3 class="font-bold text-lg">{{ $program->title }}</h3>
+      <p class="text-gray-600 text-sm">
+        {{ Str::limit($program->excerpt ?? strip_tags($program->content), 100) }}
+      </p>
     </div>
-  </section>
+    @endforeach
+  </div>
+</section>
+
+
 
   <!-- About Section -->
 <section class="container mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -268,83 +261,42 @@
     </div>
   </section>
 
-  <!-- Articles Section -->
+  <!-- Articles Section - Updated dengan Berita -->
 <section class="container mx-auto px-6 py-16">
   <h2 class="text-3xl font-bold mb-8 text-center">Our Articles</h2>
   <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-
-    <!-- Article 1 -->
+    @foreach($beritas as $berita)
     <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
-      <img src="{{ asset('frontend/assets/gallery1.jpg') }}" alt="Bali Car Rental" class="w-full h-40 object-cover" />
+      <img src="{{ asset('fotoberita/' . $berita->foto) }}" alt="{{ $berita->title }}" class="w-full h-40 object-cover" />
       <div class="p-4">
         <p class="text-sm text-red-500 font-semibold mb-1">Travel Package</p>
         <h3 class="font-bold text-lg text-gray-800 mb-2">
-          Paket Tour Nusa Penida: Snorkeling & Pantai Eksotis
+          {{ Str::limit($berita->title, 50) }}
         </h3>
         <div class="flex items-center justify-between text-sm text-gray-500">
-          <span>April 06, 2025</span>
-          <a href="articlesdetail.html" class="text-red-500 font-medium hover:underline">Read More</a>
+          <span>{{ $berita->date }}</span>
+          <a href="{{ route('articles.detail', $berita->id) }}" class="text-red-500 font-medium hover:underline">Read More</a>
         </div>
       </div>
     </article>
-
-    <!-- Article 2 -->
-    <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
-      <img src="{{ asset('frontend/assets/gallery3.jpg') }}" alt="Bali Tour Guide" class="w-full h-40 object-cover" />
-      <div class="p-4">
-        <p class="text-sm text-red-500 font-semibold mb-1">Travel Package</p>
-        <h3 class="font-bold text-lg text-gray-800 mb-2">
-          Paket Tour Nusa Penida: Snorkeling & Pantai Eksotis
-        </h3>
-        <div class="flex items-center justify-between text-sm text-gray-500">
-          <span>April 06, 2025</span>
-          <a href="#" class="text-red-500 font-medium hover:underline">Read More</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Article 3 -->
-    <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
-      <img src="{{ asset('frontend/assets/gallery5.jpg') }}" alt="Nusa Penida Tour" class="w-full h-40 object-cover" />
-      <div class="p-4">
-        <p class="text-sm text-red-500 font-semibold mb-1">Travel Package</p>
-        <h3 class="font-bold text-lg text-gray-800 mb-2">
-          Paket Tour Nusa Penida: Snorkeling & Pantai Eksotis
-        </h3>
-        <div class="flex items-center justify-between text-sm text-gray-500">
-          <span>April 06, 2025</span>
-          <a href="#" class="text-red-500 font-medium hover:underline">Read More</a>
-        </div>
-      </div>
-    </article>
-
+    @endforeach
   </div>
 </section>
 
 
-  <!-- Gallery Section -->
+
+  <!-- Gallery Section - Updated dengan Galeri -->
 <section class="container mx-auto px-6 py-16 overflow-hidden">
   <h2 class="text-3xl font-bold mb-8 text-center">Our Gallery</h2>
-
-  <!-- Wrapper untuk animasi -->
   <div class="relative">
     <div class="flex gap-4 animate-scroll">
-      <!-- Gandakan isi supaya loop terlihat mulus -->
-      <img src="{{ asset('frontend/assets/gallery1.jpg') }}" alt="Gallery 1" class="w-40 h-28 object-cover rounded-lg shadow-md" />
-      <img src="{{ asset('frontend/assets/gallery2.jpg') }}" alt="Gallery 2" class="w-40 h-28 object-cover rounded-lg shadow-md" />
-      <img src="{{ asset('frontend/assets/gallery3.jpg') }}" alt="Gallery 3" class="w-40 h-28 object-cover rounded-lg shadow-md" />
-      <img src="{{ asset('frontend/assets/gallery4.jpg') }}" alt="Gallery 4" class="w-40 h-28 object-cover rounded-lg shadow-md" />
-      <img src="{{ asset('frontend/assets/gallery5.jpg') }}" alt="Gallery 5" class="w-40 h-28 object-cover rounded-lg shadow-md" />
-
-      <!-- Duplikat supaya seamless -->
-      <img src="{{ asset('frontend/assets/gallery1.jpg') }}" alt="Gallery 1" class="w-40 h-28 object-cover rounded-lg shadow-md" />
-      <img src="{{ asset('frontend/assets/gallery2.jpg') }}" alt="Gallery 2" class="w-40 h-28 object-cover rounded-lg shadow-md" />
-      <img src="{{ asset('frontend/assets/gallery3.jpg') }}" alt="Gallery 3" class="w-40 h-28 object-cover rounded-lg shadow-md" />
-      <img src="{{ asset('frontend/assets/gallery4.jpg') }}" alt="Gallery 4" class="w-40 h-28 object-cover rounded-lg shadow-md" />
-      <img src="{{ asset('frontend/assets/gallery5.jpg') }}" alt="Gallery 5" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      @foreach($galeris as $galeri)
+      <img src="{{ asset('fotogaleri/' . $galeri->foto) }}" alt="Gallery" class="w-40 h-28 object-cover rounded-lg shadow-md" />
+      @endforeach
     </div>
   </div>
 </section>
+
 
 <!-- Tambahkan CSS -->
 <style>
@@ -361,50 +313,24 @@
 </style>
 
 
-  <!-- Customer Reviews Section -->
+  <!-- Customer Reviews Section - Updated dengan Reviews -->
 <section class="container mx-auto px-6 py-16">
   <h2 class="text-3xl font-bold mb-8 text-center">Our Happy Customer Reviews</h2>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-    <!-- Review 1 -->
+    @foreach($reviews as $review)
     <blockquote class="bg-yellow-100 p-6 rounded shadow flex flex-col justify-between h-full">
       <div>
         <div class="flex text-yellow-500 mb-3">
-          ★★★★★
+          @for($i = 0; $i < $review->rate; $i++)
+            ★
+          @endfor
         </div>
-        <p class="italic">
-          "The Bali Lady Tour package was absolutely amazing! From the airport pickup to the full-day trip to Ubud and Kintamani, everything was perfectly arranged. The car was comfortable, the driver was friendly, and the guide shared so much about Balinese culture. Highly recommended!"
-        </p>
+        <p class="italic">"{{ $review->ulasan }}"</p>
       </div>
-      <footer class="mt-4 font-semibold">- Andrew W</footer>
+      <footer class="mt-4 font-semibold">- {{ $review->nama }}</footer>
     </blockquote>
-
-    <!-- Review 2 -->
-    <blockquote class="bg-yellow-100 p-6 rounded shadow flex flex-col justify-between h-full">
-      <div>
-        <div class="flex text-yellow-500 mb-3">
-          ★★★★★
-        </div>
-        <p class="italic">
-          "I rented a car from Bali Lady Tour for three days and had a fantastic experience. The car was spotless and well-maintained, the booking process was quick, and the price was very reasonable. It made exploring Bali so easy and stress-free."
-        </p>
-      </div>
-      <footer class="mt-4 font-semibold">- Clara S</footer>
-    </blockquote>
-
-    <!-- Review 3 -->
-    <blockquote class="bg-yellow-100 p-6 rounded shadow flex flex-col justify-between h-full">
-      <div>
-        <div class="flex text-yellow-500 mb-3">
-          ★★★★★
-        </div>
-        <p class="italic">
-          "The Nusa Penida tour with Bali Lady Tour was the highlight of my holiday! The guide was super friendly, the photo spots were well planned, and lunch was delicious. Every little detail was taken care of, and we truly felt like VIP guests. Thank you Bali Lady Tour!"
-        </p>
-      </div>
-      <footer class="mt-4 font-semibold">- Michael T</footer>
-    </blockquote>
-
+    @endforeach
   </div>
 </section>
+
 @endsection

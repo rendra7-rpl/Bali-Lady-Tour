@@ -8,7 +8,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ShortController;
 use App\Http\Controllers\LoginController;
-
+use App\Http\Controllers\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,35 +21,14 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-// Frontend Routes
-Route::get('/', function () {
-    return view('Frontend.home');
-});
-
-// Frontend Pages
-Route::get('/tourpackage', function () {
-    return view('Frontend.tourpackage');
-})->name('tourpackage');
-
-Route::get('/carrental', function () {
-    return view('Frontend.carrental');
-})->name('carrental');
-
-Route::get('/tourexperience', function () {
-    return view('Frontend.tourexperience');
-})->name('tourexperience');
-
-Route::get('/articles', function () {
-    return view('Frontend.articles');
-})->name('articles');
-
-Route::get('/articlesdetail', function () {
-    return view('Frontend.articlesdetail');
-})->name('articlesdetail');
-
-Route::get('/detailtour', function () {
-    return view('Frontend.detailtour');
-})->name('detailtour');
+// Frontend Routes - Updated to use FrontendController
+Route::get('/', [FrontendController::class, 'home'])->name('home');
+Route::get('/tourpackage', [FrontendController::class, 'tourPackage'])->name('tourpackage');
+Route::get('/carrental', [FrontendController::class, 'carRental'])->name('carrental');
+Route::get('/tourexperience', [FrontendController::class, 'tourExperience'])->name('tourexperience');
+Route::get('/articles', [FrontendController::class, 'articles'])->name('articles');
+Route::get('/articles/{id}', [FrontendController::class, 'articleDetail'])->name('articles.detail');
+Route::get('/gallery', [FrontendController::class, 'gallery'])->name('gallery');
 
 // Authentication Routes
 Route::controller(LoginController::class)->group(function () {

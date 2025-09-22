@@ -9,4 +9,15 @@ class Berita extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    // Method untuk menambah hit counter
+    public function incrementHit()
+    {
+        $this->increment('hit');
+    }
 }

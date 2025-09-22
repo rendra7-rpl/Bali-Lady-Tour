@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Article Detail - Bali Lady Tour</title>
-  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <title>{{ $berita->title }} - Bali Lady Tour</title>
+  <link rel="icon" href="{{ asset('frontend/assets/logo.png') }}" type="image/png" />
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -34,15 +34,15 @@
 <header id="navbar" class="fixed top-0 left-0 w-full z-50 bg-white shadow">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
     <!-- Logo -->
-    <img src="assets/logo.png" class="h-12" alt="Logo"/>
+    <img src="{{ asset('frontend/assets/logo.png') }}" class="h-12" alt="Logo"/>
     
     <!-- Menu Desktop -->
     <nav class="hidden md:flex space-x-6 font-medium text-gray-700">
-      <a href="home.html" class="hover:text-pink-600 nav-link">Home</a>
-      <a href="tourpackage.html" class="hover:text-pink-600 nav-link">Tour</a>
-      <a href="carrental.html" class="hover:text-pink-600 nav-link">Car Rental</a>
-      <a href="tourexperience.html" class="hover:text-pink-600 nav-link">Tour Experience</a>
-      <a href="articles.html" class="hover:text-pink-600 nav-link">Articles</a>
+      <a href="{{ route('home') }}" class="hover:text-pink-600 nav-link">Home</a>
+      <a href="{{ route('tourpackage') }}" class="hover:text-pink-600 nav-link">Tour</a>
+      <a href="{{ route('carrental') }}" class="hover:text-pink-600 nav-link">Car Rental</a>
+      <a href="{{ route('tourexperience') }}" class="hover:text-pink-600 nav-link">Tour Experience</a>
+      <a href="{{ route('articles') }}" class="hover:text-pink-600 nav-link">Articles</a>
     </nav>
 
     <!-- Right Side -->
@@ -76,11 +76,11 @@
   <!-- Mobile Menu -->
   <div id="mobileMenu" class="md:hidden hidden bg-white border-t shadow-lg">
     <nav class="flex flex-col space-y-2 px-6 py-4 text-gray-700 font-medium">
-      <a href="#" class="mobile-link hover:text-pink-600">Home</a>
-      <a href="#" class="mobile-link hover:text-pink-600">Tour</a>
-      <a href="#" class="mobile-link hover:text-pink-600">Hotel & Airport</a>
-      <a href="#" class="mobile-link hover:text-pink-600">Transfers</a>
-      <a href="#" class="mobile-link hover:text-pink-600">Articles</a>
+      <a href="{{ route('home') }}" class="mobile-link hover:text-pink-600">Home</a>
+      <a href="{{ route('tourpackage') }}" class="mobile-link hover:text-pink-600">Tour</a>
+      <a href="{{ route('carrental') }}" class="mobile-link hover:text-pink-600">Car Rental</a>
+      <a href="{{ route('tourexperience') }}" class="mobile-link hover:text-pink-600">Tour Experience</a>
+      <a href="{{ route('articles') }}" class="mobile-link hover:text-pink-600">Articles</a>
       <a href="#"
          class="bg-yellow-400 text-gray-800 font-semibold px-4 py-2 rounded text-center hover:bg-yellow-500">
          Book
@@ -88,15 +88,16 @@
     </nav>
   </div>
 </header>
+
   <!-- Main Content -->
   <main class="container mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-4 gap-8 pt-28">
     <!-- Article Content -->
     <article class="md:col-span-3 space-y-6">
       <h1 class="text-3xl font-bold text-gray-900">
-        Paket Liburan Bali 4 Hari 3 Malam dengan Hotel Bintang 4
+        {{ $berita->title }}
       </h1>
       <div class="flex items-center text-gray-500 text-sm space-x-4">
-        <time datetime="2025-03-28">28 March 2025</time>
+        <time datetime="{{ $berita->date }}">{{ $berita->date }}</time>
         <div class="flex space-x-3">
           <span>Share</span>
           <a href="#" aria-label="Share on Facebook" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook-f"></i></a>
@@ -105,125 +106,61 @@
           <a href="#" aria-label="Share on WhatsApp" class="text-green-500 hover:text-green-700"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
-      <img src="assets/gallery1.jpg" alt="Article Image" class="w-full rounded-lg shadow-md" />
+      <img src="{{ asset('fotoberita/' . $berita->foto) }}" alt="{{ $berita->title }}" class="w-full rounded-lg shadow-md" />
       <div class="prose max-w-none text-gray-700">
-        <p>
-          Bali selalu menjadi destinasi impian bagi wisatawan lokal maupun mancanegara. Dengan pesona alam yang memikat, budaya yang unik, serta deretan tempat wisata yang tak ada habisnya, Pulau Dewata menjadi salah satu tujuan favorit di dunia. Di tengah tingginya minat wisatawan, kebutuhan akan layanan transportasi yang nyaman dan terjangkau menjadi sangat penting. Menjawab kebutuhan tersebut, Bali Lady Tour hadir sebagai solusi terpercaya dalam menyediakan layanan rental mobil dengan kualitas terbaik.
-        </p>
-        <p>
-          Armada Lengkap dan Terawat<br />
-          Bali Lady Tour menawarkan beragam pilihan armada mulai dari mobil keluarga, city car, hingga kendaraan premium yang selalu dirawat secara berkala. Setiap kendaraan dilengkapi fasilitas pendukung seperti AC dingin, interior bersih, serta kondisi mesin prima, sehingga perjalanan wisatawan lebih aman, nyaman, dan menyenangkan.
-        </p>
-        <p>
-          Layanan dengan atau Tanpa Sopir<br />
-          Untuk memberikan fleksibilitas, Bali Lady Tour menyediakan dua opsi layanan: rental mobil dengan sopir berpengalaman atau lepas kunci (tanpa sopir). Sopir yang disediakan tidak hanya menguasai jalan di Bali, tetapi juga ramah dan siap membantu wisatawan menemukan destinasi menarik, spot foto unik, hingga kuliner lokal yang wajib dicoba.
-        </p>
-        <p>
-          Harga Kompetitif dan Transparan<br />
-          Salah satu keunggulan Bali Lady Tour adalah penawaran harga yang kompetitif tanpa biaya tersembunyi. Wisatawan dapat memilih paket rental sesuai kebutuhan, baik untuk perjalanan harian, mingguan, hingga bulanan. Transparansi harga menjadi komitmen utama perusahaan, sehingga pelanggan merasa lebih tenang dan nyaman.
-        </p>
-        <p>
-          Paket Wisata Khusus<br />
-          Selain rental mobil, Bali Lady Tour juga menghadirkan paket wisata yang dirancang khusus untuk wisatawan. Paket ini meliputi kunjungan ke destinasi populer seperti Ubud, Kintamani, Bedugul, Tanah Lot, hingga Pantai Pandawa. Dengan layanan terintegrasi, wisatawan tak perlu repot mengatur jadwal perjalanan sendiri.
-        </p>
-        <p>
-          Pelayanan Profesional dan Ramah<br />
-          Mengutamakan kepuasan pelanggan, Bali Lady Tour selalu menghadirkan pelayanan profesional dengan standar tinggi. Tim yang ramah dan komunikatif siap membantu wisatawan mulai dari proses pemesanan, pemilihan kendaraan, hingga pendampingan perjalanan.<br />
-          Mitra Perjalanan Terpercaya di Bali<br />
-          Dengan reputasi yang terus berkembang, Bali Lady Tour berkomitmen untuk menjadi mitra perjalanan terpercaya bagi setiap wisatawan. Perusahaan ini tidak hanya menyediakan layanan transportasi, tetapi juga pengalaman berwisata yang lebih berkesan.<br />
-          Bagi Anda yang ingin menikmati liburan di Bali dengan transportasi yang aman, nyaman, dan terjangkau, Bali Lady Tour siap menjadi pilihan utama untuk menemani setiap perjalanan di Pulau Dewata.
-        </p>
+        {!! $berita->content !!}
       </div>
     </article>
 
-    <!-- Sidebar -->
+    <!-- Sidebar - Updated dengan data dari database -->
     <aside class="md:col-span-1 bg-white rounded-lg shadow p-6">
       <h2 class="text-sm font-semibold text-gray-700 uppercase border-b border-gray-300 pb-2 mb-6">
         TRENDING POST
       </h2>
       <div class="space-y-4">
+        @foreach($popularBeritas as $index => $popular)
         <div>
-          <h3 class="font-bold text-lg text-gray-900">1</h3>
-          <a href="#" class="block font-semibold text-gray-800 hover:underline">
-            Bali Lady Tour Hadirkan Layanan Rental Mobil Nyaman dan Terjangkau di Pulau Dewata
+          <h3 class="font-bold text-lg text-gray-900">{{ $index + 1 }}</h3>
+          <a href="{{ route('articles.detail', $popular->id) }}" class="block font-semibold text-gray-800 hover:underline">
+            {{ Str::limit($popular->title, 60) }}
           </a>
-          <p class="text-xs text-gray-500">RENTAL - April 14, 2025</p>
+          <p class="text-xs text-gray-500">
+            @if($popular->category)
+              {{ strtoupper($popular->category->title) }}
+            @else
+              TRAVEL PACKAGE
+            @endif
+            - {{ $popular->date }}
+          </p>
         </div>
-        <div>
-          <h3 class="font-bold text-lg text-gray-900">2</h3>
-          <a href="#" class="block font-semibold text-gray-800 hover:underline">
-            Bali Lady Tour Hadirkan Layanan Rental Mobil Nyaman dan Terjangkau di Pulau Dewata
-          </a>
-          <p class="text-xs text-gray-500">RENTAL - April 14, 2025</p>
-        </div>
-        <div>
-          <h3 class="font-bold text-lg text-gray-900">3</h3>
-          <a href="#" class="block font-semibold text-gray-800 hover:underline">
-            Bali Lady Tour Hadirkan Layanan Rental Mobil Nyaman dan Terjangkau di Pulau Dewata
-          </a>
-          <p class="text-xs text-gray-500">RENTAL - April 14, 2025</p>
-        </div>
-        <div>
-          <h3 class="font-bold text-lg text-gray-900">4</h3>
-          <a href="#" class="block font-semibold text-gray-800 hover:underline">
-            Bali Lady Tour Hadirkan Layanan Rental Mobil Nyaman dan Terjangkau di Pulau Dewata
-          </a>
-          <p class="text-xs text-gray-500">RENTAL - April 14, 2025</p>
-        </div>
-        <div>
-          <h3 class="font-bold text-lg text-gray-900">5</h3>
-          <a href="#" class="block font-semibold text-gray-800 hover:underline">
-            Bali Lady Tour Hadirkan Layanan Rental Mobil Nyaman dan Terjangkau di Pulau Dewata
-          </a>
-          <p class="text-xs text-gray-500">RENTAL - April 14, 2025</p>
-        </div>
+        @endforeach
       </div>
     </aside>
   </main>
 
-  <!-- Related Articles -->
+  <!-- Related Articles - Updated dengan data dari database -->
   <section class="container mx-auto px-6 py-12">
     <h2 class="text-xl font-bold mb-6">Artikel Terkait</h2>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      @foreach($relatedBeritas as $related)
       <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
-        <img src="assets/gallery2.jpg" alt="Related Article 1" class="w-full h-40 object-cover" />
+        <img src="{{ asset('fotoberita/' . $related->foto) }}" alt="{{ $related->title }}" class="w-full h-40 object-cover" />
         <div class="p-4">
-          <p class="text-sm text-red-500 font-semibold mb-1">Travel Package</p>
-        <h3 class="font-bold text-lg text-gray-800 mb-2">
-          Paket Tour Nusa Penida: Snorkeling & Pantai Eksotis
-        </h3>
-        <div class="flex items-center justify-between text-sm text-gray-500">
-          <span>April 06, 2025</span>
-          <a href="#" class="text-red-500 font-medium hover:underline">Read More</a>
-        </div>
+          @if($related->category)
+            <p class="text-sm text-red-500 font-semibold mb-1">{{ $related->category->title }}</p>
+          @else
+            <p class="text-sm text-red-500 font-semibold mb-1">Travel Package</p>
+          @endif
+          <h3 class="font-bold text-lg text-gray-800 mb-2">
+            {{ Str::limit($related->title, 50) }}
+          </h3>
+          <div class="flex items-center justify-between text-sm text-gray-500">
+            <span>{{ $related->date }}</span>
+            <a href="{{ route('articles.detail', $related->id) }}" class="text-red-500 font-medium hover:underline">Read More</a>
+          </div>
         </div>
       </article>
-      <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
-        <img src="assets/gallery3.jpg" alt="Related Article 2" class="w-full h-40 object-cover" />
-        <div class="p-4">
-          <p class="text-sm text-red-500 font-semibold mb-1">Travel Package</p>
-        <h3 class="font-bold text-lg text-gray-800 mb-2">
-          Paket Tour Nusa Penida: Snorkeling & Pantai Eksotis
-        </h3>
-        <div class="flex items-center justify-between text-sm text-gray-500">
-          <span>April 06, 2025</span>
-          <a href="#" class="text-red-500 font-medium hover:underline">Read More</a>
-        </div>
-        </div>
-      </article>
-      <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
-        <img src="assets/gallery5.jpg" alt="Related Article 3" class="w-full h-40 object-cover" />
-        <div class="p-4">
-          <p class="text-sm text-red-500 font-semibold mb-1">Travel Package</p>
-        <h3 class="font-bold text-lg text-gray-800 mb-2">
-          Paket Tour Nusa Penida: Snorkeling & Pantai Eksotis
-        </h3>
-        <div class="flex items-center justify-between text-sm text-gray-500">
-          <span>April 06, 2025</span>
-          <a href="#" class="text-red-500 font-medium hover:underline">Read More</a>
-        </div>
-        </div>
-      </article>
+      @endforeach
     </div>
   </section>
 
@@ -231,7 +168,7 @@
   <footer class="bg-white text-gray-700 py-12">
     <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
       <div>
-        <img src="assets/logo.png" alt="Logo" class="h-14 mb-4 max-w-full" />
+        <img src="{{ asset('frontend/assets/logo.png') }}" alt="Logo" class="h-14 mb-4 max-w-full" />
         <p class="text-gray-600 text-sm mb-6 leading-relaxed">
           With our reliable Bali Lady Tour services, you can explore breathtaking islands,
           soak up the sun, and travel comfortably.
@@ -241,11 +178,11 @@
       <div>
         <h4 class="font-bold text-indigo-900 mb-4 uppercase">Menu</h4>
         <ul class="space-y-2 text-gray-600">
-          <li><a href="#" class="hover:text-indigo-900">Home</a></li>
-          <li><a href="#" class="hover:text-indigo-900">Tour</a></li>
-          <li><a href="#" class="hover:text-indigo-900">Car Rental</a></li>
-          <li><a href="#" class="hover:text-indigo-900">Tour Experience</a></li>
-          <li><a href="#" class="hover:text-indigo-900">Articles</a></li>
+          <li><a href="{{ route('home') }}" class="hover:text-indigo-900">Home</a></li>
+          <li><a href="{{ route('tourpackage') }}" class="hover:text-indigo-900">Tour</a></li>
+          <li><a href="{{ route('carrental') }}" class="hover:text-indigo-900">Car Rental</a></li>
+          <li><a href="{{ route('tourexperience') }}" class="hover:text-indigo-900">Tour Experience</a></li>
+          <li><a href="{{ route('articles') }}" class="hover:text-indigo-900">Articles</a></li>
         </ul>
       </div>
       <div>
